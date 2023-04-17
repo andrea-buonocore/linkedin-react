@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../Footer";
+import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
 
 const ProfilePage = () => {
     return (
@@ -8,7 +9,7 @@ const ProfilePage = () => {
                 {/* COLONNA SX */}
                 <Col xs={12} md={6} lg={8}>
                     <Row xs={1}>
-                        <Col>Colonna sx</Col>
+                        <Col><ProfileBigCard/></Col>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
