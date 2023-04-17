@@ -5,6 +5,7 @@ import Risorse from "./Risorse";
 import Attivita from "./Attivita";
 import Esperienza from "./Esperienza";
 import Formazione from "./Formazione";
+import Competenze from "./Competenze";
 
 const ProfilePage = () => {
     return (
@@ -19,6 +20,7 @@ const ProfilePage = () => {
                         <Attivita/>
                         <Esperienza/>
                         <Formazione/>
+                        <Competenze/>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
