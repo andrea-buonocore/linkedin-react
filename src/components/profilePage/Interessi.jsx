@@ -6,7 +6,7 @@ const Interessi = () => {
             <Card.Body>
                 <Card.Title>Interessi</Card.Title>
                 <Row className="justify-content-start">
-                    <Col xs={2}>
+                    <Col xs={4} lg={2}>
                         <p className="m-0">Aziende</p>
                     </Col>
                     <Col>
