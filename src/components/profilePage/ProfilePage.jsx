@@ -1,6 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../Footer";
 import Analisi from "./Analisi";
+import Risorse from "./Risorse";
+import Attivita from "./Attivita";
 
 const ProfilePage = () => {
     return (
@@ -11,6 +13,8 @@ const ProfilePage = () => {
                     <Row xs={1}>
                         <Col>Colonna sx</Col>
                         <Analisi/>
+                        <Risorse/>
+                        <Attivita/>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
