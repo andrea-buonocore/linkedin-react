@@ -12,21 +12,37 @@ const Risorse = () => {
                 </div>
                 <Row>
                     <Col>
-                        <Row>
-                            <Col xs={1}><i class="bi bi-reception-4"></i></Col>
-                            <Col xs={11}>
-                                <p className="m-0 fw-bold">Modalità creazione di contenuti</p>
-                                <small>Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione</small>
-                            </Col>
-                        </Row>
-                        <hr className="my-4"/>
-                        <Row>
-                            <Col xs={1}><i class="bi bi-people-fill"></i></Col>
-                            <Col xs={11}>
-                                <p className="m-0 fw-bold">La mia rete</p>
-                                <small>Salva e gestisci i tuoi collegamenti e interessi.</small>
-                            </Col>
-                        </Row>
+                        {/* MODALITA CREAZIONE CONTENUTI */}
+                        <Card>
+                            <Row>
+                                <Col xs={3} lg={1} >
+                                    <i class="bi bi-reception-4"></i>
+                                </Col>
+                                <Col className="px-0">
+                                    <Card.Body className="p-0">
+                                        <p className="fw-bold m-0">Modalità creazione di contenuti</p>
+                                        <small>Fatti scoprire, metti in risalto i contenuti sul tuo profilo e accedi agli strumenti di creazione</small>
+                                    </Card.Body>
+                                </Col>
+                            </Row>
+                        </Card>
+                         {/* FINE MODALITA CREAZIONE CONTENUTI */}
+                        <hr/>
+                        {/* LA MIA RETE */}
+                        <Card>
+                            <Row>
+                                <Col xs={3} lg={1} >
+                                    <i class="bi bi-people-fill"></i>
+                                </Col>
+                                <Col className="px-0">
+                                    <Card.Body className="p-0">
+                                        <p className="m-0 fw-bold">La mia rete</p>
+                                        <small>Salva e gestisci i tuoi collegamenti e interessi.</small>
+                                    </Card.Body>
+                                </Col>
+                            </Row>
+                        </Card>
+                        {/* FINELA MIA RETE */}
                     </Col>
                 </Row>
             </Card.Body>
