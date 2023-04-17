@@ -11,3 +11,7 @@
     font-size: 1.5rem ! important;
     font-weight: bold !important;;
 }
+
+#profilePageContainer {
+    margin-top: 7rem;
+}
