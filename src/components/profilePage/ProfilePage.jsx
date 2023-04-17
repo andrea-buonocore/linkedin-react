@@ -3,6 +3,7 @@ import Footer from "../Footer";
 import Analisi from "./Analisi";
 import Risorse from "./Risorse";
 import Attivita from "./Attivita";
+import Esperienza from "./Esperienza";
 
 const ProfilePage = () => {
     return (
@@ -15,6 +16,7 @@ const ProfilePage = () => {
                         <Analisi/>
                         <Risorse/>
                         <Attivita/>
+                        <Esperienza/>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
