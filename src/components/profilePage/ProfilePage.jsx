@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../Footer";
+import Analisi from "./Analisi";
 
 const ProfilePage = () => {
     return (
@@ -9,6 +10,7 @@ const ProfilePage = () => {
                 <Col xs={12} md={6} lg={8}>
                     <Row xs={1}>
                         <Col>Colonna sx</Col>
+                        <Analisi/>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
