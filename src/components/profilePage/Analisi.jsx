@@ -12,26 +12,38 @@ const Analisi = () => {
                 </div>
                 <Row>
                     {/* COL SX */}
-                    <Col xs={4}>
-                        <Row>
-                            <Col xs={1}><i class="bi bi-people-fill"></i></Col>
-                            <Col>
-                                <p className="m-0 fw-bold">9 visualizzazioni del profilo</p>
-                                <small>Scopri chi ha visitato il tuo profilo</small>
-                            </Col>
-                        </Row>
+                    <Col xs={12} md={4}>
+                        <Card>
+                            <Row>
+                                <Col xs={3} lg={1} >
+                                    <i class="bi bi-people-fill"></i>
+                                </Col>
+                                <Col>
+                                    <Card.Body className="p-0">
+                                        <p className="fw-bold m-0">9 visualizzazioni del profilo</p>
+                                        <small>Scopri chi ha visualizzato il tuo profilo</small>
+                                    </Card.Body>
+                                </Col>
+                            </Row>
+                        </Card>
                     </Col>
                     {/* FINE COL SX */}
 
                     {/* COL DX */}
-                    <Col xs={5}>
-                        <Row>
-                            <Col xs={1}><i class="bi bi-search"></i></Col>
-                            <Col>
-                                <p className="m-0 fw-bold">3 comparse nei motori di ricerca</p>
-                                <small>Vedi quante volte compari nei risultati di ricerca.</small>
-                            </Col>
-                        </Row>
+                    <Col xs={12} md={4}>
+                        <Card>
+                            <Row>
+                                <Col xs={3} lg={1} >
+                                    <i class="bi bi-search"></i>
+                                </Col>
+                                <Col>
+                                    <Card.Body className="p-0">
+                                        <p className="fw-bold m-0">3 comparse nei motori di ricerca</p>
+                                        <small>Vedi quante volte compari nei risultati di ricerca</small>
+                                    </Card.Body>
+                                </Col>
+                            </Row>
+                        </Card>
                     </Col>
                     {/* FINE COL DX */}
                 </Row>
