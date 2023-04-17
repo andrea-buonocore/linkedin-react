@@ -68,8 +68,10 @@
 }
 
 .profileBigCardTextContainer{
-    margin-top:5em;
+    margin-top:0.5em;
 }
+
+
 
 .ProfileCoverPencil svg{
     width: 1.4rem;
@@ -87,4 +89,44 @@
 .pencil-right{
     text-align: end;
     margin-right: 1.4em;
+}
+
+.profileBigCardTextContainer{
+    line-height: 1.1em;
+}
+
+#buttonProfileBigCard{
+    padding: 0 1rem;
+    border-radius: 64px;
+    display: flex;
+    align-items: center;
+    height: 2em;
+}
+
+.ProfilePicButtons{
+    display: none;
+}
+@media screen and (min-width:800px) {
+    .ProfilePicButtons{
+        display: flex;
+    }
+}
+@media screen and(min-width:1199px) {
+    .profileBigCardTextContainer{
+        margin-top:2.5em;
+    }
+}
+
+.carouselCard1{
+    background-color: #DCE6F1;
+    width: 386px;
+    justify-content: space-between;
+    padding:0.7em;
+    border-radius: 8px;
+}
+
+.carousel{
+    display: flex;
+    overflow-x: hidden;
+    padding: 2.4rem
 }
