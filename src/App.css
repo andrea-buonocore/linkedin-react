@@ -15,3 +15,29 @@
 #profilePageContainer {
     margin-top: 7rem;
 }
+
+.nav a {
+    text-decoration: none;
+    color: gray;
+}
+.nav a:hover {
+    color: black
+}
+svg:hover {
+    fill: black;
+}
+#kitten {
+    width: 35px;
+}
+.nav li {
+    font-size: small;    
+    width: 115px;
+}
+
+#lastLi {
+    text-decoration: underline;
+    color: #965c06;
+}
+#lastLi:hover {
+    color: #5a3804;
+}
