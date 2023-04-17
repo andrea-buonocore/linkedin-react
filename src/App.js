@@ -1,11 +1,17 @@
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Info from './components/profilePage/Info';
+import ProfilePage from './components/profilePage/ProfilePage';
+import CustomNavbar from './components/CustomNavbar';
 
 function App() {
   return (
     <div className="App">
-        <Info/>
+      <BrowserRouter>
+      <CustomNavbar/>
+      <Routes>
+        <Route path={'/'} element={<ProfilePage/>}/>        
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
