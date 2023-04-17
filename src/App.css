@@ -15,3 +15,35 @@
 #profilePageContainer {
     margin-top: 7rem;
 }
+
+/* colonna destra */
+
+#ad-dx {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profileUrl {
+    text-decoration: none;
+    color: grey;
+}
+
+.profileUrl:hover {
+    text-decoration: underline;
+    color: rgb(79, 78, 78);
+}
+
+#showMore {
+    background-color: white;
+    font-weight: 500;
+}
+
+#showMore:hover {
+    background-color: lightgray;
+}
+
+#btn-profile:hover {
+    background-color: white;
+    border: 2px solid grey;
+    color: grey;
+}
