@@ -1,5 +1,27 @@
+
+
+import { useState } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
+
 const PeopleWhoMightKnow = () => {
+
+  const profiles = useSelector((state) => state.profiles.profiles);
+  const [visibleProfiles, setVisibleProfiles] = useState(4);
+  const [showMore, setShowMore] = useState(true);
+
+  const handleShowMore = () => {
+    if (visibleProfiles === 4) {
+      setVisibleProfiles(visibleProfiles + 3);
+      setShowMore(false);
+    } else {
+      setVisibleProfiles(4);
+      setShowMore(true);
+    }
+  };
+
   let connectSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +38,36 @@ const PeopleWhoMightKnow = () => {
     </svg>
   );
 
+  let showMoreSvg = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      data-supported-dps="16x16"
+      fill="currentColor"
+      class="mercado-match"
+      width="16"
+      height="16"
+      focusable="false"
+    >
+      <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
+    </svg>
+  );
+
+  let showLessSvg = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      data-supported-dps="16x16"
+      fill="currentColor"
+      class="mercado-match"
+      width="16"
+      height="16"
+      focusable="false"
+    >
+      <path d="M15 11L8 6.39 1 11V8.61L8 4l7 4.61z"></path>
+    </svg>
+  )
+
   return (
     <Card className="mb-2">
       <ListGroup variant="flush" className="p-3">
@@ -23,22 +75,24 @@ const PeopleWhoMightKnow = () => {
         <p className="text-secondary">
           <em>Dalla tua scuola o dalla tua università</em>
         </p>
-        <ListGroup.Item>
+        {profiles.slice(8, visibleProfiles + 8).map((profile) => (
+        <ListGroup.Item key={profile._id}>
           <Row className="d-flex justify-content-start">
             <Col xs={2} className="p-0 p-sm-2">
-              <img
-                src="https://picsum.photos/200"
-                alt="placeholder"
-                style={{ width: "50px" }}
-                className="rounded-circle"
-              />
+            <img
+                  src={profile.image}
+                  alt={profile.name}
+                  style={{ width: "50px" }}
+                  className="rounded-circle"
+                />
             </Col>
             <Col xs={10}>
               <div>
-                <h6 className="mb-1">Nome Cognome</h6>
+                <h6 className="mb-1">{profile.name}&nbsp;{profile.surname}</h6>
                 <p className="mb-1">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                {profile.title}
                 </p>
+                <Link to={'/profile/' + profile._id}>
                 <Button
                   variant="outline-secondary"
                   className="rounded-pill px-3 py-1 btn-profile"
@@ -46,80 +100,19 @@ const PeopleWhoMightKnow = () => {
                   {connectSvg}
                   &nbsp;Collegati
                 </Button>
+                </Link>
               </div>
             </Col>
           </Row>
         </ListGroup.Item>
-        <ListGroup.Item>
-          <Row className="d-flex justify-content-start">
-            <Col xs={2} className="p-0 p-sm-2">
-              <img
-                src="https://picsum.photos/200"
-                alt="placeholder"
-                style={{ width: "50px" }}
-                className="rounded-circle"
-              />
-            </Col>
-            <Col xs={10}>
-              <div>
-                <h6 className="mb-1">Nome Cognome</h6>
-                <p className="mb-1">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill px-3 py-1 btn-profile"
-                >
-                  {connectSvg}
-                  &nbsp;Collegati
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </ListGroup.Item>
-        <ListGroup.Item>
-          <Row className="d-flex justify-content-start">
-            <Col xs={2} className="p-0 p-sm-2">
-              <img
-                src="https://picsum.photos/200"
-                alt="placeholder"
-                style={{ width: "50px" }}
-                className="rounded-circle"
-              />
-            </Col>
-            <Col xs={10}>
-              <div>
-                <h6 className="mb-1">Nome Cognome</h6>
-                <p className="mb-1">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <Button
-                  variant="outline-secondary"
-                  className="rounded-pill px-3 py-1 btn-profile"
-                >
-                  {connectSvg}
-                  &nbsp;Collegati
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </ListGroup.Item>
+        ))}
       </ListGroup>
-      <Card.Footer id="showMore">
-        Visualizza altro&nbsp;
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          data-supported-dps="16x16"
-          fill="currentColor"
-          class="mercado-match"
-          width="16"
-          height="16"
-          focusable="false"
-          className="mb-1"
-        >
-          <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
-        </svg>
+        <Card.Footer id="showMore" onClick={handleShowMore}>
+        {showMore ? (
+          <>Visualizza altro {showMoreSvg}</>
+        ) : (
+          <>Meno dettagli {showLessSvg}</>
+        )}
       </Card.Footer>
     </Card>
   );

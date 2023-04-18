@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 
 const OtherProfiles = () => {
-  const [profileData, setProfileData] = useState([]);
+  const dispatch = useDispatch();
+  const profiles = useSelector((state) => state.profiles.profiles);
+
   const [visibleProfiles, setVisibleProfiles] = useState(4);
   const [showMore, setShowMore] = useState(true);
 
@@ -19,7 +22,11 @@ const OtherProfiles = () => {
         }
       );
       let data = await response.json();
-      setProfileData(data);
+
+      dispatch({
+        type: 'SAVE_ALL_PROFILES_INFO',
+        payload: data
+    });
     } catch (error) {
       console.log(error);
     }
@@ -88,8 +95,8 @@ const OtherProfiles = () => {
   return (
     <Card className="mb-2">
       <ListGroup variant="flush" className="p-3">
-        <h5>Altri profili consultati</h5>
-        {profileData.slice(0, visibleProfiles).map((profile) => (
+          <h5>Altri profili consultati</h5>
+        {profiles.slice(0, visibleProfiles).map((profile) => (
           <ListGroup.Item key={profile._id}>
             <Row className="d-flex justify-content-start">
               <Col xs={2} className="p-0 p-sm-2">
@@ -118,8 +125,8 @@ const OtherProfiles = () => {
             </Row>
           </ListGroup.Item>
         ))}
-      </ListGroup>
-      <Card.Footer id="showMore" onClick={handleShowMore}>
+          </ListGroup>
+        <Card.Footer id="showMore" onClick={handleShowMore}>
         {showMore ? (
           <>Visualizza altro {showMoreSvg}</>
         ) : (
@@ -131,4 +138,3 @@ const OtherProfiles = () => {
 };
 
 export default OtherProfiles;
-
