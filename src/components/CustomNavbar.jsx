@@ -12,6 +12,7 @@ const CustomNavbar = () => {
         <div className="d-flex d-none d-md-inline col col-md-4">
           <a href="#">
             <svg
+            id="logo"
               className="me-1"
               xmlns="http://www.w3.org/2000/svg"
               width="35"

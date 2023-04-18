@@ -74,6 +74,9 @@
 #profilePageContainer {
     margin-top: 7rem;
 }
+#logo:hover {
+    fill:currentColor
+} 
 ul .nav {
     flex-wrap: nowrap;
 }
