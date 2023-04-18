@@ -1,3 +1,10 @@
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f2ef;
+}
+
 .card-footer {
     text-align: center;
 }
@@ -13,9 +20,242 @@
 }
 
 #profilePageContainer {
-    margin-top: 7rem;
+    padding-top: 7rem;
 }
 
+/* colonna destra */
+
+#ad-dx {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profileUrl {
+    text-decoration: none;
+    color: grey;
+}
+
+.profileUrl:hover {
+    text-decoration: underline;
+    color: rgb(79, 78, 78);
+}
+
+#showMore {
+    background-color: white;
+    font-weight: 500;
+}
+
+#showMore:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.btn-profile:hover {
+    background-color: #ebebeb;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.insideCards {
+    border: none !important;
+}
+.card-footer {
+    text-align: center;
+}
+.card-body {
+    padding: 2rem 1.5rem !important;
+}
+.card-title {
+    margin-bottom: 1rem !important;
+    font-size: 1.5rem ! important;
+    font-weight: bold !important;;
+}
+/*CSS Card Grande Profile Page*/
+#profilePageContainer {
+    margin-top: 7rem;
+}
+ul .nav {
+    flex-wrap: nowrap;
+}
+.nav a {
+    text-decoration: none;
+    color: gray;
+}
+.nav a:hover {
+    color: black
+}
+svg:hover {
+    fill: black;
+}
+#kitten {
+    width: 35px;
+}
+.nav li {
+    font-size: small;    
+    width: 115px;
+}
+/* 
+@media only screen and (min-width: 1300px) {
+#aziende {
+    font-size: smaller;
+}
+} */
+#aziende {
+    width: 10em;
+}
+#lastLi {
+    text-decoration: underline;
+    color: #965c06;
+}
+#lastLi:hover {
+    color: #5a3804;
+}
+#navUl {
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+@media only screen and (min-width: 768px) {
+    #navUl {
+        width: 60vw;
+    }
+}
+  @media only screen and (max-width: 767px) {
+    .nav li {
+        width: 60px;
+    }
+  }
+  
+
+@media only screen and (max-width: 375px) {
+    ul li svg {
+      width: 15;
+      height: 15;
+    }
+    .nav li {
+        width: 50px;
+    }
+  }
+.profileBigCardCoverContainer{
+    min-height: 201px;
+    max-height: 201px;
+    position: relative;
+    
+}
+.profileBigCardCoverContainer img{
+    width:100%;
+    overflow: hidden;
+}
+
+.ProfileBigCardContainer{
+   border-radius:0.375rem;
+   border:1px solid gray;
+   position: relative;
+    
+
+}
+
+.profilepicContainer{
+    width: 160px;
+    height: 160px;
+    box-sizing: border-box;
+    border-radius: 49.9%;
+    border:4px solid white;position: absolute;
+    top: 8%;
+    left: 4%;
+}
+
+@media screen and (min-width:992px) {
+    .profilepicContainer{
+        top:16%
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .profilepicContainer{
+        top:26%
+    }
+}
+@media screen and (min-width:1400px) {
+    .profilepicContainer{
+        top:36%
+    }
+}
+
+.profilepic{
+    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+}
+
+.profileBigCardTextContainer{
+    margin-top:0.5em;
+}
+
+.ProfileCoverPencil svg{
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.ProfileCoverPencil{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: white;
+    border-radius: 49%;
+}
+
+.pencil-right{
+    text-align: end;
+    margin-right: 1.4em;
+}
+
+.profileBigCardTextContainer{
+    line-height: 1.1em;
+}
+
+#buttonProfileBigCard{
+    padding: 0 1rem;
+    border-radius: 64px;
+    display: flex;
+    align-items: center;
+    height: 2em;
+}
+
+.ProfilePicButtons{
+    display: none;
+}
+@media screen and (min-width:800px) {
+    .ProfilePicButtons{
+        display: flex;
+    }
+}
+@media screen and(min-width:1199px) {
+    .profileBigCardTextContainer{
+        margin-top:2.5em;
+    }
+}
+
+.carouselCard1{
+    background-color: #DCE6F1;
+    width: 386px;
+    justify-content: space-between;
+    padding:0.7em;
+    border-radius: 8px;
+}
+
+.carousel{
+    display: flex;
+    overflow-x: hidden;
+    padding: 2.4rem
+}
+
+.btn-profile:hover {
+    background-color: #ebebeb;
+    border: 2px solid grey;
+    color: grey;
+}
+
+/*Fine CSS Card Grande Profile Page*/
 
 
 

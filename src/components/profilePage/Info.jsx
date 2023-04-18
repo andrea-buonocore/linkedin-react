@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap";
 
 const Info = () => {
     return (
-        <Card>
+        <Card className="my-3">
             <Card.Body>
                 <div className="d-flex justify-content-between">
                     <Card.Title>Informazioni</Card.Title>
@@ -12,9 +12,6 @@ const Info = () => {
                     Attualmente sto affrontando un percorso di Stage presso Goriziane Group S.p.A. come “Analista e Progettista di Software”
                 </Card.Text>
             </Card.Body>
-            <Card.Footer>
-                <span>Mostra tutte le attività</span>
-            </Card.Footer>
         </Card>
     )
 }
