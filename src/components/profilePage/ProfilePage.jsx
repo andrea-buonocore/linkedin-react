@@ -21,13 +21,13 @@ const ProfilePage = () => {
                 <Col xs={12} md={6} lg={8}>
                     <Row xs={1}>
                         <Col><ProfileBigCard/></Col>
-                        <Analisi/>
-                        <Risorse/>
-                        <Attivita/>
-                        <Esperienza/>
-                        <Formazione/>
-                        <Competenze/>
-                        <Interessi/>
+                        <Col><Analisi/></Col>
+                        <Col><Risorse/></Col>
+                        <Col><Attivita/></Col>
+                        <Col><Esperienza/></Col>
+                        <Col><Formazione/></Col>
+                        <Col><Competenze/></Col>
+                        <Col><Interessi/></Col>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
