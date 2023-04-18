@@ -19,3 +19,77 @@
 .insideCards {
     border: none !important;
 }
+.card-footer {
+    text-align: center;
+}
+.card-body {
+    padding: 2rem 1.5rem !important;
+}
+.card-title {
+    margin-bottom: 1rem !important;
+    font-size: 1.5rem ! important;
+    font-weight: bold !important;;
+}
+#profilePageContainer {
+    margin-top: 7rem;
+}
+ul .nav {
+    flex-wrap: nowrap;
+}
+.nav a {
+    text-decoration: none;
+    color: gray;
+}
+.nav a:hover {
+    color: black
+}
+svg:hover {
+    fill: black;
+}
+#kitten {
+    width: 35px;
+}
+.nav li {
+    font-size: small;    
+    width: 115px;
+}
+/* 
+@media only screen and (min-width: 1300px) {
+#aziende {
+    font-size: smaller;
+}
+} */
+#aziende {
+    width: 10em;
+}
+#lastLi {
+    text-decoration: underline;
+    color: #965c06;
+}
+#lastLi:hover {
+    color: #5a3804;
+}
+#navUl {
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+@media only screen and (min-width: 768px) {
+    #navUl {
+        width: 60vw;
+    }
+}
+  @media only screen and (max-width: 767px) {
+    .nav li {
+        width: 60px;
+    }
+  }
+  
+@media only screen and (max-width: 375px) {
+    ul li svg {
+      width: 15;
+      height: 15;
+    }
+    .nav li {
+        width: 50px;
+    }
+  }
