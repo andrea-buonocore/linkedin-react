@@ -15,7 +15,9 @@
 #profilePageContainer {
     margin-top: 7rem;
 }
-
+ul .nav {
+    flex-wrap: nowrap;
+}
 .nav a {
     text-decoration: none;
     color: gray;
@@ -33,7 +35,15 @@ svg:hover {
     font-size: small;    
     width: 115px;
 }
-
+/* 
+@media only screen and (min-width: 1300px) {
+#aziende {
+    font-size: smaller;
+}
+} */
+#aziende {
+    width: 10em;
+}
 #lastLi {
     text-decoration: underline;
     color: #965c06;
@@ -41,3 +51,28 @@ svg:hover {
 #lastLi:hover {
     color: #5a3804;
 }
+
+#navUl {
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+@media only screen and (min-width: 768px) {
+    #navUl {
+        width: 60vw;
+    }
+}
+  @media only screen and (max-width: 767px) {
+    .nav li {
+        width: 60px;
+    }
+  }
+  
+@media only screen and (max-width: 375px) {
+    ul li svg {
+      width: 15;
+      height: 15;
+    }
+    .nav li {
+        width: 50px;
+    }
+  }
