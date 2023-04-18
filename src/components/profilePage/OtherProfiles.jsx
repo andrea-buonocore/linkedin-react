@@ -90,7 +90,7 @@ const OtherProfiles = () => {
       <ListGroup variant="flush" className="p-3">
         <h5>Altri profili consultati</h5>
         {profileData.slice(0, visibleProfiles).map((profile) => (
-          <ListGroup.Item>
+          <ListGroup.Item key={profile.id}>
             <Row className="d-flex justify-content-start">
               <Col xs={2} className="p-0 p-sm-2">
                 <img
