@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Footer from "../Footer";
+import MyFooter from "../MyFooter";
 import Analisi from "./Analisi";
 import Risorse from "./Risorse";
 import Attivita from "./Attivita";
@@ -43,7 +43,7 @@ const ProfilePage = () => {
                 </Col>
                 {/* FINE COLONNA DX */}
             </Row>
-            <Footer/>
+            <MyFooter/>
         </Container>
     )
 }

@@ -151,6 +151,7 @@ svg:hover {
    border:1px solid gray;
    position: relative;
     
+
 }
 
 .profilepicContainer{
@@ -255,3 +256,40 @@ svg:hover {
 }
 
 /*Fine CSS Card Grande Profile Page*/
+
+
+
+
+
+
+
+
+
+
+
+  /*FOOTER*/
+ #logoFooter{ 
+    width: "50px";
+ }
+            
+  .collegamenti {
+    color: #848482;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.6em;
+    margin-bottom: 8px;
+  }
+  
+  .domande {
+    font-size: 0.9em;
+  }
+  
+  .footerQuestion {
+    font-size: 0.9em;
+    color: #848482;
+  }
+  
+  #language {
+    width: 100%;
+    border-radius: 7px;
+  }
