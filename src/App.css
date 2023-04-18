@@ -269,7 +269,8 @@ svg:hover {
 
   /*FOOTER*/
  #logoFooter{ 
-    width: "50px";
+    width: 20%;
+    height: 20%
  }
             
   .collegamenti {

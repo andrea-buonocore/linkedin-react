@@ -9,7 +9,7 @@ export const MyFooter = () => {
         <Row>
               <Col xs={12} md={6}>
               <div className="d-flex justify-content-start">       
-              <img className="mb-3" id="logoFooter"src="https://1000marche.net/linkedin-logo/"/>
+              <img className="mb-3" id="logoFooter"src="https://1000marche.net/wp-content/uploads/2020/03/LinkedIn-Logo-1-600x340.png"/>
 
               <ul className="list-unstyled">
               <li> <Link className="collegamenti" to={"https://about.linkedin.com/it-it"}>
@@ -84,4 +84,6 @@ export const MyFooter = () => {
             </Row>
       </Container>
     );
-  };export default MyFooter
+  };
+  
+  export default MyFooter

@@ -22,7 +22,7 @@ const ProfileBigCard = () => {
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
           fill="blue"
-          clasName="mercado-match"
+          className="mercado-match"
           width="20"
           height="20"
           focusable="false"
