@@ -12,6 +12,7 @@
     font-weight: bold !important;;
 }
 
+/*CSS Card Grande Profile Page*/
 #profilePageContainer {
     margin-top: 7rem;
 }
@@ -70,8 +71,6 @@
 .profileBigCardTextContainer{
     margin-top:0.5em;
 }
-
-
 
 .ProfileCoverPencil svg{
     width: 1.4rem;
@@ -136,3 +135,5 @@
     border: 2px solid grey;
     color: grey;
 }
+
+/*Fine CSS Card Grande Profile Page*/

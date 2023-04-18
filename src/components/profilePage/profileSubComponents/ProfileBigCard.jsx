@@ -1,5 +1,4 @@
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
+
 const ProfileBigCard = () => {
   return (
     <div className="ProfileBigCardContainer">
@@ -16,7 +15,7 @@ const ProfileBigCard = () => {
           src="https://media.licdn.com/dms/image/D4E35AQEI-SA5CGOldg/profile-framedphoto-shrink_200_200/0/1680040710302?e=1682326800&v=beta&t=pQUm4JEVPJ3p9SAmPWX9ZS6VEEV4vpiQ3ePd64Bcia4"
         />
       </div>
-      <div className="pencil-right">ciao</div>
+      <div className="pencil-right"><i class="bi bi-pencil"></i></div>
       <div className="ProfileCoverPencil">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -46,13 +45,9 @@ const ProfileBigCard = () => {
         </p>
         <span className="text-primary">78 collegamenti </span>
         <div className=" mt-2 ProfilePicButtons">
-          <Button className="me-2" id="buttonProfileBigCard">
-            <span>Disponibile per </span>
-          </Button>
-          <button type="button" class="rounded-pill px-3 py-1 btn btn-outline-primary">Segui</button>
-          <Button id="buttonProfileBigCard" variant="outline-secondary">
-            <span className="text-secondary">Altro </span>
-          </Button>
+        <button type="button" class="rounded-pill px-3 py-1 btn btn-primary me-2">Aggiungi sezione del profilo</button>
+          <button type="button" class="rounded-pill px-3 py-1 btn btn-outline-primary me-2">Aggiungi sezione del profilo</button>
+          <button type="button" class="rounded-pill px-3 py-1 btn btn-outline-secondary">Altro</button>
         </div>
         <div className="carousel container mt-3">
           <div className="carouselCard1 d-flex me-3">
