@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import SaveMyInfoReducer from "../reducers/SaveMyInfoReducer";
+import ExperiencesReducer from "../reducers/ExperiencesReducer";
 
 
 const store = configureStore({
     reducer: combineReducers({
-        userInfo: SaveMyInfoReducer
+        userInfo: SaveMyInfoReducer,
+        experiences: ExperiencesReducer
     })
 })
 
