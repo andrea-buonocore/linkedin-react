@@ -1,6 +1,10 @@
 import { Button, Card } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const SideProfileInfo = () => {
+
+  const myInfo = useSelector(state => state.userInfo.me);
+
   return (
     <>
       {/* prima card con info profilo */}
@@ -53,7 +57,7 @@ const SideProfileInfo = () => {
             <small>Scopri le ultime offerte di lavoro</small>
             <div className="d-flex justify-content-center my-2">
               <img
-                src="https://placekitten.com/g/200/"
+                src={myInfo.image}
                 alt="placeholder"
                 className="rounded-circle"
                 style={{ width: "70px" }}
@@ -65,7 +69,7 @@ const SideProfileInfo = () => {
                 style={{ width: "70px" }}
               />
             </div>
-            <p>Andrea, scopri le opportunità offerte da XXX</p>
+            <p>{myInfo.name}, scopri le opportunità offerte da XXX</p>
             <div>
               <Button
                 variant="outline-primary"
