@@ -16,7 +16,7 @@ const ProfileBigCard = () => {
         <img
           className="profilepic"
           alt="profilepic"
-          src="https://media.licdn.com/dms/image/D4E35AQEI-SA5CGOldg/profile-framedphoto-shrink_200_200/0/1680040710302?e=1682326800&v=beta&t=pQUm4JEVPJ3p9SAmPWX9ZS6VEEV4vpiQ3ePd64Bcia4"
+          src={myInfo.image}
         />
       </div>
       <div className="pencil-right"><i class="bi bi-pencil"></i></div>
