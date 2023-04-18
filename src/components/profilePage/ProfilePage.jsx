@@ -7,6 +7,10 @@ import Esperienza from "./Esperienza";
 import Formazione from "./Formazione";
 import Competenze from "./Competenze";
 import Interessi from "./Interessi";
+import SideProfileInfo from "./SideProfileInfo";
+import OtherProfiles from "./OtherProfiles";
+import PeopleWhoMightKnow from "./PeopleWhoMightKnow";
+import Interests from "./Interests";
 
 const ProfilePage = () => {
     return (
@@ -30,7 +34,10 @@ const ProfilePage = () => {
                 {/* COLONNA DX */}
                 <Col xs={12} md={6} lg={4}>
                     <Row xs={1}>
-                        <Col>Colonna dx</Col>
+                        <Col><SideProfileInfo/></Col>
+                        <Col><OtherProfiles/></Col>
+                        <Col><PeopleWhoMightKnow/></Col>
+                        <Col><Interests/></Col>
                     </Row>
                 </Col>
                 {/* FINE COLONNA DX */}

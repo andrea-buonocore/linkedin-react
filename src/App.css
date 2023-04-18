@@ -1,3 +1,10 @@
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f2ef;
+}
+
 .card-footer {
     text-align: center;
 }
@@ -13,7 +20,40 @@
 }
 
 #profilePageContainer {
-    margin-top: 7rem;
+    padding-top: 7rem;
+}
+
+/* colonna destra */
+
+#ad-dx {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profileUrl {
+    text-decoration: none;
+    color: grey;
+}
+
+.profileUrl:hover {
+    text-decoration: underline;
+    color: rgb(79, 78, 78);
+}
+
+#showMore {
+    background-color: white;
+    font-weight: 500;
+}
+
+#showMore:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.btn-profile:hover {
+    background-color: #ebebeb;
+    border: 2px solid grey;
+    color: grey;
 }
 
 .insideCards {
