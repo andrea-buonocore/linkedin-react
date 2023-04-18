@@ -2,7 +2,7 @@ import { Card, Row, Col } from "react-bootstrap";
 
 const Formazione = () => {
     return (
-        <Card>
+        <Card className="mb-3" >
             <Card.Body>
                 <div className="d-flex justify-content-between">
                     <Card.Title>Formazione</Card.Title>
@@ -11,7 +11,7 @@ const Formazione = () => {
                         <i className="bi bi-pencil"></i>
                     </div>
                 </div>
-                <Card>
+                <Card className="insideCards">
                     <Row>
                         <Col xs={3} lg={1} >
                             <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />

@@ -3,7 +3,7 @@ import { Card, Row, Col, Button } from "react-bootstrap";
 
 const Competenze = () => {
     return (
-        <Card>
+        <Card className="mb-3">
             <Card.Body>
                 <div className="d-flex justify-content-between mb-2">
                     <Card.Title>Competenze</Card.Title>

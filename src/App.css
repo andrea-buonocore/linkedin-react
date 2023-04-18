@@ -15,3 +15,7 @@
 #profilePageContainer {
     margin-top: 7rem;
 }
+
+.insideCards {
+    border: none !important;
+}

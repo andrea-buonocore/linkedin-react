@@ -2,7 +2,7 @@ import { Card, Button } from "react-bootstrap";
 
 const Attivita = () => {
     return (
-        <Card>
+        <Card className="mb-3">
             <Card.Body>
                 <div className="mb-3">
                     <div className="d-flex justify-content-between align-items-center">

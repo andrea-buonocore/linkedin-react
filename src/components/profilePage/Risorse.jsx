@@ -3,7 +3,7 @@ import { Card, Row, Col } from "react-bootstrap";
 
 const Risorse = () => {
     return (
-        <Card>
+        <Card  className="mb-3">
             <Card.Body>
                 <div className="mb-3">
                     <Card.Title className="m-0">Risorse</Card.Title>
@@ -13,7 +13,7 @@ const Risorse = () => {
                 <Row>
                     <Col>
                         {/* MODALITA CREAZIONE CONTENUTI */}
-                        <Card>
+                        <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
                                     <i class="bi bi-reception-4"></i>
@@ -29,7 +29,7 @@ const Risorse = () => {
                          {/* FINE MODALITA CREAZIONE CONTENUTI */}
                         <hr/>
                         {/* LA MIA RETE */}
-                        <Card>
+                        <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
                                     <i class="bi bi-people-fill"></i>

@@ -2,7 +2,7 @@ import { Card, Row, Col, Button } from "react-bootstrap";
 
 const Interessi = () => {
     return (
-        <Card>
+        <Card className="mb-3">
             <Card.Body>
                 <Card.Title>Interessi</Card.Title>
                 <Row className="justify-content-start">
@@ -17,7 +17,7 @@ const Interessi = () => {
                 <Row xs={1} md={2}>
                     {/* AZIENDA */}
                     <Col>
-                        <Card>
+                        <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={4} >
                                     <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
@@ -38,7 +38,7 @@ const Interessi = () => {
                     {/* FINE AZIENDA */}
                     {/* AZIENDA */}
                     <Col>
-                        <Card>
+                        <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={4} >
                                     <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />

@@ -3,7 +3,7 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 
 const Analisi = () => {
     return (
-        <Card>
+        <Card className="mb-3">
             <Card.Body>
                 <div className="mb-3">
                     <Card.Title className="m-0">Analisi</Card.Title>
@@ -13,7 +13,7 @@ const Analisi = () => {
                 <Row>
                     {/* COL SX */}
                     <Col xs={12} md={4}>
-                        <Card>
+                        <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
                                     <i class="bi bi-people-fill"></i>
@@ -31,7 +31,7 @@ const Analisi = () => {
 
                     {/* COL DX */}
                     <Col xs={12} md={4}>
-                        <Card>
+                        <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
                                     <i class="bi bi-search"></i>

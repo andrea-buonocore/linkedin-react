@@ -2,7 +2,7 @@ import { Card } from "react-bootstrap";
 
 const Info = () => {
     return (
-        <Card>
+        <Card className="my-3">
             <Card.Body>
                 <div className="d-flex justify-content-between">
                     <Card.Title>Informazioni</Card.Title>

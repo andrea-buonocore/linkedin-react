@@ -2,7 +2,7 @@ import { Card, Col, Row } from "react-bootstrap";
 
 const Esperienza = () => {
     return (
-        <Card>
+        <Card  className="mb-3">
             <Card.Body>
                 <div className="d-flex justify-content-between">
                     <Card.Title>Esperienza</Card.Title>
@@ -13,7 +13,7 @@ const Esperienza = () => {
                 </div>
 
                 {/* INIZIO SINGOLA ESPERIENZA */}
-                <Card>
+                <Card className="my-3 insideCards">
                     <Row>
                         <Col xs={3} lg={1} >
                             <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
@@ -31,7 +31,7 @@ const Esperienza = () => {
                 {/* FINE SINGOLA ESPERIENZA */}
                 <hr className="my-4" />
                 {/* INIZIO SINGOLA ESPERIENZA */}
-                <Card>
+                <Card className="insideCards">
                     <Row>
                         <Col xs={3} lg={1} >
                             <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
@@ -49,7 +49,7 @@ const Esperienza = () => {
                 {/* FINE SINGOLA ESPERIENZA */}
                 <hr className="my-4" />
                 {/* INIZIO SINGOLA ESPERIENZA */}
-                <Card>
+                <Card className="insideCards">
                     <Row>
                         <Col xs={3} lg={1} >
                             <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
