@@ -1,3 +1,10 @@
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f2ef;
+}
+
 .card-footer {
     text-align: center;
 }
@@ -12,11 +19,122 @@
     font-weight: bold !important;;
 }
 
+#profilePageContainer {
+    padding-top: 7rem;
+}
+
+/* colonna destra */
+
+#ad-dx {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.profileUrl {
+    text-decoration: none;
+    color: grey;
+}
+
+.profileUrl:hover {
+    text-decoration: underline;
+    color: rgb(79, 78, 78);
+}
+
+#showMore {
+    background-color: white;
+    font-weight: 500;
+}
+
+#showMore:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+
+.btn-profile:hover {
+    background-color: #ebebeb;
+    border: 2px solid grey;
+    color: grey;
+}
+
+.insideCards {
+    border: none !important;
+}
+.card-footer {
+    text-align: center;
+}
+.card-body {
+    padding: 2rem 1.5rem !important;
+}
+.card-title {
+    margin-bottom: 1rem !important;
+    font-size: 1.5rem ! important;
+    font-weight: bold !important;;
+}
 /*CSS Card Grande Profile Page*/
 #profilePageContainer {
     margin-top: 7rem;
 }
+ul .nav {
+    flex-wrap: nowrap;
+}
+.nav a {
+    text-decoration: none;
+    color: gray;
+}
+.nav a:hover {
+    color: black
+}
+svg:hover {
+    fill: black;
+}
+#kitten {
+    width: 35px;
+}
+.nav li {
+    font-size: small;    
+    width: 115px;
+}
+/* 
+@media only screen and (min-width: 1300px) {
+#aziende {
+    font-size: smaller;
+}
+} */
+#aziende {
+    width: 10em;
+}
+#lastLi {
+    text-decoration: underline;
+    color: #965c06;
+}
+#lastLi:hover {
+    color: #5a3804;
+}
+#navUl {
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+@media only screen and (min-width: 768px) {
+    #navUl {
+        width: 60vw;
+    }
+}
+  @media only screen and (max-width: 767px) {
+    .nav li {
+        width: 60px;
+    }
+  }
+  
 
+@media only screen and (max-width: 375px) {
+    ul li svg {
+      width: 15;
+      height: 15;
+    }
+    .nav li {
+        width: 50px;
+    }
+  }
 .profileBigCardCoverContainer{
     min-height: 201px;
     max-height: 201px;
