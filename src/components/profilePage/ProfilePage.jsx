@@ -12,22 +12,63 @@ import OtherProfiles from "./OtherProfiles";
 import PeopleWhoMightKnow from "./PeopleWhoMightKnow";
 import Interests from "./Interests";
 import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProfilePage = () => {
+
+    const dispatch = useDispatch();
+    const myInfo = useSelector(state => state.userInfo.me);
+    //fetch per ottenere info sul profilo
+    // profile/me --> miei dati
+    // profile/123 --> dati di utente con id 123
+
+    const getUserInfo = async () => {
+        try {
+            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+                method: "GET",
+                headers: {
+                    Authorization:
+                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
+                },
+            });
+            if (response.ok) {
+                let data = await response.json();
+                console.log("dati ottenuti dalla fetch:", data);
+                dispatch({
+                    type: 'SAVE_MY_INFO',
+                    payload: data
+                })
+            }
+            else{
+                return new Error('Errore nella fetch');
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+    useEffect(() => {
+        getUserInfo();
+    },[]) // componentDidMount 
+
+    console.log('useSelector:', myInfo);
+
     return (
         <Container id="profilePageContainer">
             <Row>
                 {/* COLONNA SX */}
                 <Col xs={12} md={6} lg={8}>
                     <Row xs={1}>
-                        <Col><ProfileBigCard/></Col>
-                        <Col><Analisi/></Col>
-                        <Col><Risorse/></Col>
-                        <Col><Attivita/></Col>
-                        <Col><Esperienza/></Col>
-                        <Col><Formazione/></Col>
-                        <Col><Competenze/></Col>
-                        <Col><Interessi/></Col>
+                        <Col><ProfileBigCard /></Col>
+                        <Col><Analisi /></Col>
+                        <Col><Risorse /></Col>
+                        <Col><Attivita /></Col>
+                        <Col><Esperienza /></Col>
+                        <Col><Formazione /></Col>
+                        <Col><Competenze /></Col>
+                        <Col><Interessi /></Col>
                     </Row>
                 </Col>
                 {/* FINE COLONNA SX */}
@@ -35,15 +76,15 @@ const ProfilePage = () => {
                 {/* COLONNA DX */}
                 <Col xs={12} md={6} lg={4}>
                     <Row xs={1}>
-                        <Col><SideProfileInfo/></Col>
-                        <Col><OtherProfiles/></Col>
-                        <Col><PeopleWhoMightKnow/></Col>
-                        <Col><Interests/></Col>
+                        <Col><SideProfileInfo /></Col>
+                        <Col><OtherProfiles /></Col>
+                        <Col><PeopleWhoMightKnow /></Col>
+                        <Col><Interests /></Col>
                     </Row>
                 </Col>
                 {/* FINE COLONNA DX */}
             </Row>
-            <MyFooter/>
+            <MyFooter />
         </Container>
     )
 }

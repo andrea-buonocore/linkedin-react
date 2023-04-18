@@ -1,5 +1,9 @@
+import { useSelector } from "react-redux";
 
 const ProfileBigCard = () => {
+
+  const myInfo = useSelector(state => state.userInfo.me);
+
   return (
     <div className="ProfileBigCardContainer">
       <div className="profileBigCardCoverContainer">
@@ -32,15 +36,16 @@ const ProfileBigCard = () => {
       </div>
 
       <div className="profileBigCardTextContainer">
-        <h5 className="mb-0">Hansel Sarpong Adjei </h5>
+        <h5 className="mb-0">{myInfo.name} {myInfo.surname}</h5>
         <p className="mb-2">
-          <small>Junior Full-Stack Web Developer </small>
+          <small>{myInfo.title}</small>
         </p>
         <p className="mb-2 text-secondary">
-          <small>EPICODE </small>
+          <small>{myInfo.bio} </small>
         </p>
         <p className="text-secondary mb-2">
-          <small>Reggio nell'Emilia, Emilia Romagna, Italia • </small>
+          <small>{myInfo.area}</small>
+          <br/>
           <span className="text-primary">Informazioni di contatto </span>
         </p>
         <span className="text-primary">78 collegamenti </span>
