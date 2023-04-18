@@ -55,6 +55,7 @@ const ProfilePage = () => {
 
     useEffect(() => {
         getUserInfo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]) // componentDidMount 
 
     console.log('useSelector:', myInfo);

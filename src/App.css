@@ -147,6 +147,91 @@ svg:hover {
 .profileBigCardCoverContainer img{
     width:100%;
     overflow: hidden;
+    height: 100px;
+}
+.profilepicContainer{
+    width: 160px;
+    height: 160px;
+    box-sizing: border-box;
+    border-radius: 49.9%;
+    border:4px solid white;position: absolute;
+    top: 5%;
+    left: 4%;
+}
+
+.pencil-right{
+    position: absolute;
+    right: 28px;
+    top: 170px;
+}
+.profileBigCardTextContainer{
+    margin-top:0.5em;
+    line-height: 1.1em;
+    padding: 0 0.8em;
+}
+
+
+
+@media screen and (min-width:400px) {
+    .profileBigCardCoverContainer img{
+        height: 170px;
+    }
+    .profilepicContainer{
+        top: 10%;
+    }
+    .pencil-right{
+        top: 183px;
+    }
+    .profileBigCardTextContainer{
+        margin-top:1.8em;
+    }
+}
+
+@media screen and (min-width:767px) {
+    .profileBigCardCoverContainer img{
+        height: 130px;
+    }
+    .profilepicContainer{
+        top: 7%;
+    }
+    .pencil-right{
+        top: 145px;
+    }
+    .profileBigCardTextContainer{
+        margin-top:0.8em;
+    }
+}
+
+@media screen and (min-width:993px) {
+    .profileBigCardCoverContainer img{
+        height: 170px;
+    }
+    .profilepicContainer{
+        top: 13%;
+    }
+    .pencil-right{
+        top: 183px;
+    }
+    .profileBigCardTextContainer{
+        margin-top:3em;
+        padding: 0 1.4em;
+    }
+    
+}
+
+@media screen and (min-width:1190px) {
+    .profileBigCardCoverContainer img{
+        height: 200px;
+    }
+    .profilepicContainer{
+        top: 20%;
+    }
+    .pencil-right{
+        top: 212px;
+    }
+    .profileBigCardTextContainer{
+        margin-top:6.5em;
+    }
 }
 
 .ProfileBigCardContainer{
@@ -157,32 +242,8 @@ svg:hover {
 
 }
 
-.profilepicContainer{
-    width: 160px;
-    height: 160px;
-    box-sizing: border-box;
-    border-radius: 49.9%;
-    border:4px solid white;position: absolute;
-    top: 8%;
-    left: 4%;
-}
 
-@media screen and (min-width:992px) {
-    .profilepicContainer{
-        top:16%
-    }
-}
 
-@media screen and (min-width:1200px) {
-    .profilepicContainer{
-        top:26%
-    }
-}
-@media screen and (min-width:1400px) {
-    .profilepicContainer{
-        top:36%
-    }
-}
 
 .profilepic{
     border-radius: 50%;
@@ -190,9 +251,6 @@ svg:hover {
     height: 152px;
 }
 
-.profileBigCardTextContainer{
-    margin-top:0.5em;
-}
 
 .ProfileCoverPencil svg{
     width: 1.4rem;
@@ -207,14 +265,7 @@ svg:hover {
     border-radius: 49%;
 }
 
-.pencil-right{
-    text-align: end;
-    margin-right: 1.4em;
-}
 
-.profileBigCardTextContainer{
-    line-height: 1.1em;
-}
 
 #buttonProfileBigCard{
     padding: 0 1rem;
@@ -249,13 +300,17 @@ svg:hover {
 .carousel{
     display: flex;
     overflow-x: hidden;
-    padding: 2.4rem
+    padding: 0 2.4rem 2rem 2.4rem;
 }
 
 .btn-profile:hover {
     background-color: #ebebeb;
     border: 2px solid grey;
     color: grey;
+}
+
+.carousel-indicators{
+    display: none!important;
 }
 
 /*Fine CSS Card Grande Profile Page*/
