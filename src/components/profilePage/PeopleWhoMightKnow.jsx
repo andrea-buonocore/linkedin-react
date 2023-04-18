@@ -41,8 +41,7 @@ const PeopleWhoMightKnow = () => {
                 </p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill px-3 py-1"
-                  id="btn-profile"
+                  className="rounded-pill px-3 py-1 btn-profile"
                 >
                   {connectSvg}
                   &nbsp;Collegati
@@ -69,8 +68,7 @@ const PeopleWhoMightKnow = () => {
                 </p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill px-3 py-1"
-                  id="btn-profile"
+                  className="rounded-pill px-3 py-1 btn-profile"
                 >
                   {connectSvg}
                   &nbsp;Collegati
@@ -97,8 +95,7 @@ const PeopleWhoMightKnow = () => {
                 </p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill px-3 py-1"
-                  id="btn-profile"
+                  className="rounded-pill px-3 py-1 btn-profile"
                 >
                   {connectSvg}
                   &nbsp;Collegati

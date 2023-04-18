@@ -41,8 +41,7 @@ const Interests = () => {
                 <p><small>5.518 follower</small></p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill px-3 py-1"
-                  id="btn-profile"
+                  className="rounded-pill px-3 py-1 btn-profile"
                 >
                   {addSvg}
                   &nbsp;Segui
@@ -70,8 +69,7 @@ const Interests = () => {
                 <p><small>28 Mln follower</small></p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill px-3 py-1"
-                  id="btn-profile"
+                  className="rounded-pill px-3 py-1 btn-profile"
                 >
                   {addSvg}
                   &nbsp;Segui

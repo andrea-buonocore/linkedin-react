@@ -1,3 +1,10 @@
+.App {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f3f2ef;
+}
+
 .card-footer {
     text-align: center;
 }
@@ -39,11 +46,11 @@
 }
 
 #showMore:hover {
-    background-color: lightgray;
+    background-color: #ebebeb;
 }
 
-#btn-profile:hover {
-    background-color: white;
+.btn-profile:hover {
+    background-color: #ebebeb;
     border: 2px solid grey;
     color: grey;
 }

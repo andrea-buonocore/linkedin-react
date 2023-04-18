@@ -1,6 +1,34 @@
+import { useEffect, useState } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 
 const OtherProfiles = () => {
+  
+  const [profileData, setProfileData] = useState([]);
+
+  const getProfileData = async () => {
+    try {
+      let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/", {
+        method: "GET",
+        headers: {
+          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        let data = await response.json();
+        setProfileData(data);
+      } else {
+        alert("something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getProfileData();
+  }, []);
+
     let messageSvg =                   
     <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,26 +48,26 @@ const OtherProfiles = () => {
     <Card className="mb-2">
       <ListGroup variant="flush" className="p-3">
         <h5>Altri profili consultati</h5>
+        {profileData.slice(0,4).map((profile) => (
         <ListGroup.Item>
           <Row className="d-flex justify-content-start">
             <Col xs={2} className="p-0 p-sm-2">
               <img
-                src="https://picsum.photos/200"
-                alt="placeholder"
+                src={profile.image}
+                alt={profile.name}
                 style={{ width: "50px" }}
                 className="rounded-circle"
               />
             </Col>
             <Col xs={10}>
               <div>
-                <h6 className="mb-1">Nome Cognome</h6>
+                <h6 className="mb-1">{profile.name}&nbsp;{profile.surname}</h6>
                 <p className="mb-1">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  {profile.title}
                 </p>
                 <Button
                   variant="outline-secondary"
-                  className="rounded-pill px-3 py-1"
-                  id="btn-profile"
+                  className="rounded-pill px-3 py-1 btn-profile"
                 >
                     {messageSvg}
                   &nbsp;Messaggio
@@ -48,7 +76,8 @@ const OtherProfiles = () => {
             </Col>
           </Row>
         </ListGroup.Item>
-        <ListGroup.Item>
+        ))}
+        {/* <ListGroup.Item>
           <Row className="d-flex justify-content-start">
             <Col xs={2} className="p-0 p-sm-2">
               <img
@@ -103,7 +132,7 @@ const OtherProfiles = () => {
               </div>
             </Col>
           </Row>
-        </ListGroup.Item>
+        </ListGroup.Item> */}
       </ListGroup>
       <Card.Footer id="showMore">
         Visualizza altro&nbsp;
