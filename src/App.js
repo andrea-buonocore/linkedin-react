@@ -9,7 +9,8 @@ function App() {
       <BrowserRouter>
       <CustomNavbar/>
       <Routes>
-        <Route path={'/'} element={<ProfilePage/>}/>        
+        <Route path={'/profile/me'} element={<ProfilePage/>}/>        
+        <Route path={'/profile/:id'} element={<ProfilePage/>}/>        
       </Routes>
       </BrowserRouter>
     </div>
