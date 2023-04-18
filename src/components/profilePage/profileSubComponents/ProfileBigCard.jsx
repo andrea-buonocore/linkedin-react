@@ -49,13 +49,7 @@ const ProfileBigCard = () => {
           <Button className="me-2" id="buttonProfileBigCard">
             <span>Disponibile per </span>
           </Button>
-          <Button
-            className="me-2"
-            id="buttonProfileBigCard"
-            variant="outline-primary"
-          >
-            <span className="text-primary">Aggiungi sezione del profilo </span>
-          </Button>
+          <button type="button" class="rounded-pill px-3 py-1 btn btn-outline-primary">Segui</button>
           <Button id="buttonProfileBigCard" variant="outline-secondary">
             <span className="text-secondary">Altro </span>
           </Button>

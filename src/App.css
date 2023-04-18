@@ -130,3 +130,9 @@
     overflow-x: hidden;
     padding: 2.4rem
 }
+
+.btn-profile:hover {
+    background-color: #ebebeb;
+    border: 2px solid grey;
+    color: grey;
+}
