@@ -47,6 +47,7 @@
 
 #showMore:hover {
     background-color: #ebebeb;
+    cursor: pointer;
 }
 
 .btn-profile:hover {
