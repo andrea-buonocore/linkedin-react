@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 const ProfileBigCard = () => {
 
   const myInfo = useSelector(state => state.userInfo.me);
-
+  console.log('myInfo', myInfo);
   return (
     <div className="ProfileBigCardContainer">
       <div className="profileBigCardCoverContainer">

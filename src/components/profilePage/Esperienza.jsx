@@ -1,8 +1,43 @@
+import { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 
 const Esperienza = () => {
+
+    const dispatch = useDispatch();
+
+    const getExperiences = async () => {
+        try {
+            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/643cf25b186a8700143867ae/experiences', {
+                method: "GET",
+                headers: {
+                    Authorization:
+                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
+                },
+            })
+            if(response.ok){
+                let data = await response.json();
+                dispatch({
+                    type: 'ADD_TO_EXPERIENCES',
+                    payload: data
+                })
+            }
+            else{
+                return new Error('Errore nella fetch');
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+
+
+    useEffect(() => {
+        getExperiences();
+    })
+
     return (
-        <Card  className="mb-3">
+        <Card className="mb-3">
             <Card.Body>
                 <div className="d-flex justify-content-between">
                     <Card.Title>Esperienza</Card.Title>
