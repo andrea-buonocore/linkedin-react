@@ -609,6 +609,25 @@ svg:hover {
         border: 1px solid transparent!important;
         padding: 0.375rem 0rem!important;
     }
+    .buttonPost{
+        background-color: transparent;
+    border-color: transparent;
+    }
+.firstContainerPostIcons{
+    align-items: center;
+    display: flex;
+    padding-right: 0.8rem;
+}
+
+.secondContainerPostIcons{
+    border-left: 1px solid rgba(0,0,0,0.08);
+    padding-left: 0.8rem;
+    margin-right: auto;
+}
+
+.gray{
+    color:gray;
+}
 
     
   /* FINE CREAZIONE POST COLONNA CENTRALE HOME PAGE */
