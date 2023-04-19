@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 const Esperienza = () => {
 
     const dispatch = useDispatch();
+    const id=useSelector(state => state.userInfo.me._id);
     const experiences = useSelector(state => state.experiences.experiences);
     console.log('experiences', experiences);
+    console.log(id)
 
     const getExperiences = async () => {
         try {
-            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/643cf25b186a8700143867ae/experiences', {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
                 method: "GET",
                 headers: {
                     Authorization:
@@ -36,7 +38,8 @@ const Esperienza = () => {
 
     useEffect(() => {
         getExperiences();
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id])
 
     return (
         <Card className="mb-3">
@@ -52,7 +55,7 @@ const Esperienza = () => {
                     experiences.map((experience, index) => {
                         return (
                             <>
-                                <Card Card className="my-3 insideCards" >
+                                <Card key={index} Card className="my-3 insideCards" >
                                     <Row>
                                         <Col xs={3} lg={1} >
                                             <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />

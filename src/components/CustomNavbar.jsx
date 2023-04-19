@@ -1,8 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
+import { Dropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CustomNavbar = () => {
@@ -12,7 +11,7 @@ const CustomNavbar = () => {
         <div className="d-flex d-none d-md-inline col col-md-4">
           <a href="#">
             <svg
-            id="logo"
+              id="logo"
               className="me-1"
               xmlns="http://www.w3.org/2000/svg"
               width="35"
@@ -32,7 +31,10 @@ const CustomNavbar = () => {
             id="navUl"
           >
             <li>
-              <a href="#"className="d-flex d-md-none flex-column align-items-center justify-content-end">
+              <a
+                href="#"
+                className="d-flex d-md-none flex-column align-items-center justify-content-end"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -134,7 +136,16 @@ const CustomNavbar = () => {
                 />
 
                 <p className="d-none d-lg-inline m-0">
-                  Tu{" "}
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+               Tu{" "}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1"><Link to='/profile/me'> Visualizza profilo</Link></Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="11"
@@ -149,7 +160,10 @@ const CustomNavbar = () => {
               </Link>
             </li>
             <li>
-              <a href="#" className="d-flex d-none d-lg-flex flex-column justify-content-center align-items-center">
+              <a
+                href="#"
+                className="d-flex d-none d-lg-flex flex-column justify-content-center align-items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -161,10 +175,13 @@ const CustomNavbar = () => {
                   <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
                 </svg>
 
-                <p className="d-flex m-0 d-none d-lg-flex align-items-center justify-content-center" id="aziende">
+                <p
+                  className="d-flex m-0 d-none d-lg-flex align-items-center justify-content-center"
+                  id="aziende"
+                >
                   Per le aziende{" "}
                   <svg
-                  className="ms-1"
+                    className="ms-1"
                     xmlns="http://www.w3.org/2000/svg"
                     width="12"
                     height="12"

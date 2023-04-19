@@ -8,8 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <CustomNavbar/>
-      <Routes>
-        <Route path={'/profile/me'} element={<ProfilePage/>}/>        
+      <Routes>    
         <Route path={'/profile/:id'} element={<ProfilePage/>}/>        
       </Routes>
       </BrowserRouter>

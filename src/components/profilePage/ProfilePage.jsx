@@ -22,14 +22,14 @@ const ProfilePage = () => {
     const myInfo = useSelector(state => state.userInfo.me);
     const params = useParams();
     console.log('params', params);
-    const myID = "643cf25b186a8700143867ae";
+    //const myID = "643cf25b186a8700143867ae";
     //fetch per ottenere info sul profilo
     // profile/me --> miei dati
     // profile/123 --> dati di utente con id 123
 
     const getUserInfo = async () => {
         try {
-            let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params.id}`, {
                 method: "GET",
                 headers: {
                     Authorization:
@@ -56,7 +56,7 @@ const ProfilePage = () => {
     useEffect(() => {
         getUserInfo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]) // componentDidMount 
+    },[params.id]) // componentDidMount 
 
     console.log('useSelector:', myInfo);
 
