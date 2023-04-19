@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux";
+import Spinner from 'react-bootstrap/Spinner';
+
 import Post from "./ColonnaCentrale/Post";
 
 const HomePage = () => {
 
     const dispatch = useDispatch();
     const postRedux = useSelector(state => state.post.post);
+    const [isLoading, setIsLoading] = useState(true);
 
     const getPosts = async () => {
         try {
@@ -20,12 +23,13 @@ const HomePage = () => {
             if (response.ok) {
                 let post = await response.json();
                 console.log('tutti i post', post);
-                let fiftyPost = post.slice(0,50);
+                let fiftyPost = post.slice(0, 50);
                 dispatch({
                     type: 'SAVE_POST',
                     payload: fiftyPost
                 })
-                
+                setIsLoading(false);
+
             }
             else {
                 return new Error('Errore nella fetch:', response.status);
@@ -44,9 +48,16 @@ const HomePage = () => {
                 <Col xs={12} md={2}></Col>
                 <Col xs={12} md={7}>
                     {
+                        isLoading && (
+                            <div className="text-center">
+                            <Spinner animation="border" variant="primary"/>
+                            </div>
+                        )
+                    }
+                    {
                         postRedux.map((post, index) => {
                             return (
-                                <Post post={post} key={index}/>
+                                <Post post={post} key={index} />
                             )
                         })
                     }
