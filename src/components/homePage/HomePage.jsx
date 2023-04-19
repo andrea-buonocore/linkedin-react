@@ -12,9 +12,11 @@ import Post from "./ColonnaCentrale/Post";
 import CreazionePost from "./ColonnaCentrale/creazionePost"
 
 const HomePage = () => {
+    
 
     const dispatch = useDispatch();
     const postRedux = useSelector(state => state.post.post);
+    //const myInfo=useSelector(state=>state.myInfo)
     const [isLoading, setIsLoading] = useState(true);
 
     const getPosts = async () => {
@@ -43,6 +45,25 @@ const HomePage = () => {
         }
         catch (err) {
             console.error(err);
+        }
+
+        try {
+            let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk"
+                },
+            }
+            );
+            let data = await response.json();
+            dispatch({
+                type: 'HOMEPAGE_SAVE_MY_INFO',
+                payload: data
+            })
+            console.log('Dati',data)
+        } catch (error) {
+            console.log(error);
         }
     }
 
