@@ -13,13 +13,13 @@ import PeopleWhoMightKnow from "./PeopleWhoMightKnow";
 import Interests from "./Interests";
 import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
 
 const ProfilePage = () => {
 
     const dispatch = useDispatch();
-    const myInfo = useSelector(state => state.userInfo.me);
+    //const myInfo = useSelector(state => state.userInfo.me);
     const params = useParams();
     //console.log('params', params);
     //const myID = "643cf25b186a8700143867ae";
