@@ -18,10 +18,11 @@ const Post = ({ post }) => {
             <Card.Body>
                 <Card className='border border-0 mb-3'>
                     <Row>
-                        <Col xs={2}>
-                            <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle' />
+                        <Col xs={4} lg={2}>
+                            
+                            <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle'/>
                         </Col>
-                        <Col xs={10}>
+                        <Col xs={8} lg={10}>
                             <p className='m-0 fw-bold'>{post.user.name} {post.user.surname}</p>
                             <small className='text-muted'>{post.user.title}</small>
                             <br></br>
@@ -36,20 +37,20 @@ const Post = ({ post }) => {
             </Card.Body>
             <Card.Footer>
                 <Row xs={4}>
-                    <Col>
-                        <i class="bi bi-hand-thumbs-up mx-2"></i>
+                    <Col className='px-0 text-center'>
+                        <i class="bi bi-hand-thumbs-up me-2"></i>
                         <span className='d-none d-lg-inline'>Consiglia</span>
                     </Col>
-                    <Col>
-                        <i class="bi bi-chat-text mx-2"></i>
+                    <Col className='px-0 text-center'>
+                        <i class="bi bi-chat-text me-2"></i>
                         <span className='d-none d-lg-inline'>Commenta</span>
                     </Col>
-                    <Col>
-                        <i class="bi bi-share mx-2"></i>
+                    <Col className='px-0 text-center'>
+                        <i class="bi bi-share me-2"></i>
                         <span className='d-none d-lg-inline'>Diffondi il post</span>
                     </Col>
-                    <Col>
-                        <i class="bi bi-send-fill mx-2"></i>
+                    <Col className='px-0 text-center'>
+                        <i class="bi bi-send-fill me-2"></i>
                         <span className='d-none d-lg-inline'>Invia</span>
                     </Col>
                 </Row>
