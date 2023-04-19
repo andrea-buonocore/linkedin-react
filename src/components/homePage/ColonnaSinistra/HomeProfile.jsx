@@ -33,20 +33,26 @@ const HomeProfile = () => {
       <ListGroup variant="flush">
         <ListGroup.Item className="p-0">
           <Row className="d-flex flex-column">
-            <Col className="position-relative">
+            <Col>
               <div className="sidebarCover">
                 <img
                   src="https://randomwordgenerator.com/img/picture-generator/55e7d1414d53af14f1dc8460962e33791c3ad6e04e507440762e7adc9f49c1_640.jpg"
                   alt=""
                 />
               </div>
-              <div className="sidebarAvatar">
+              <div className="position-relative">
                 <img
                   src={profileInfo.image}
                   alt="Profile"
                   className="rounded-circle"
                   width={80}
                   height={80}
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
                 ></img>
               </div>
             </Col>
@@ -127,7 +133,7 @@ const HomeProfile = () => {
           </p>
         </ListGroup.Item>
       </ListGroup>
-    </Card>
+      </Card>
   );
 };
 
