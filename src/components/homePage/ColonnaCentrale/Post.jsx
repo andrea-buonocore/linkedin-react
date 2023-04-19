@@ -1,0 +1,61 @@
+import { Col, Row } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+
+const Post = ({ post }) => {
+
+    let date = new Date(post.createdAt);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+    return (
+        <Card className='mb-3'>
+            <Card.Body>
+                <Card className='border border-0 mb-3'>
+                    <Row>
+                        <Col xs={2}>
+                            <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle' />
+                        </Col>
+                        <Col xs={10}>
+                            <p className='m-0 fw-bold'>{post.user.name} {post.user.surname}</p>
+                            <small className='text-muted'>{post.user.title}</small>
+                            <br></br>
+                            <small className='text-muted'>{formattedDate}</small>
+                        </Col>
+                    </Row>
+                </Card>
+                <Card.Text>
+                    {post.text}
+                </Card.Text>
+
+            </Card.Body>
+            <Card.Footer>
+                <Row xs={4}>
+                    <Col>
+                        <i class="bi bi-hand-thumbs-up mx-2"></i>
+                        <span className='d-none d-lg-inline'>Consiglia</span>
+                    </Col>
+                    <Col>
+                        <i class="bi bi-chat-text mx-2"></i>
+                        <span className='d-none d-lg-inline'>Commenta</span>
+                    </Col>
+                    <Col>
+                        <i class="bi bi-share mx-2"></i>
+                        <span className='d-none d-lg-inline'>Diffondi il post</span>
+                    </Col>
+                    <Col>
+                        <i class="bi bi-send-fill mx-2"></i>
+                        <span className='d-none d-lg-inline'>Invia</span>
+                    </Col>
+                </Row>
+            </Card.Footer>
+        </Card>
+    )
+}
+
+export default Post;
