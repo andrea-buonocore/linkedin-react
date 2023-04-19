@@ -9,7 +9,7 @@ const CreazionePost = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="card">
+    <div className="card mb-3">
       <div className="d-flex flex-column ">
         <div className="d-flex picAndButtonContainer">
           <div className="imgPostContainer me-3">
