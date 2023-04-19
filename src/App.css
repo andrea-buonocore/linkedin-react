@@ -44,7 +44,33 @@
     background-color: white;
     font-weight: 500;
 }
-
+#notizie {
+    color: #676767;
+}
+#bulletPoint {
+    background-color: #676767;
+    border-radius: 50%;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0px .6rem 5px 10px
+}
+#dataNotizie {
+    margin-left: 1.8em;
+}
+.listaNotizie h6, .listaNotizie p {
+    font-size: .9em;
+}
+.listaNotizie {
+    text-decoration: none;
+    color: #676767;
+    
+}
+.listaNotizie:hover {
+    color: #676767;
+    background-color: salmon;
+    cursor: pointer;
+}
 #showMore:hover {
     background-color: #ebebeb;
     cursor: pointer;
