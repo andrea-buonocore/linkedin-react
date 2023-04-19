@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Spinner from 'react-bootstrap/Spinner';
 import Post from "./ColonnaCentrale/Post";
 import CreazionePost from "./ColonnaCentrale/creazionePost"
+import Scopri from "./ColonnaSinistra/Scopri";
 
 const HomePage = () => {
     
@@ -74,6 +75,8 @@ const HomePage = () => {
             <Row>
                 <Col xs={12} md={2}>
                     <HomeProfile/>
+                    <Scopri/>
+
                 </Col>
                 <Col xs={12} md={7}>
                     <Row xs={1}>

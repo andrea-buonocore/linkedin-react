@@ -1,6 +1,6 @@
 import { Card, Col, Row } from "react-bootstrap";
 
-const ScopriDiPiu = () => {
+const Scopri = () => {
   return (
     <Card className="mb-2 sticky-top">
       <Row className="d-flex align-items-center p-2 flex-nowrap">
@@ -33,4 +33,4 @@ const ScopriDiPiu = () => {
   );
 };
 
-export default ScopriDiPiu;
+export default Scopri;
