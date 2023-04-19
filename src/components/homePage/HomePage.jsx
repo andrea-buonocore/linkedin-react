@@ -1,4 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap"
+import Annuncio from "./ColonnaDestra/Annuncio"
+import LinkedinNotizie from "./ColonnaDestra/LinkedinNotizie"
+import { FooterHome } from "./FooterHome/FooterHome"
 import CreazionePost from "./ColonnaCentrale/creazionePost"
 
 const HomePage = () => {
@@ -12,7 +15,7 @@ const HomePage = () => {
                     
                     </Row>
                 </Col>
-                <Col xs={12} md={3}></Col>
+                <Col xs={12} md={3}><Annuncio/><LinkedinNotizie/><FooterHome></FooterHome></Col>
             </Row>
         </Container>
     )
