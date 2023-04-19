@@ -349,3 +349,56 @@ svg:hover {
     width: 100%;
     border-radius: 7px;
   }
+
+/* sidebar homepage */
+
+.sidebarStats {
+    color: grey;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sidebarText {
+    color: grey;
+    font-size: 12px;
+    font-weight: 400;
+}
+.sidebarTextPremium {
+    color: black;
+    text-decoration: underline;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sidebarProfileName {
+    color:black;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebarProfileRole {
+    color:grey;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.sidebarCover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sidebarCover img {
+    width: 100%;
+    height: 5em;
+    display: block;
+    object-fit: cover;
+  }
+
+  .sidebarAvatar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+  }
