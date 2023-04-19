@@ -429,6 +429,16 @@ svg:hover {
 
   }
 
+  .linkHome {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .linkHome:hover {
+    text-decoration: underline;
+  }
+
+
   /* prova */
   #dropdown-basic {
     margin: 0;

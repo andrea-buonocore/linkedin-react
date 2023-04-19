@@ -1,0 +1,36 @@
+import { Card, Col, Row } from "react-bootstrap";
+
+const ScopriDiPiu = () => {
+  return (
+    <Card className="mb-2 sticky-top">
+      <Row className="d-flex align-items-center p-2 flex-nowrap">
+        <Col xs={9}>
+          <p className="linkHome text-primary mb-2">Gruppi</p>
+          <p className="linkHome text-primary mb-2">Eventi</p>
+          <p className="linkHome text-primary mb-1">Hashtag seguiti</p>
+        </Col>
+        <Col xs={3}>
+          <div className="plusIcon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              data-supported-dps="16x16"
+              fill="grey"
+              class="mercado-match"
+              width="16"
+              height="16"
+              focusable="false"
+            >
+              <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+            </svg>
+          </div>
+        </Col>
+      </Row>
+      <Card.Footer id="showMore" className="text-center text-secondary fs-6">
+        Scopri di più
+      </Card.Footer>
+    </Card>
+  );
+};
+
+export default ScopriDiPiu;
