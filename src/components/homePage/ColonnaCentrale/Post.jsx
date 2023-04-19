@@ -21,7 +21,7 @@ const Post = ({ post }) => {
                     <Row>
                         <Col xs={3} md={2} lg={1}>
                             <Link to={`/profile/${post.user._id}`}>
-                                <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle' style={{ aspectRatio: 1 }} />
+                                <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle' style={{ aspectRatio: 1 }} alt={`Immagine di ${post.user.name} ${post.user.surname}`}/>
                             </Link>
                         </Col>
                         <Col xs={9} md={10} lg={11}>
