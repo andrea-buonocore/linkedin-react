@@ -61,7 +61,7 @@ const ProfilePage = () => {
    // console.log('useSelector:', myInfo);
 
     return (
-        <Container id="profilePageContainer">
+        <Container className="pageContainer">
             <Row>
                 {/* COLONNA SX */}
                 <Col xs={12} md={6} lg={8}>
