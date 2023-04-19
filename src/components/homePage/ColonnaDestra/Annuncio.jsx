@@ -1,18 +1,18 @@
 import { Button, Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
-const ColonnaDestra = () => {
+const Annuncio = () => {
 
-    const myInfo = useSelector(state => state.userInfo.me);
+  const myInfo = useSelector(state => state.userInfo.me);
   
-
+return (
 <Card className="mb-2">
 <Card.Body className="p-1">
   <div className="text-end" id="ad-dx">
     <span>Annuncio</span>&nbsp;<i class="bi bi-three-dots"></i>
   </div>
   <div className="d-flex flex-column text-center p-2">
-    <small>Scopri le ultime offerte di lavoro</small>
+    <small>{myInfo.name}, want to learn what the future of medicine holds?</small>
     <div className="d-flex justify-content-center my-2">
       <img
         src={myInfo.image}
@@ -27,7 +27,7 @@ const ColonnaDestra = () => {
         style={{ width: "70px" }}
       />
     </div>
-    <p>{myInfo.name}, scopri le opportunità offerte da XXX</p>
+    <p>Learn why biosimilars are the future of medicine.</p>
     <div>
       <Button
         variant="outline-primary"
@@ -39,6 +39,6 @@ const ColonnaDestra = () => {
   </div>
 </Card.Body>
 </Card>
-}
+)}
 
-export default ColonnaDestra
+export default Annuncio

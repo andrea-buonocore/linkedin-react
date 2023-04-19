@@ -45,7 +45,33 @@
     background-color: white;
     font-weight: 500;
 }
-
+#notizie {
+    color: #676767;
+}
+#bulletPoint {
+    background-color: #676767;
+    border-radius: 50%;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0px .6rem 5px 10px
+}
+#dataNotizie {
+    margin-left: 1.8em;
+}
+.listaNotizie h6, .listaNotizie p {
+    font-size: .9em;
+}
+.listaNotizie {
+    text-decoration: none;
+    color: #676767;
+    
+}
+.listaNotizie:hover {
+    color: #676767;
+    background-color: salmon;
+    cursor: pointer;
+}
 #showMore:hover {
     background-color: #ebebeb;
     cursor: pointer;
@@ -387,6 +413,70 @@ svg:hover {
     width: 100%;
     border-radius: 7px;
 }
+
+
+/* sidebar homepage */
+
+.sidebarStats {
+    color: grey;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sidebarText {
+    color: grey;
+    font-size: 12px;
+    font-weight: 400;
+}
+.sidebarTextPremium {
+    color: black;
+    text-decoration: underline;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sidebarProfileName {
+    color:black;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebarProfileRole {
+    color:grey;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.sidebarCover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sidebarCover img {
+    width: 100%;
+    height: 5em;
+    display: block;
+    object-fit: cover;
+  }
+
+  .sidebarAvatar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+  }
+
+  /* prova */
+  #dropdown-basic {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: grey;
+    font-size: 13px;
+  }
 
 /* POST */
 
