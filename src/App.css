@@ -71,9 +71,6 @@
     font-weight: bold !important;;
 }
 /*CSS Card Grande Profile Page*/
-#profilePageContainer {
-    margin-top: 7rem;
-}
 #logo:hover {
     fill:currentColor
 } 
