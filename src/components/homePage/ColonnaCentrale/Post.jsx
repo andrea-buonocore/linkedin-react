@@ -1,5 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
 
@@ -19,11 +20,14 @@ const Post = ({ post }) => {
                 <Card className='border border-0 mb-3'>
                     <Row>
                         <Col xs={3} md={2} lg={1}>
-                            
-                            <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle' style={{aspectRatio: 1}}/>
+                            <Link to={`/profile/${post.user._id}`}>
+                                <Card.Img variant="top" src={post.user.image} className='rounded rounded-circle' style={{ aspectRatio: 1 }} />
+                            </Link>
                         </Col>
                         <Col xs={9} md={10} lg={11}>
-                            <p className='m-0 fw-bold'>{post.user.name} {post.user.surname}</p>
+                            <Link to={`/profile/${post.user._id}`} className='postUserName'>
+                                <p className='m-0 fw-bold postUserName'>{post.user.name} {post.user.surname}</p>
+                            </Link>
                             <small className='text-muted'>{post.user.title}</small>
                             <br></br>
                             <small className='text-muted'>{formattedDate}</small>
