@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const Messaggistica = () => {
-  const myInfo = useSelector((state) => state.userInfo.me);
+  const myInfo = useSelector((state) => state.myInfo.myInfo);
 
   return (
     <Card className="">
@@ -14,7 +14,7 @@ const Messaggistica = () => {
               src={myInfo.image}
               alt="placeholder"
               className="rounded-circle"
-              style={{ width: "70px" }}
+              style={{ width: "40px" }}
             />
             <h4>Messaggistica</h4>
           </div>
