@@ -402,3 +402,13 @@ svg:hover {
     left: 50%;
 
   }
+
+  /* prova */
+  #dropdown-basic {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: grey;
+    font-size: 13px;
+  }
