@@ -428,6 +428,10 @@ svg:hover {
     .articleIcon{
         color:#e16745;
     }
+    .textPostArea{
+        border: 1px solid transparent!important;
+        padding: 0.375rem 0rem!important;
+    }
 
     
   /* FINE CREAZIONE POST COLONNA CENTRALE HOME PAGE */
