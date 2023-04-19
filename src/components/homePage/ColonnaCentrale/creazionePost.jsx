@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { useSelector } from "react-redux";
 const token ='Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQwMmEwNWQ5MTJlOTAwMTRjMjNmYTMiLCJpYXQiOjE2ODE5MjY2NjIsImV4cCI6MTY4MzEzNjI2Mn0.s5TVsYd1HXaVaF0WJGJgDu1B2fdFiL0a6OxN5U3_aFk'
 
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
   const [comment,setComment]=useState(null)
+  const myInfo=useSelector(state=>state.myInfo.myInfo)
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -42,7 +44,7 @@ let commentToSend={text:''}
           <div className="imgPostContainer me-3">
             <img
               alt="profilePicture"
-              src="https://media.licdn.com/dms/image/D4E35AQEI-SA5CGOldg/profile-framedphoto-shrink_100_100/0/1680040710302?e=1682499600&v=beta&t=UcGobhn27mcA4S5yRP21ndI8OGPsrOublvKpGfFnxU8"
+              src={myInfo.image}
             />
           </div>
           <div className="buttonContainer">
@@ -62,25 +64,25 @@ let commentToSend={text:''}
                 controlId="exampleForm.ControlInput1"
               >
                 <div className="d-flex align-items-center">
-                  <div class="imgPostContainer me-3">
+                  <div className="imgPostContainer me-3">
                     <img
                       alt="profilePicture"
-                      src="https://media.licdn.com/dms/image/D4E35AQEI-SA5CGOldg/profile-framedphoto-shrink_100_100/0/1680040710302?e=1682499600&amp;v=beta&amp;t=UcGobhn27mcA4S5yRP21ndI8OGPsrOublvKpGfFnxU8"
+                      src={myInfo.image}
                     />
                   </div>
                   <div className="d-flex flex-column">
                     <div>
-                      <strong> Hansel Sarpong Adjei</strong>
+                      <strong> {myInfo.name}&nbsp;{myInfo.surname} </strong>
                     </div>
                     <div>
                       <button
                         type="button"
-                        class="rounded-pill py-1 btn btn-outline-secondary d-flex align-items-center justify-content-between"
+                        className="rounded-pill py-1 btn btn-outline-secondary d-flex align-items-center justify-content-between"
                       >
                         <li-icon
                           aria-hidden="true"
                           type="globe-americas"
-                          class="share-state-change-button__icon d-flex"
+                          className="share-state-change-button__icon d-flex"
                           size="small"
                         >
                           <svg
@@ -88,7 +90,7 @@ let commentToSend={text:''}
                             viewBox="0 0 16 16"
                             data-supported-dps="16x16"
                             fill="currentColor"
-                            class="mercado-match"
+                            className="mercado-match"
                             width="16"
                             height="16"
                             focusable="false"

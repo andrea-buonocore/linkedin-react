@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Esperienza = () => {
 
     const dispatch = useDispatch();
-    const id=useSelector(state => state.userInfo.me._id);
+    const id=useSelector(state => state.myInfo.myInfo._id);
     const experiences = useSelector(state => state.experiences.experiences);
     //console.log('experiences', experiences);
     //console.log(id)
@@ -37,6 +37,7 @@ const Esperienza = () => {
 
 
     useEffect(() => {
+        
         getExperiences();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])

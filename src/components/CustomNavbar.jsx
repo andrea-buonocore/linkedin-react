@@ -143,7 +143,7 @@ const CustomNavbar = () => {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1"><Link to='/profile/me'> Visualizza profilo</Link></Dropdown.Item>
+                      <Link className="dropdown-item" to='/profile/me'> Visualizza profilo</Link>
                     </Dropdown.Menu>
                   </Dropdown>
 
