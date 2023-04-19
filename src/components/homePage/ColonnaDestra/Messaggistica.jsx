@@ -1,4 +1,5 @@
-import { Button, Card } from "react-bootstrap";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Card } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const Messaggistica = () => {
@@ -30,3 +31,5 @@ const Messaggistica = () => {
     </Card>
   );
 };
+
+export default Messaggistica
