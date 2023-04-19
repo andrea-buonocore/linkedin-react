@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 const Annuncio = () => {
 
-  const myInfo = useSelector(state => state.userInfo.me);
+  const myInfo = useSelector((state) => state.myInfo.myInfo);
   
 return (
 <Card className="mb-2">

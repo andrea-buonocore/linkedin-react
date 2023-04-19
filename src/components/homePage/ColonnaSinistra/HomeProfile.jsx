@@ -1,30 +1,33 @@
 import { useEffect, useState } from "react";
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const HomeProfile = () => {
- const [profileInfo, setProfileInfo] = useState([]);
+  const myInfo = useSelector((state) => state.myInfo.myInfo);
+  console.log('myInfo',myInfo);
+//  const [profileInfo, setProfileInfo] = useState([]);
 
- const getProfileInfo = async () => {
-    try {
-        let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk"
-            },
-        }
-        );
-        let data = await response.json();
-        setProfileInfo(data);
-    } catch (error) {
-        console.log(error);
-    }
- };
+//  const getProfileInfo = async () => {
+//     try {
+//         let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+//             method: "GET",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk"
+//             },
+//         }
+//         );
+//         let data = await response.json();
+//         setProfileInfo(data);
+//     } catch (error) {
+//         console.log(error);
+//     }
+//  };
 
- useEffect(() => {
-    getProfileInfo();
- }, []);
+//  useEffect(() => {
+//     getProfileInfo();
+//  }, []);
 
   const randomNum100 = Math.floor(Math.random() * 100) + 1;
   const randomNum500 = Math.floor(Math.random() * 500) + 1;
@@ -37,13 +40,13 @@ const HomeProfile = () => {
             <Col>
               <div className="sidebarCover">
                 <img
-                  src="https://randomwordgenerator.com/img/picture-generator/55e7d1414d53af14f1dc8460962e33791c3ad6e04e507440762e7adc9f49c1_640.jpg"
+                  src="https://i.ibb.co/C6zmzQ2/cover-linkedin.jpg"
                   alt=""
                 />
               </div>
               <div className="position-relative">
                 <img
-                  src={profileInfo.image}
+                  src={myInfo.image}
                   alt="Profile"
                   className="rounded-circle"
                   width={80}
@@ -59,9 +62,9 @@ const HomeProfile = () => {
             </Col>
             <Col className="mt-5">
               <Link to={"/profile/me"} className="text-decoration-none">
-              <p className="sidebarProfileName mb-1">{profileInfo.name}&nbsp;{profileInfo.surname}</p>
+              <p className="sidebarProfileName mb-1">{myInfo.name}&nbsp;{myInfo.surname}</p>
               </Link>
-              <p className="sidebarProfileRole">{profileInfo.title} <br /> {profileInfo.bio}</p>
+              <p className="sidebarProfileRole">{myInfo.title} <br /> {myInfo.bio}</p>
             </Col>
           </Row>
         </ListGroup.Item>
