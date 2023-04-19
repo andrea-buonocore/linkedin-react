@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const HomeProfile = () => {
  const [profileInfo, setProfileInfo] = useState([]);
@@ -29,7 +30,7 @@ const HomeProfile = () => {
   const randomNum500 = Math.floor(Math.random() * 500) + 1;
 
   return (
-    <Card>
+    <Card className="mb-2">
       <ListGroup variant="flush">
         <ListGroup.Item className="p-0">
           <Row className="d-flex flex-column">
@@ -57,7 +58,9 @@ const HomeProfile = () => {
               </div>
             </Col>
             <Col className="mt-5">
+              <Link to={"/profile/me"} className="text-decoration-none">
               <p className="sidebarProfileName mb-1">{profileInfo.name}&nbsp;{profileInfo.surname}</p>
+              </Link>
               <p className="sidebarProfileRole">{profileInfo.title} <br /> {profileInfo.bio}</p>
             </Col>
           </Row>
