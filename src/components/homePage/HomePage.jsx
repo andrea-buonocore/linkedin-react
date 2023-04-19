@@ -7,10 +7,8 @@ import Messaggistica from "./ColonnaDestra/Messaggistica"
 import HomeProfile from "./ColonnaSinistra/HomeProfile"
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from 'react-bootstrap/Spinner';
-
 import Post from "./ColonnaCentrale/Post";
 import CreazionePost from "./ColonnaCentrale/creazionePost"
-import ScopriDiPiu from "./ColonnaSinistra/ScopriDiPiu"
 
 const HomePage = () => {
     
@@ -76,7 +74,6 @@ const HomePage = () => {
             <Row>
                 <Col xs={12} md={2}>
                     <HomeProfile/>
-                    <ScopriDiPiu/>
                 </Col>
                 <Col xs={12} md={7}>
                     <Row xs={1}>
