@@ -19,7 +19,7 @@
     font-weight: bold !important;;
 }
 
-#profilePageContainer {
+.pageContainer {
     padding-top: 7rem;
 }
 
@@ -71,9 +71,6 @@
     font-weight: bold !important;;
 }
 /*CSS Card Grande Profile Page*/
-#profilePageContainer {
-    margin-top: 7rem;
-}
 #logo:hover {
     fill:currentColor
 } 

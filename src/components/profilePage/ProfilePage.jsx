@@ -13,15 +13,15 @@ import PeopleWhoMightKnow from "./profileSubComponents/PeopleWhoMightKnow";
 import Interests from "./profileSubComponents/Interests";
 import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
 
 const ProfilePage = () => {
 
     const dispatch = useDispatch();
-    const myInfo = useSelector(state => state.userInfo.me);
+    //const myInfo = useSelector(state => state.userInfo.me);
     const params = useParams();
-    console.log('params', params);
+    //console.log('params', params);
     //const myID = "643cf25b186a8700143867ae";
     //fetch per ottenere info sul profilo
     // profile/me --> miei dati
@@ -38,7 +38,7 @@ const ProfilePage = () => {
             });
             if (response.ok) {
                 let data = await response.json();
-                console.log("dati ottenuti dalla fetch:", data);
+                //console.log("dati ottenuti dalla fetch:", data);
                 dispatch({
                     type: 'SAVE_MY_INFO',
                     payload: data
@@ -58,10 +58,10 @@ const ProfilePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[params.id]) // componentDidMount 
 
-    console.log('useSelector:', myInfo);
+   // console.log('useSelector:', myInfo);
 
     return (
-        <Container id="profilePageContainer">
+        <Container className="pageContainer">
             <Row>
                 {/* COLONNA SX */}
                 <Col xs={12} md={6} lg={8}>

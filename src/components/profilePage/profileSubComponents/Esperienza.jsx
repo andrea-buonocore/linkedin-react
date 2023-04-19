@@ -7,8 +7,8 @@ const Esperienza = () => {
     const dispatch = useDispatch();
     const id=useSelector(state => state.userInfo.me._id);
     const experiences = useSelector(state => state.experiences.experiences);
-    console.log('experiences', experiences);
-    console.log(id)
+    //console.log('experiences', experiences);
+    //console.log(id)
 
     const getExperiences = async () => {
         try {
