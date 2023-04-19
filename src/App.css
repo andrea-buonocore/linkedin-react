@@ -428,6 +428,14 @@ svg:hover {
     left: 50%;
 
   }
+  .linkHome {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .linkHome:hover {
+    text-decoration: underline;
+  }
 
   /* prova */
   #dropdown-basic {
