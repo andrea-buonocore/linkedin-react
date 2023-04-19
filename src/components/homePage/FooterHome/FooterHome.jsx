@@ -4,7 +4,7 @@ import { HiOutlinePlus } from "react-icons/hi";
 
 export const FooterHome = () => {
   return (
-    <Row className="d-flex justify-content-center align-items-center m-3 d-none d-md-block">
+    <Row className="d-flex justify-content-center align-items-center d-block">
       <Col>
         <Row>
           <Col className="d-flex justify-content-around align-items-center text-secondary text-footer mt-2">
@@ -77,7 +77,7 @@ export const FooterHome = () => {
                 </NavDropdown.Item>
 
                 <NavDropdown.Item href="#action/3.4" className="dropdown-text2">
-                  <p className="m-0 text-black">Marcketing Solutions</p>
+                  <p className="m-0 text-black">Marketing Solutions</p>
                   <small className="text-secondary">
                     Acquisisci clienti e fai crescere la tua azienda
                   </small>
@@ -122,7 +122,7 @@ export const FooterHome = () => {
               alt="LogoFooter"
 
 
-              style={{ width: "60px", height: "40px" }}/>  ---css
+              style={{ width: "60px", height: "40px" }}/>
 
             <span className="footerQuestion2 p-0 m-0">
               LinkedIn Corporation © 2023

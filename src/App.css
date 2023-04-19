@@ -320,9 +320,7 @@ svg:hover {
 
 
 
-
-
-  /*FOOTER*/
+  /*Footer profile-page*/
  #logoFooter{ 
     width: 20%;
     height: 20%
@@ -349,3 +347,36 @@ svg:hover {
     width: 100%;
     border-radius: 7px;
   }
+
+   
+   /*Footer home-page*/
+
+   .footerQuestion2 {
+     font-size: 0.9em;
+     margin-left: 5px !important;
+   }
+   
+   .text-footer {
+     font-size: 0.9em;
+   }
+   
+   .color:hover,
+   #basic-nav-dropdown:hover {
+     color: #378fe9;
+     text-decoration: underline;
+     cursor: pointer;
+   }
+   
+   .dropdown-text {
+     font-size: 0.7em;
+     font-weight: bold;
+   }
+   
+   .dropdown-text:hover {
+     text-decoration: none;
+   }
+   
+   .dropdown-text2 {
+     font-size: 0.9em;
+   }
+  
