@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const token =
@@ -10,38 +10,94 @@ const token =
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
   const [comment, setComment] = useState(null);
-  
+
   const myInfo = useSelector((state) => state.myInfo.myInfo);
   const counter = useSelector((state) => state.counter.counter);
 
-  const dispatch=useDispatch()
-
+  const dispatch = useDispatch();
+  const formData = new FormData();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const sendComment = () => {
-    return fetch("https://striveschool-api.herokuapp.com/api/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify({ text: comment }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          // eslint-disable-next-line no-sequences
-          return response.json(), alert("Your comment has been posted!"),dispatch({
-            type:'UPDATE_COUNTER',
-            payload:counter+1
-          })
+  // const sendComment = () => {
+  //   return fetch("https://striveschool-api.herokuapp.com/api/posts", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: token,
+  //     },
+  //     body: JSON.stringify({ text: comment }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         // eslint-disable-next-line no-sequences
+  //         return response.json(), alert("Your comment has been posted!"),dispatch({
+  //           type:'UPDATE_COUNTER',
+  //           payload:counter+1
+  //         })
 
-           
-        } else {
-          alert("ERROR your comment hasn't been posted!");
+  //       } else {
+  //         alert("ERROR your comment hasn't been posted!");
+  //       }
+  //     })
+  //     .catch((error) => console.log("ERROR", error));
+  // };
+
+
+  const sendComment = async () => {
+    try {
+      // Effettua la prima richiesta POST per creare un nuovo post con un commento
+      const response1 = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ text: comment }),
         }
-      })
-      .catch((error) => console.log("ERROR", error));
+      );
+  
+      if (response1.ok) {
+        const data1 = await response1.json();
+        const postId = data1._id;
+  
+        // Verifica se l'utente ha selezionato un'immagine
+        if (formData.has("post")) {
+  
+          // Effettua la seconda richiesta POST per caricare un'immagine
+          const response2 = await fetch(
+            `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: token,
+              },
+              body: formData,
+            }
+          );
+  
+          if (response2.ok) {
+            const data2 = await response2.json();
+            console.log(data2);
+            alert("Your comment has been posted!");
+            dispatch({
+              type: "UPDATE_COUNTER",
+              payload: counter + 1,
+            });
+          } else {
+            throw new Error("Errore nella seconda richiesta POST");
+          }
+  
+        }
+  
+      } else {
+        alert("ERROR your comment hasn't been posted!");
+      }
+    } catch (error) {
+      console.log("ERROR", error);
+    }
   };
 
   return (
@@ -141,6 +197,16 @@ const CreazionePost = () => {
                   value={comment}
                   onChange={(e) => {
                     setComment(e.target.value);
+                  }}
+                />
+              </Form.Group>
+              <Form.Group controlId="formFile" className="mb-3">
+                <Form.Label className="h6">Allega un'immagine</Form.Label>
+                <Form.Control
+                  type="file"
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    formData.append("post", file);
                   }}
                 />
               </Form.Group>

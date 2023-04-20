@@ -112,6 +112,7 @@ const Post = ({ post }) => {
           </Row>
         </Card>
         <Card.Text>{post.text}</Card.Text>
+        <img className="img-fluid" src={post.image} alt="img" />
       </Card.Body>
       <Card.Footer>
         <Row xs={4}>
