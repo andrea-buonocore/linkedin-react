@@ -8,7 +8,7 @@ const ProfileBigCard = () => {
       <div className="profileBigCardCoverContainer">
         <img
           alt="cover"
-          src="https://media.licdn.com/dms/image/D4E16AQHoUy27joLDsA/profile-displaybackgroundimage-shrink_350_1400/0/1681248955424?e=1687392000&v=beta&t=szvFwPl4IHx-s3hoJ76ml8-gpAwEDuu2AdpzyAeB0Uo"
+          src="https://i.ibb.co/C6zmzQ2/cover-linkedin.jpg"
         />
       </div>
       <div className="profilepicContainer">
@@ -70,9 +70,9 @@ const ProfileBigCard = () => {
           </button>
         </div>
         <div className="carousel container mt-3">
-          <div className="carouselCard1 d-flex me-3">
+          <div className="carouselCard1 d-flex me-2">
             <div className="carouselTextContainer">
-              <p className="mb-0"><strong>Disponibilie a lavorare </strong></p>
+              <p className="mb-0"><strong>Disponibile a lavorare </strong></p>
               <p className="mb-0">Ruoli di Sviluppatore Html5, Sviluppatore </p>
               <p className="mb-0 text-primary">Mostra dettagli</p>
             </div>
@@ -80,7 +80,7 @@ const ProfileBigCard = () => {
               <i className="bi bi-pencil"></i>
             </div>
           </div>
-          <div className="carouselCard1 d-flex bg-light">
+          <div className="carouselCard1 d-flex bg-light me-2">
             <div className="carouselTextContainer">
               <p className="mb-0"><strong> Fai sapere che stai facendo selezione</strong> e attrai candidati qualificati.</p>
               <p className="mb-0 text-primary"> Inizia</p>

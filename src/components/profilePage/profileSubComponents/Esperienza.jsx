@@ -5,10 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 const Esperienza = () => {
 
     const dispatch = useDispatch();
-    const id=useSelector(state => state.userInfo.me._id);
+    const id = useSelector(state => state.userInfo.me._id);
     const experiences = useSelector(state => state.experiences.experiences);
     //console.log('experiences', experiences);
     //console.log(id)
+
 
     const getExperiences = async () => {
         try {
@@ -38,7 +39,7 @@ const Esperienza = () => {
 
     useEffect(() => {
         getExperiences();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id])
 
     return (
@@ -53,6 +54,10 @@ const Esperienza = () => {
                 </div>
                 {
                     experiences.map((experience, index) => {
+                        let startDate = new Date(experience.startDate);
+                        let startYear = startDate.getFullYear();
+                        let endDate = new Date(experience.endDate);
+                        let endYear = endDate.getFullYear();
                         return (
                             <>
                                 <Card key={index} Card className="my-3 insideCards" >
@@ -64,13 +69,13 @@ const Esperienza = () => {
                                             <Card.Body className="p-0">
                                                 <p className="fw-bold m-0">{experience.role}</p>
                                                 <p className="m-0">{experience.company}</p>
-                                                <small className="text-muted">{experience.startDate} - {experience.endDate ? experience.endDate : 'In corso'}</small>
+                                                <small className="text-muted">{startYear} - {endYear ? endYear : 'In corso'}</small>
                                                 <p>{experience.description}</p>
                                             </Card.Body>
                                         </Col>
                                     </Row>
                                 </Card>
-                                {index !== experiences.length-1 ? <hr className="my-4" /> : null }
+                                {index !== experiences.length - 1 ? <hr className="my-4" /> : null}
                             </>
 
                         )
