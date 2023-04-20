@@ -186,10 +186,7 @@ try {
               </Form.Group>
               </Form>
             </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={closeExperience}>
-                Close
-              </Button>
+            <Modal.Footer className="d-flex justify-content-center">
               <Button variant="primary" onClick={()=>{
                 addExperience()
                 closeExperience()
