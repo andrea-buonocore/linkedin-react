@@ -23,7 +23,10 @@
 .pageContainer {
     padding-top: 7rem;
 }
-
+#scopriSticky {
+    position: sticky;
+    top: 5em;
+}
 /* colonna destra */
 
 #ad-dx {
