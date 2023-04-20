@@ -71,6 +71,7 @@ const Esperienza = () => {
     useEffect(() => {
 
         getExperiences();
+        console.log(params)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [myInfo])
 
