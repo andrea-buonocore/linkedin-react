@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Col } from "react-bootstrap";
 
 const Messaggistica = () => {
-  const myInfo = useSelector((state) => state.userInfo.me);
+  const myInfo = useSelector((state) => state.myInfo.myInfo);
 
   return (
 
@@ -18,7 +18,7 @@ const Messaggistica = () => {
                     src={myInfo.image}
                     alt="placeholder"
                     className="rounded-circle me-2"
-                    style={{ width: "70px" }}
+                    style={{ width: "30px" }}
                   />
                 <h6 className="m-0">Messaggistica</h6>
                 </div>

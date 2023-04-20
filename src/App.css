@@ -437,6 +437,7 @@ svg:hover {
 
 
 
+
 /* sidebar homepage */
 
 .sidebarStats {
@@ -631,3 +632,38 @@ svg:hover {
 
     
   /* FINE CREAZIONE POST COLONNA CENTRALE HOME PAGE */
+
+   
+   /*Footer home-page*/
+
+   .footerQuestion2 {
+     font-size: 0.9em;
+     margin-left: 5px !important;
+   }
+   
+   .text-footer {
+     font-size: 1.2em;
+     color:#848482 ;
+   }
+   
+   .color:hover,
+   #basic-nav-dropdown:hover {
+     color: #b624cf!important ;
+     text-decoration: underline;
+     cursor: pointer;
+   }
+   
+   .dropdown-text {
+     font-size: 0.8em;
+     font-weight: bold;
+   }
+   
+   .dropdown-text:hover {
+     text-decoration: none;
+   }
+   
+   .dropdown-text2 {
+     font-size: 0.9em;
+   }
+  
+   
