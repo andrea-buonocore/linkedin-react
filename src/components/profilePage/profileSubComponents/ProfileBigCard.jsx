@@ -114,7 +114,7 @@ const ProfileBigCard = () => {
             type="button"
             className="rounded-pill px-3 py-1 btn btn-primary me-2"
           >
-            Aggiungi sezione del profilo
+            Disponibile per
           </button>
           <button
             type="button"
@@ -152,7 +152,6 @@ const ProfileBigCard = () => {
             </div>
           </div>
 
-
           <div className="carouselCard1 d-flex bg-light">
             <div className="carouselTextContainer">
               <p className="mb-0"><strong>Metti in risalto i servizi</strong> che offri, così tu e la tua azienda potrete apparire nei risultati di ricerca.</p>
@@ -172,3 +171,4 @@ const ProfileBigCard = () => {
 };
 
 export default ProfileBigCard;
+
