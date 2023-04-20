@@ -4,7 +4,8 @@ import Annuncio from "./ColonnaDestra/Annuncio";
 import LinkedinNotizie from "./ColonnaDestra/LinkedinNotizie";
 import { FooterHome } from "./FooterHome/FooterHome";
 import Messaggistica from "./ColonnaDestra/Messaggistica";
-import HomeProfile from "./ColonnaSinistra/HomeProfile";
+
+import HomeProfile from "./ColonnaSinistra/HomeProfile"
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
 import Post from "./ColonnaCentrale/Post";
@@ -74,31 +75,37 @@ const HomePage = () => {
   return (
     <Container className="pageContainer">
       <Row>
-        <Col xs={12} md={3}>
-          <HomeProfile />
-          <Scopri />
-        </Col>
-        <Col xs={12} md={6}>
-          <Row xs={1}>
-            <Col>
-              <CreazionePost />{" "}
-            </Col>
-          </Row>
+        <Col xs={12} md={2}>
+                    <HomeProfile/>
+                    <Scopri/>
 
-          {isLoading && (
-            <div className="text-center">
-              <Spinner animation="border" variant="primary" />
-            </div>
-          )}
-          {postRedux.map((post, index) => {
-            return <Post post={post} key={index} />;
-          })}
-        </Col>
+                </Col>
+        <Col xs={12} md={7}>
+                    <Row xs={1}>
+                        <Col><CreazionePost /> </Col>
+                    
+                    </Row>
+                
+                    {
+                        isLoading && (
+                            <div className="text-center">
+                            <Spinner animation="border" variant="primary"/>
+                            </div>
+                        )
+                    }
+                    {
+                        postRedux.map((post, index) => {
+                            return (
+                                <Post post={post} key={index} />
+                            )
+                        })
+                    }
+                </Col>
         <Col xs={12} md={3}>
           <LinkedinNotizie />
           <Annuncio />
+          <FooterHome></FooterHome>
           <Messaggistica />
-          <FooterHome />
         </Col>
       </Row>
     </Container>

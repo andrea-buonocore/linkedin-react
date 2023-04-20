@@ -6,7 +6,7 @@ const Annuncio = () => {
   const myInfo = useSelector((state) => state.myInfo.myInfo);
   
 return (
-<Card className="mb-2">
+<Card className="mb-2 sticky">
 <Card.Body className="p-1">
   <div className="text-end" id="ad-dx">
     <span>Annuncio</span>&nbsp;<i class="bi bi-three-dots"></i>
