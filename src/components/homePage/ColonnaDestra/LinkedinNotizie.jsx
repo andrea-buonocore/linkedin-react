@@ -23,8 +23,8 @@ const LinkedinNotizie = () => {
     </svg>
   );
   return (
-    <Card className="mb-2 px-2" id="notizie">
-      <div className="d-flex p-3 justify-content-between align-items-center">
+    <Card className="mb-2" id="notizie">
+      <div className="d-flex p-3 justify-content-between align-items-center px-2">
         <h6>Linkedin Notizie</h6>
         <svg
           xmlns="http://www.w3.org/2000/svg"
