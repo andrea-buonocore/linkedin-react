@@ -4,12 +4,12 @@ const Scopri = () => {
   return (
     <Card className="mb-2 sticky-top">
       <Row className="d-flex align-items-center p-2 flex-nowrap">
-        <Col xs={9}>
+        <Col xs={10}>
           <p className="linkHome text-primary mb-2">Gruppi</p>
           <p className="linkHome text-primary mb-2">Eventi</p>
           <p className="linkHome text-primary mb-1">Hashtag seguiti</p>
         </Col>
-        <Col xs={3}>
+        <Col xs={2}>
           <div className="plusIcon">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -3,8 +3,10 @@ import Container from "react-bootstrap/Container";
 import { Dropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const CustomNavbar = () => {
+  const myInfo = useSelector((state) => state.myInfo.myInfo);
   return (
     <Navbar bg="light" variant="light" className="fixed-top border py-0">
       <Container className="d-flex pr-0">
@@ -131,8 +133,8 @@ const CustomNavbar = () => {
             <li className="">
               <Link href="#" className="d-flex flex-column align-items-center">
                 <img
-                  className=""
-                  src="https://placekitten.com/25"
+                  style={{width: "25px", height: "25px"}}
+                  src={myInfo.image}
                   alt="kitten"
                 />
 

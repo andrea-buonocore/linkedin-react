@@ -23,7 +23,7 @@ const Post = ({ post }) => {
                             <Link to={`/profile/${post.user._id}`}>
                                 <Card.Img variant="top" src={post.user.image} onError={(e)=>{
                                     e.currentTarget.src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'
-                                }} className='rounded rounded-circle' style={{ aspectRatio: 1 }} alt={`Immagine di ${post.user.name} ${post.user.surname}`}/>
+                                }} className='rounded rounded-circle' style={{ aspectRatio: 1, width: '40px' }} alt={`Immagine di ${post.user.name} ${post.user.surname}`}/>
                             </Link>
                         </Col>
                         <Col xs={9} md={10} lg={11}>
