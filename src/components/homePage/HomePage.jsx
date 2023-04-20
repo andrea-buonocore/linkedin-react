@@ -11,6 +11,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Post from "./ColonnaCentrale/Post";
 import CreazionePost from "./ColonnaCentrale/creazionePost";
 import Scopri from "./ColonnaSinistra/Scopri";
+import ScrollToTopButton from "./ColonnaDestra/ScrollToTopButton";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -107,6 +108,7 @@ const HomePage = () => {
             <FooterHome></FooterHome>
           </div>
           <Messaggistica />
+          <ScrollToTopButton/>
         </Col>
       </Row>
     </Container>
