@@ -39,7 +39,7 @@ const Post = ({ post }) => {
                 <Card.Text>
                     {post.text}
                 </Card.Text>
-
+                <Card.Img src={post.image} />
             </Card.Body>
             <Card.Footer>
                 <Row xs={4}>

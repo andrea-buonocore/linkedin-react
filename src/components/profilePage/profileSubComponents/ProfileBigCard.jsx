@@ -7,24 +7,22 @@ const ProfileBigCard = () => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [picture, setPicture] = useState(null);
-  const [formDataState, setFormDataState] = useState(null)
   const myInfo = useSelector((state) => state.userInfo.me);
+  const formData = new FormData();
   // console.log("myInfo", myInfo);
 
   const changeProfilePic = async () => {
-    console.log('formDataState', formDataState)
+    
     try {
       let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/picture`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk',
         },
-        body: formDataState
+        body: formData
       })
-      if(response.ok){
-        alert("Your profile pic has been changed!") 
+      if (response.ok) {
+        alert("Your profile pic has been changed!")
       }
       else {
         return new Error('Errore nella fetch');
@@ -69,23 +67,23 @@ const ProfileBigCard = () => {
           <Modal.Title>Change Profile Image</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Choose a pic.</Form.Label>
-            <Form.Control type="file" onChange={(e) => {
-              const file = e.target.files[0];
-              setPicture(file);
-              console.log(file);
-            }} />
-          </Form.Group>
+          <Form>
+            <Form.Group controlId="formFile" className="mb-3">
+              <Form.Label>Choose a pic.</Form.Label>
+              <Form.Control type="file" onChange={(e) => {
+                const file = e.target.files[0];
+                console.log(file);
+                
+                formData.append('profile', file);
+              }} />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
           <Button variant="primary" onClick={() => {
-            const formData = new FormData();
-            formData.append('profile', picture);
-            setFormDataState(formData)
             changeProfilePic();
             handleClose();
           }}>
