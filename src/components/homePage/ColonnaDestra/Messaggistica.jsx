@@ -13,15 +13,17 @@ const Messaggistica = () => {
           <Card className="d-flex">
             <Card.Body className="p-0">
               <div className="d-flex justify-content-between">
-                <div className="d-flex align-items-center">
-                  <img
-                    src={myInfo.image}
-                    alt="placeholder"
-                    className="rounded-circle me-2"
-                    style={{ width: "30px" }}
-                  />
-                <h6 className="m-0">Messaggistica</h6>
-                </div>
+                <a href="#" className="text-dark text-decoration-none">
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={myInfo.image}
+                      alt="placeholder"
+                      className="rounded-circle me-2"
+                      style={{ width: "30px" }}
+                    />
+                  <h6 className="m-0">Messaggistica</h6>
+                  </div>
+                </a>
                 <div className="d-flex justify-content-center align-items-center">
                   <a href="#" className="p-1 simbolini">
                     <svg
