@@ -39,7 +39,9 @@ const Post = ({ post }) => {
                 <Card.Text>
                     {post.text}
                 </Card.Text>
-
+                {
+                    post.image ? <Card.Img src={post.image} /> : null
+                }
             </Card.Body>
             <Card.Footer>
                 <Row xs={4}>
