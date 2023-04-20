@@ -103,8 +103,10 @@ const HomePage = () => {
         </Col>
         <Col xs={12} md={3}>
           <LinkedinNotizie />
-          <Annuncio />
-          <FooterHome></FooterHome>
+          <div className="" id="deviStareStickyTop">
+            <Annuncio />
+            <FooterHome></FooterHome>
+          </div>
           <Messaggistica />
           <ScrollToTopButton/>
         </Col>

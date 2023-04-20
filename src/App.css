@@ -84,6 +84,10 @@
 .listaNotizie h6, .listaNotizie p {
     font-size: .9em;
 }
+#deviStareStickyTop {
+    position: sticky;
+    top: 5em;
+}
 .listaNotizie {
     text-decoration: none;
     color: #676767;
