@@ -5,6 +5,7 @@ import ProfilesReducer from "../reducers/ProfilesReducer";
 import SavePost from "../reducers/SavePost";
 import HomePageMyInfoReducer from "../reducers/HomePageMyInfoReducer";
 import counterReducer from "../reducers/counterReducer";
+import SaveMyCommentReducer from "../reducers/SaveMyComment";
 
 
 const store = configureStore({
@@ -14,7 +15,8 @@ const store = configureStore({
         profiles: ProfilesReducer,
         post: SavePost,
         myInfo:HomePageMyInfoReducer,
-        counter:counterReducer
+        counter:counterReducer,
+        comment:SaveMyCommentReducer
     })
 })
 

@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const Esperienza = () => {
 
     const dispatch = useDispatch();
-    const id=useSelector(state => state.myInfo.myInfo._id);
     const experiences = useSelector(state => state.experiences.experiences);
+    const params=useParams().id
     //console.log('experiences', experiences);
     //console.log(id)
 
 
     const getExperiences = async () => {
         try {
-            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params}/experiences`, {
                 method: "GET",
                 headers: {
                     Authorization:
@@ -41,7 +42,7 @@ const Esperienza = () => {
         
         getExperiences();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id])
+    }, [params])
 
     return (
         <Card className="mb-3">
