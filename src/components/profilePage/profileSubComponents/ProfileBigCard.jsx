@@ -8,7 +8,7 @@ const ProfileBigCard = () => {
       <div className="profileBigCardCoverContainer">
         <img
           alt="cover"
-          src="https://media.licdn.com/dms/image/D4E16AQHoUy27joLDsA/profile-displaybackgroundimage-shrink_350_1400/0/1681248955424?e=1687392000&v=beta&t=szvFwPl4IHx-s3hoJ76ml8-gpAwEDuu2AdpzyAeB0Uo"
+          src="https://i.ibb.co/C6zmzQ2/cover-linkedin.jpg"
         />
       </div>
       <div className="profilepicContainer">

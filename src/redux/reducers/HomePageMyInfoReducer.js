@@ -9,7 +9,7 @@ const HomePageMyInfoReducer = (state = InitialState, action) => {
         case 'HOMEPAGE_SAVE_MY_INFO':
             return {
                 ...state,
-                me: action.payload
+                myInfo: action.payload
             }
         default: return state
     }
