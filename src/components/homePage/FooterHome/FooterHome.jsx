@@ -8,23 +8,21 @@ export const FooterHome = () => {
       <Col>
         <Row>
           <Col className="d-flex justify-content-around align-items-center text-secondary text-footer mt-2">
-            <small className="color">Informazioni</small>
-            <small className="color">Accessibilità</small>
+            <small className="color"> <a href="https://about.linkedin.com/it-it">Informazioni</a></small>
+            <small className="color"><a href="https://it.linkedin.com/accessibility?">Accessibilità</a> </small>
           </Col>
         </Row>
 
         <Row>
           <Col className="d-flex justify-content-around align-items-center text-secondary text-footer mt-2">
-            <small className="color">Centro assistenza</small>
-
-
+            <small className="color"><a href="https://www.linkedin.com//help/linkedin?trk=footer_d_flagship3_feed"> Centro assistenza</a> </small>
             <small>
               <NavDropdown title="Privacy e condizioni" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1" className="dropdown-text">
                   Informazioni sulla privacy
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2" className="dropdown-text">
-                  Contartto di licenza
+                  Contratto di licenza
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2" className="dropdown-text">
                  Termini e condizioni delle pagine
@@ -42,16 +40,15 @@ export const FooterHome = () => {
 
         <Row>
           <Col className="d-flex justify-content-around align-items-center text-secondary text-footer mt-2">
-            <small className="color">
-              Opzioni per gli annunci pubblicitari
-            </small>
+            <small className="color"><a href="https://www.linkedin.com/help/linkedin/answer/a1342443?lang=it">
+              Opzioni per gli annunci pubblicitari </a></small>
           </Col>
         </Row>
 
 
         <Row>
           <Col className="d-flex justify-content-around align-items-center text-secondary text-footer mt-2">
-            <small className="color">Pubblicità</small>
+            <small className="color"><a href="https://business.linkedin.com/marketing-solutions/ads?trk=n_nav_ads_rr_b&src=li-nav&veh=ad%2Fstart"> Pubblicità </a></small>
             <small> <NavDropdown title="Servizi alle aziende" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1" className="dropdown-text2">
                   <p className="m-0 text-black">Talent Solutions</p>
@@ -115,15 +112,9 @@ export const FooterHome = () => {
 
         <Row>
           <Col className="d-flex align-items-center mt-2 justify-content-center">
-            <img
-              className="p-0 m-0"
-              id="logoFooter"
-              src="https://1000marche.net/wp-content/uploads/2020/03/LinkedIn-Logo-1.png"
-              alt="LogoFooter"
-
-
-              style={{ width: "60px", height: "40px" }}/>
-
+            <img className="p-0 m-0" id="logoFooter"
+              src="https://1000marche.net/wp-content/uploads/2020/03/LinkedIn-Logo-1-600x340.png"
+              alt="LogoFooter" style={{ width: "70px", height: "50px"}}/> 
             <span className="footerQuestion2 p-0 m-0">
               LinkedIn Corporation © 2023
             </span>

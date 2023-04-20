@@ -313,13 +313,6 @@ svg:hover {
 /*Fine CSS Card Grande Profile Page*/
 
 
-
-
-
-
-
-
-
   /*Footer profile-page*/
  #logoFooter{ 
     width: 20%;
@@ -357,18 +350,19 @@ svg:hover {
    }
    
    .text-footer {
-     font-size: 0.9em;
+     font-size: 1.2em;
+     color:#848482 ;
    }
    
    .color:hover,
    #basic-nav-dropdown:hover {
-     color: #378fe9;
+     color: #b624cf!important ;
      text-decoration: underline;
      cursor: pointer;
    }
    
    .dropdown-text {
-     font-size: 0.7em;
+     font-size: 0.8em;
      font-weight: bold;
    }
    
@@ -380,3 +374,4 @@ svg:hover {
      font-size: 0.9em;
    }
   
+   
