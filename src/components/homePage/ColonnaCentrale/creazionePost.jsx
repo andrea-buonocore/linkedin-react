@@ -2,50 +2,46 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useSelector } from "react-redux";
-const token ='Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQwMmEwNWQ5MTJlOTAwMTRjMjNmYTMiLCJpYXQiOjE2ODE5MjY2NjIsImV4cCI6MTY4MzEzNjI2Mn0.s5TVsYd1HXaVaF0WJGJgDu1B2fdFiL0a6OxN5U3_aFk'
+import { Link } from "react-router-dom";
+
+const token =
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQwMmEwNWQ5MTJlOTAwMTRjMjNmYTMiLCJpYXQiOjE2ODE5MjY2NjIsImV4cCI6MTY4MzEzNjI2Mn0.s5TVsYd1HXaVaF0WJGJgDu1B2fdFiL0a6OxN5U3_aFk";
 
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
-  const [comment,setComment]=useState(null)
-  const myInfo=useSelector(state=>state.myInfo.myInfo)
+  const [comment, setComment] = useState(null);
+  const myInfo = useSelector((state) => state.myInfo.myInfo);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-let commentToSend={text:''}
 
-  const sendComment=()=>{
-    return(
-    fetch('https://striveschool-api.herokuapp.com/api/posts',{
-        method:'POST',
-        headers:{
-            'Content-Type':'aplication/json',
-            "Authorization": token
-        },
-        body: JSON.stringify({commentToSend})
+  const sendComment = () => {
+    return fetch("https://striveschool-api.herokuapp.com/api/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({ text: comment }),
     })
-    .then(response=>{
-        if(response.ok){
-            return(
-                response.json(),
-                alert('Your comment has been posted!')
-                ) 
-        }else{
-            alert('ERROR your comment hasn\'t been posted!')
+      .then((response) => {
+        if (response.ok) {
+          return response.json(), alert("Your comment has been posted!");
+        } else {
+          alert("ERROR your comment hasn't been posted!");
         }
-    })
-    .catch(error=>console.log('ERROR',error))
-    ) 
-  }
+      })
+      .catch((error) => console.log("ERROR", error));
+  };
 
   return (
     <div className="card mb-3">
       <div className="d-flex flex-column ">
         <div className="d-flex picAndButtonContainer">
           <div className="imgPostContainer me-3">
-            <img
-              alt="profilePicture"
-              src={myInfo.image}
-            />
+            <Link to={"/profile/me"}>
+              <img alt="profilePicture" src={myInfo.image} />
+            </Link>
           </div>
           <div className="buttonContainer">
             <button className="buttonCreationPost" onClick={handleShow}>
@@ -65,14 +61,14 @@ let commentToSend={text:''}
               >
                 <div className="d-flex align-items-center">
                   <div className="imgPostContainer me-3">
-                    <img
-                      alt="profilePicture"
-                      src={myInfo.image}
-                    />
+                    <img alt="profilePicture" src={myInfo.image} />
                   </div>
                   <div className="d-flex flex-column">
                     <div>
-                      <strong> {myInfo.name}&nbsp;{myInfo.surname} </strong>
+                      <strong>
+                        {" "}
+                        {myInfo.name}&nbsp;{myInfo.surname}{" "}
+                      </strong>
                     </div>
                     <div>
                       <button
@@ -133,34 +129,36 @@ let commentToSend={text:''}
                   placeholder="Di cosa vorresti parlare?"
                   className="textPostArea"
                   value={comment}
-                  onChange={(e)=>{
-                    setComment(e.target.value)
+                  onChange={(e) => {
+                    setComment(e.target.value);
                   }}
                 />
               </Form.Group>
 
               <Form.Group>
-                <button className="buttonPost" onClick={(e)=>e.preventDefault()}>
-                                    <li-icon
-                  aria-hidden="true"
-                  type="emoji-face-icon"
-                  class="artdeco-button__icon"
+                <button
+                  className="buttonPost"
+                  onClick={(e) => e.preventDefault()}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    data-supported-dps="24x24"
-                    fill="currentColor"
-                    class="mercado-match gray"
-                    width="24"
-                    height="24"
-                    focusable="false"
+                  <li-icon
+                    aria-hidden="true"
+                    type="emoji-face-icon"
+                    class="artdeco-button__icon"
                   >
-                    <path d="M8 10.5A1.5 1.5 0 119.5 12 1.5 1.5 0 018 10.5zm6.5 1.5a1.5 1.5 0 10-1.5-1.5 1.5 1.5 0 001.5 1.5zm7.5 0A10 10 0 1112 2a10 10 0 0110 10zm-2 0a8 8 0 10-8 8 8 8 0 008-8zm-8 4a6 6 0 01-4.24-1.76l-.71.76a7 7 0 009.89 0l-.71-.71A6 6 0 0112 16z"></path>
-                  </svg>
-                </li-icon>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      data-supported-dps="24x24"
+                      fill="currentColor"
+                      class="mercado-match gray"
+                      width="24"
+                      height="24"
+                      focusable="false"
+                    >
+                      <path d="M8 10.5A1.5 1.5 0 119.5 12 1.5 1.5 0 018 10.5zm6.5 1.5a1.5 1.5 0 10-1.5-1.5 1.5 1.5 0 001.5 1.5zm7.5 0A10 10 0 1112 2a10 10 0 0110 10zm-2 0a8 8 0 10-8 8 8 8 0 008-8zm-8 4a6 6 0 01-4.24-1.76l-.71.76a7 7 0 009.89 0l-.71-.71A6 6 0 0112 16z"></path>
+                    </svg>
+                  </li-icon>
                 </button>
-
               </Form.Group>
             </Form>
 
@@ -300,13 +298,18 @@ let commentToSend={text:''}
                 </button>
               </div>
               <div>
-              <button type="button" class="rounded-pill px-3 py-1 btn btn-primary me-2" disabled={comment?false:true} onClick={()=>{
-                commentToSend.text=comment;
-                handleClose()
-                setComment(null)
-                sendComment()
-
-              }}>Pubblica</button>
+                <button
+                  type="button"
+                  class="rounded-pill px-3 py-1 btn btn-primary me-2"
+                  disabled={comment ? false : true}
+                  onClick={() => {
+                    handleClose();
+                    setComment(null);
+                    sendComment();
+                  }}
+                >
+                  Pubblica
+                </button>
               </div>
             </div>
           </Modal.Body>
