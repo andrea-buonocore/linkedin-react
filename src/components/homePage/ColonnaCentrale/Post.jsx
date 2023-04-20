@@ -116,19 +116,19 @@ const Post = ({ post }) => {
       <Card.Footer>
         <Row xs={4}>
           <Col className="px-0 text-center">
-            <i class="bi bi-hand-thumbs-up me-2"></i>
+            <i className="bi bi-hand-thumbs-up me-2"></i>
             <span className="d-none d-lg-inline">Consiglia</span>
           </Col>
           <Col className="px-0 text-center">
-            <i class="bi bi-chat-text me-2"></i>
+            <i className="bi bi-chat-text me-2"></i>
             <span className="d-none d-lg-inline">Commenta</span>
           </Col>
           <Col className="px-0 text-center">
-            <i class="bi bi-share me-2"></i>
+            <i className="bi bi-share me-2"></i>
             <span className="d-none d-lg-inline">Diffondi il post</span>
           </Col>
           <Col className="px-0 text-center">
-            <i class="bi bi-send-fill me-2"></i>
+            <i className="bi bi-send-fill me-2"></i>
             <span className="d-none d-lg-inline">Invia</span>
           </Col>
           {idUser === post.user._id && (
@@ -140,8 +140,8 @@ const Post = ({ post }) => {
                   className="drop d-flex align-items-center"
                   id="dropdown-basic"
                 >
-                  <i class="bi bi-three-dots me-2 fs-5 text-dark"></i>
-                  <span className="d-none d-lg-inline Modifica" >Modifica</span>
+                  <i className="bi bi-three-dots me-2 fs-5 text-dark"></i>
+                  <span className="d-none d-lg-inline Modifica">Modifica</span>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="d-flex flex-column align-items-center">
                   <span role="button" onClick={()=>{
@@ -201,7 +201,7 @@ const Post = ({ post }) => {
                         <li-icon
                           aria-hidden="true"
                           type="caret"
-                          class="share-state-change-button__icon d-flex"
+                          className="share-state-change-button__icon d-flex"
                           size="small"
                         >
                           <svg
@@ -209,7 +209,7 @@ const Post = ({ post }) => {
                             viewBox="0 0 16 16"
                             data-supported-dps="16x16"
                             fill="currentColor"
-                            class="mercado-match"
+                            className="mercado-match"
                             width="16"
                             height="16"
                             focusable="false"
@@ -247,14 +247,14 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="emoji-face-icon"
-                    class="artdeco-button__icon"
+                    className="artdeco-button__icon"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="24"
                       height="24"
                       focusable="false"
@@ -272,14 +272,14 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="image"
-                    class="artdeco-button__icon"
+                    className="artdeco-button__icon"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="24"
                       height="24"
                       focusable="false"
@@ -293,14 +293,14 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="video"
-                    class="artdeco-button__icon"
+                    className="artdeco-button__icon"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="24"
                       height="24"
                       focusable="false"
@@ -314,14 +314,14 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="sticky-note"
-                    class="artdeco-button__icon"
+                    className="artdeco-button__icon"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="24"
                       height="24"
                       focusable="false"
@@ -335,14 +335,14 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="overflow-web-ios"
-                    class="artdeco-button__icon "
+                    className="artdeco-button__icon "
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="24"
                       height="24"
                       focusable="false"
@@ -357,7 +357,7 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="comment"
-                    class="share-state-change-button__icon"
+                    className="share-state-change-button__icon"
                     size="small"
                   >
                     <svg
@@ -365,7 +365,7 @@ const Post = ({ post }) => {
                       viewBox="0 0 16 16"
                       data-supported-dps="16x16"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="16"
                       height="16"
                       focusable="false"
@@ -381,14 +381,14 @@ const Post = ({ post }) => {
                   <li-icon
                     aria-hidden="true"
                     type="clock"
-                    class="artdeco-button__icon"
+                    className="artdeco-button__icon"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       data-supported-dps="24x24"
                       fill="currentColor"
-                      class="mercado-match gray"
+                      className="mercado-match gray"
                       width="24"
                       height="24"
                       focusable="false"
@@ -404,7 +404,7 @@ const Post = ({ post }) => {
               <div>
                 <button
                   type="button"
-                  class="rounded-pill px-3 py-1 btn btn-primary me-2"
+                  className="rounded-pill px-3 py-1 btn btn-primary me-2"
                   disabled={comment ? false : true}
                   onClick={() => {
                     //console.log(comment)
