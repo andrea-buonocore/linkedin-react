@@ -694,7 +694,7 @@ display: none!important;
 
    .scroll-to-top-button-container {
     position: fixed;
-    bottom: 40px;
+    bottom: 50px;
     right: 10px;
     z-index: 999;
   }
