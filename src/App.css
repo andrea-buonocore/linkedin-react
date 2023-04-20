@@ -23,7 +23,10 @@
 .pageContainer {
     padding-top: 7rem;
 }
-
+#scopriSticky {
+    position: sticky;
+    top: 5em;
+}
 /* colonna destra */
 
 #ad-dx {
@@ -83,6 +86,10 @@
 }
 .listaNotizie h6, .listaNotizie p {
     font-size: .9em;
+}
+#deviStareStickyTop {
+    position: sticky;
+    top: 5em;
 }
 .listaNotizie {
     text-decoration: none;
@@ -316,8 +323,10 @@ svg:hover {
 
 .ProfileBigCardContainer {
     border-radius: 0.375rem;
-    border: 1px solid gray;
+    border: 1px solid rgba(163, 163, 163, 0.526);
     position: relative;
+    background-color: white;
+    margin-bottom: 1em
 
 
 }
@@ -681,4 +690,23 @@ display: none!important;
      font-size: 0.9em;
    }
   
-   
+   /* scroll button */
+
+   .scroll-to-top-button-container {
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    z-index: 999;
+  }
+  
+  .scroll-to-top-button {
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
