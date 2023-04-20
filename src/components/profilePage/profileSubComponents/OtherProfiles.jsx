@@ -25,7 +25,7 @@ const OtherProfiles = () => {
 
       dispatch({
         type: 'SAVE_ALL_PROFILES_INFO',
-        payload: data.reverse()
+        payload: data
     });
     } catch (error) {
       console.log(error);

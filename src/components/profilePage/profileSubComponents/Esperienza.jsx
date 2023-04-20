@@ -10,38 +10,41 @@ const Esperienza = () => {
     const [show, setShow] = useState(false)
     const dispatch = useDispatch();
     const experiences = useSelector(state => state.experiences.experiences);
-    const params=useParams().id
-    //console.log('experiences', experiences);
+    const params=useParams()
+    const myInfo = useSelector(state => state.userInfo.me)
+    console.log('myInfo', myInfo);
+    
+    console.log('experiences', experiences);
     //console.log(id)
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const formData = new FormData();
 
-    const changeExperiencePic = async () => {
+    // const changeExperiencePic = async () => {
 
-        try {
-            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/:expId/picture`, {
-                method: "POST",
-                headers: {
-                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk',
-                },
-                body: formData
-            })
-            if (response.ok) {
-                alert("Your profile pic has been changed!")
-            }
-            else {
-                return new Error('Errore nella fetch');
-            }
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }
+    //     try {
+    //         let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences/:expId/picture`, {
+    //             method: "POST",
+    //             headers: {
+    //                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk',
+    //             },
+    //             body: formData
+    //         })
+    //         if (response.ok) {
+    //             alert("Your profile pic has been changed!")
+    //         }
+    //         else {
+    //             return new Error('Errore nella fetch');
+    //         }
+    //     }
+    //     catch (err) {
+    //         console.log(err);
+    //     }
+    // }
 
     const getExperiences = async () => {
         try {
-            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params}/experiences`, {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences`, {
                 method: "GET",
                 headers: {
                     Authorization:
@@ -69,7 +72,7 @@ const Esperienza = () => {
 
         getExperiences();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [params])
+    }, [myInfo])
 
     return (
         <>
@@ -133,7 +136,7 @@ const Esperienza = () => {
                         Close
                     </Button>
                     <Button variant="primary" onClick={() => {
-                        changeExperiencePic();
+                        // changeExperiencePic();
                         handleClose();
                     }}>
                         Save Changes
