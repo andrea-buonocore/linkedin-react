@@ -18,7 +18,7 @@ const Messaggistica = () => {
                     src={myInfo.image}
                     alt="placeholder"
                     className="rounded-circle me-2"
-                    style={{ width: "70px" }}
+                    style={{ width: "30px" }}
                   />
                 <h6 className="m-0">Messaggistica</h6>
                 </div>

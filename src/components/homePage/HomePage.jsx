@@ -75,12 +75,12 @@ const HomePage = () => {
   return (
     <Container className="pageContainer">
       <Row>
-        <Col xs={12} md={2}>
+        <Col xs={12} md={3}>
                     <HomeProfile/>
                     <Scopri/>
 
                 </Col>
-        <Col xs={12} md={7}>
+        <Col xs={12} md={6}>
                     <Row xs={1}>
                         <Col><CreazionePost /> </Col>
                     
