@@ -26,7 +26,9 @@ const CreazionePost = () => {
     })
       .then((response) => {
         if (response.ok) {
-          return response.json(), alert("Your comment has been posted!");
+          // eslint-disable-next-line no-sequences
+          return response.json(), alert("Your comment has been posted!")
+           
         } else {
           alert("ERROR your comment hasn't been posted!");
         }
