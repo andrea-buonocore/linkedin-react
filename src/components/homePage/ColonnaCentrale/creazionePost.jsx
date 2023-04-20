@@ -12,6 +12,8 @@ const CreazionePost = () => {
   const [comment, setComment] = useState(null);
   
   const myInfo = useSelector((state) => state.myInfo.myInfo);
+  const counter = useSelector((state) => state.counter.counter);
+
   const dispatch=useDispatch()
 
   const handleClose = () => setShow(false);
@@ -33,7 +35,7 @@ const CreazionePost = () => {
           // eslint-disable-next-line no-sequences
           return response.json(), alert("Your comment has been posted!"),dispatch({
             type:'UPDATE_COUNTER',
-            payload:i+1
+            payload:counter+1
           })
 
            

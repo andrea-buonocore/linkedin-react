@@ -1,7 +1,7 @@
 import { Col, Row, Dropdown } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -9,6 +9,7 @@ import Modal from "react-bootstrap/Modal";
 const token="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk"
 
 const Post = ({ post }) => {
+  const dispatch=useDispatch()
   const idUser = useSelector((state) => state.myInfo.myInfo._id);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -17,6 +18,7 @@ const Post = ({ post }) => {
   const [comment, setComment] = useState('');
   const [postId, setPostId] = useState(null);
   const myInfo = useSelector((state) => state.myInfo.myInfo);
+  const counter = useSelector((state) => state.counter.counter);
 
   let date = new Date(post.createdAt);
   let year = date.getFullYear();
@@ -30,8 +32,8 @@ const Post = ({ post }) => {
   const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
 
-  const eliminationPost=()=>{
-    fetch(`https://striveschool-api.herokuapp.com/api/posts/${postId}`,{
+  const eliminationPost=(id)=>{
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${id}`,{
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +43,10 @@ const Post = ({ post }) => {
       .then((response) => {
         if (response.ok) {
           // eslint-disable-next-line no-sequences
-          return alert("Your comment has been deleted!")
+          return alert("Your comment has been deleted!"),dispatch({
+            type:'UPDATE_COUNTER',
+            payload:counter+1
+          })
         } else {
           alert("ERROR your comment hasn't been deleted!");
         }
@@ -62,7 +67,10 @@ const Post = ({ post }) => {
       .then((response) => {
         if (response.ok) {
           // eslint-disable-next-line no-sequences
-          return alert("Your comment has been changed!")
+          return alert("Your comment has been changed!"),dispatch({
+            type:'UPDATE_COUNTER',
+            payload:counter+1
+          })
         } else {
           alert("ERROR your comment hasn't been changed!");
         }
@@ -124,7 +132,7 @@ const Post = ({ post }) => {
             <span className="d-none d-lg-inline">Invia</span>
           </Col>
           {idUser === post.user._id && (
-            <>{console.log(post._id)}
+            <>
     
             <Col className="px-0 text-center">
               <Dropdown className="dropdownEdit">
@@ -133,13 +141,14 @@ const Post = ({ post }) => {
                   id="dropdown-basic"
                 >
                   <i class="bi bi-three-dots me-2 fs-5 text-dark"></i>
-                  <span className="d-none d-lg-inline Modifica">Modifica</span>
+                  <span className="d-none d-lg-inline Modifica" >Modifica</span>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="d-flex flex-column align-items-center">
                   <span role="button" onClick={()=>{
                     handleShow()
                     setComment(post.text)
                     setPostId(post._id)
+                    //console.log(post._id)
                   }}>
                     <span>Modifica</span>
                   </span>
@@ -224,9 +233,8 @@ const Post = ({ post }) => {
                   className="textPostArea"
                   value={comment}
                   onChange={(e) => {
-                    console.log(comment)
                     setComment(e.target.value);
-                    console.log(comment)
+                    //console.log(comment)
                   }}
                 />
               </Form.Group>
@@ -399,7 +407,7 @@ const Post = ({ post }) => {
                   class="rounded-pill px-3 py-1 btn btn-primary me-2"
                   disabled={comment ? false : true}
                   onClick={() => {
-                    console.log(comment)
+                    //console.log(comment)
                     modifyComment()
                     handleClose();
                     //setComment(null);
@@ -415,14 +423,9 @@ const Post = ({ post }) => {
                   <span role="button" onClick={()=>{
                    if (window.confirm('Sicuro di voler eliminare questo post?')){
                     setPostId(post._id)
-                    console.log(postId)
-                    eliminationPost();
-                    alert('Hai selezionato okey')
-                   }else{
-                    //alert('Hai selezionato NO')
+                    //console.log(postId)
+                    eliminationPost(post._id);
                    }
-
-
                   }}>
                     <span>Elimina post</span>
                   </span>

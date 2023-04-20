@@ -8,13 +8,15 @@ const Esperienza = () => {
     const dispatch = useDispatch();
     const experiences = useSelector(state => state.experiences.experiences);
     const params=useParams().id
+    let id=''
+    const myId= useSelector(state=>state.myInfo.myInfo._id)
     //console.log('experiences', experiences);
     //console.log(id)
 
 
     const getExperiences = async () => {
         try {
-            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params}/experiences`, {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
                 method: "GET",
                 headers: {
                     Authorization:
@@ -39,8 +41,15 @@ const Esperienza = () => {
 
 
     useEffect(() => {
-        
+
+        if(params==='me'){
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            id=myId
+        }else{
+            id=params 
+        }
         getExperiences();
+        console.log(params)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params])
 
