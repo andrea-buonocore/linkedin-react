@@ -5,7 +5,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const token =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQwMmEwNWQ5MTJlOTAwMTRjMjNmYTMiLCJpYXQiOjE2ODE5MjY2NjIsImV4cCI6MTY4MzEzNjI2Mn0.s5TVsYd1HXaVaF0WJGJgDu1B2fdFiL0a6OxN5U3_aFk";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk";
 
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
