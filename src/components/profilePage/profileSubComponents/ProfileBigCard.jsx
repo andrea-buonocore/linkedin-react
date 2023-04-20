@@ -54,7 +54,7 @@ const ProfileBigCard = () => {
             type="button"
             className="rounded-pill px-3 py-1 btn btn-primary me-2"
           >
-            Aggiungi sezione del profilo
+            Disponibile per
           </button>
           <button
             type="button"
