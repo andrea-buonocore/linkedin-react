@@ -32,7 +32,7 @@ const HomePage = () => {
             if (response.ok) {
                 let post = await response.json();
                 console.log('tutti i post', post);
-                let fiftyPost = post.slice(0, 50);
+                let fiftyPost = post.reverse().slice(0, 50);
                 dispatch({
                     type: 'SAVE_POST',
                     payload: fiftyPost
