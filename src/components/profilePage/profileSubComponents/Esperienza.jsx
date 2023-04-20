@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
@@ -9,7 +8,6 @@ const Esperienza = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
   const experiences = useSelector((state) => state.experiences.experiences);
-  const params = useParams();
   const myInfo = useSelector((state) => state.userInfo.me);
   const [selectedExperienceId, setSelectedExperienceId] = useState(null);
   //console.log("myInfo", myInfo);
@@ -127,7 +125,6 @@ try {
 
   useEffect(() => {
     getExperiences();
-    //console.log(params);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [myInfo,i]);
 
