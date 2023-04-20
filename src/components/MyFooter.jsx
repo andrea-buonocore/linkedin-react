@@ -56,15 +56,15 @@ export const MyFooter = () => {
                     <li><Link to={"https://business.linkedin.com/grow?&src=li-footer"} className="collegamenti">Piccole imprese</Link></li>
     
                   <li><Link to={"https://www.linkedin.com/help/linkedin?trk=d_flagship3_profile_view_base&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bru6up1A6Seq3bJvMtE7iUQ%3D%3D"
-                    }className="collegamenti domande"> <i class="bi bi-question-circle-fill">Domande? </i></Link>
+                    }className="collegamenti domande"> <i className="bi bi-question-circle-fill">Domande? </i></Link>
                   <p className="footerQuestion">Visita il nostro Centro assistenza.</p> </li>
 
                   <li> <Link to={"https://www.linkedin.com/mypreferences/d/categories/account"}
-                    className="collegamenti domande"><i class="bi bi-gear-fill"> Gestisci il tuo account e la tua privacy</i> </Link>
+                    className="collegamenti domande"><i className="bi bi-gear-fill"> Gestisci il tuo account e la tua privacy</i> </Link>
                   <p className="footerQuestion">Vai alle impostazioni</p> </li>
           
                   <li><Link to={"https://www.linkedin.com/help/linkedin/answer/a1339724"}
-                    className="collegamenti domande"><i class="bi bi-shield-shaded"> Trasparenza sui contenuti consigliati </i> </Link>
+                    className="collegamenti domande"><i className="bi bi-shield-shaded"> Trasparenza sui contenuti consigliati </i> </Link>
                   <p className="footerQuestion">Scopri di più sui contenuti consigliati.</p></li>
  <Col xs={12} md={6}>
                   <li>

@@ -23,7 +23,7 @@ function ScrollToTopButton() {
           className="scroll-to-top-button"
           onClick={handleScrollTop}
         >
-          <i class="bi bi-arrow-up-circle-fill"></i>
+          <i className="bi bi-arrow-up-circle-fill"></i>
         </Button>
       </OverlayTrigger>
     </div>

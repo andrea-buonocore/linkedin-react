@@ -7,7 +7,7 @@ const Risorse = () => {
             <Card.Body>
                 <div className="mb-3">
                     <Card.Title className="m-0">Risorse</Card.Title>
-                    <i class="bi bi-eye-fill"></i>
+                    <i className="bi bi-eye-fill"></i>
                     <span> Solo per te</span>
                 </div>
                 <Row>
@@ -16,7 +16,7 @@ const Risorse = () => {
                         <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
-                                    <i class="bi bi-reception-4"></i>
+                                    <i className="bi bi-reception-4"></i>
                                 </Col>
                                 <Col className="px-0">
                                     <Card.Body className="p-0">
@@ -32,7 +32,7 @@ const Risorse = () => {
                         <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
-                                    <i class="bi bi-people-fill"></i>
+                                    <i className="bi bi-people-fill"></i>
                                 </Col>
                                 <Col className="px-0">
                                     <Card.Body className="p-0">

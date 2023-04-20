@@ -52,11 +52,10 @@ const OtherProfiles = () => {
       viewBox="0 0 16 16"
       data-supported-dps="16x16"
       fill="currentColor"
-      class="mercado-match"
       width="16"
       height="16"
       focusable="false"
-      className="mb-1"
+      className="mercado-match mb-1"
     >
       <path d="M14 2L0 6.67l5 2.64 5.67-3.98L6.7 11l2.63 5L14 2z"></path>
     </svg>
@@ -68,7 +67,7 @@ const OtherProfiles = () => {
       viewBox="0 0 16 16"
       data-supported-dps="16x16"
       fill="currentColor"
-      class="mercado-match"
+      className="mercado-match"
       width="16"
       height="16"
       focusable="false"
@@ -83,7 +82,7 @@ const OtherProfiles = () => {
       viewBox="0 0 16 16"
       data-supported-dps="16x16"
       fill="currentColor"
-      class="mercado-match"
+      className="mercado-match"
       width="16"
       height="16"
       focusable="false"

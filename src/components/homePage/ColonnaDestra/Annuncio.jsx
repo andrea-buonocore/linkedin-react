@@ -9,7 +9,7 @@ return (
 <Card className="mb-2" id="stickyAnnuncio">
 <Card.Body className="p-1">
   <div className="text-end" id="ad-dx">
-    <span>Annuncio</span>&nbsp;<i class="bi bi-three-dots"></i>
+    <span>Annuncio</span>&nbsp;<i className="bi bi-three-dots"></i>
   </div>
   <div className="d-flex flex-column text-center p-2">
     <small>{myInfo.name}, want to learn what the future of medicine holds?</small>

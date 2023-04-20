@@ -7,7 +7,7 @@ const Analisi = () => {
             <Card.Body>
                 <div className="mb-3">
                     <Card.Title className="m-0">Analisi</Card.Title>
-                    <i class="bi bi-eye-fill"></i>
+                    <i className="bi bi-eye-fill"></i>
                     <span> Solo per te</span>
                 </div>
                 <Row>
@@ -16,7 +16,7 @@ const Analisi = () => {
                         <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
-                                    <i class="bi bi-people-fill"></i>
+                                    <i className="bi bi-people-fill"></i>
                                 </Col>
                                 <Col>
                                     <Card.Body className="p-0">
@@ -34,7 +34,7 @@ const Analisi = () => {
                         <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={1} >
-                                    <i class="bi bi-search"></i>
+                                    <i className="bi bi-search"></i>
                                 </Col>
                                 <Col>
                                     <Card.Body className="p-0">

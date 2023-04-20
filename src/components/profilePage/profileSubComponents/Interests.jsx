@@ -7,7 +7,7 @@ const Interests = () => {
       viewBox="0 0 16 16"
       data-supported-dps="16x16"
       fill="currentColor"
-      class="mercado-match"
+      className="mercado-match"
       width="16"
       height="16"
       focusable="false"
@@ -86,11 +86,10 @@ const Interests = () => {
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
           fill="currentColor"
-          class="mercado-match"
+          className="mercado-match mb-1"
           width="16"
           height="16"
           focusable="false"
-          className="mb-1"
         >
           <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
         </svg>

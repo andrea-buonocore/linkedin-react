@@ -19,7 +19,7 @@ const SideProfileInfo = () => {
               viewBox="0 0 16 16"
               data-supported-dps="16x16"
               fill="currentColor"
-              class="mercado-match"
+              className="mercado-match"
               width="16"
               height="16"
               focusable="false"
@@ -37,7 +37,7 @@ const SideProfileInfo = () => {
               viewBox="0 0 16 16"
               data-supported-dps="16x16"
               fill="currentColor"
-              class="mercado-match"
+              className="mercado-match"
               width="16"
               height="16"
               focusable="false"
@@ -51,7 +51,7 @@ const SideProfileInfo = () => {
       <Card className="mb-2">
         <Card.Body className="p-1">
           <div className="text-end" id="ad-dx">
-            <span>Annuncio</span>&nbsp;<i class="bi bi-three-dots"></i>
+            <span>Annuncio</span>&nbsp;<i className="bi bi-three-dots"></i>
           </div>
           <div className="d-flex flex-column text-center p-2">
             <small>Scopri le ultime offerte di lavoro</small>
