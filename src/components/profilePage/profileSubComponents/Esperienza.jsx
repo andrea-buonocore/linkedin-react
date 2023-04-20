@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
@@ -8,8 +9,8 @@ const Esperienza = () => {
 
     const [show, setShow] = useState(false)
     const dispatch = useDispatch();
-    const id = useSelector(state => state.myInfo.myInfo._id);
     const experiences = useSelector(state => state.experiences.experiences);
+    const params=useParams().id
     //console.log('experiences', experiences);
     //console.log(id)
     const handleClose = () => setShow(false);
@@ -40,7 +41,7 @@ const Esperienza = () => {
 
     const getExperiences = async () => {
         try {
-            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`, {
+            let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params}/experiences`, {
                 method: "GET",
                 headers: {
                     Authorization:
@@ -68,7 +69,7 @@ const Esperienza = () => {
 
         getExperiences();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id])
+    }, [params])
 
     return (
         <>

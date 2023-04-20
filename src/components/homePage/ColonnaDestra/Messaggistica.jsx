@@ -14,7 +14,7 @@ const Messaggistica = () => {
             <Card.Body className="p-0">
               <div className="d-flex justify-content-between">
                 <a href="#" className="text-dark text-decoration-none">
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-center p-2">
                     <img
                       src={myInfo.image}
                       alt="placeholder"
