@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const token =
@@ -10,12 +10,16 @@ const token =
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
   const [comment, setComment] = useState(null);
+  
   const myInfo = useSelector((state) => state.myInfo.myInfo);
+  const dispatch=useDispatch()
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let i=0;
 
   const sendComment = () => {
+    i++;
     return fetch("https://striveschool-api.herokuapp.com/api/posts", {
       method: "POST",
       headers: {
@@ -27,7 +31,11 @@ const CreazionePost = () => {
       .then((response) => {
         if (response.ok) {
           // eslint-disable-next-line no-sequences
-          return response.json(), alert("Your comment has been posted!")
+          return response.json(), alert("Your comment has been posted!"),dispatch({
+            type:'UPDATE_COUNTER',
+            payload:i+1
+          })
+
            
         } else {
           alert("ERROR your comment hasn't been posted!");

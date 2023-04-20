@@ -4,6 +4,7 @@ import ExperiencesReducer from "../reducers/ExperiencesReducer";
 import ProfilesReducer from "../reducers/ProfilesReducer";
 import SavePost from "../reducers/SavePost";
 import HomePageMyInfoReducer from "../reducers/HomePageMyInfoReducer";
+import counterReducer from "../reducers/counterReducer";
 
 
 const store = configureStore({
@@ -12,7 +13,8 @@ const store = configureStore({
         experiences: ExperiencesReducer,
         profiles: ProfilesReducer,
         post: SavePost,
-        myInfo:HomePageMyInfoReducer
+        myInfo:HomePageMyInfoReducer,
+        counter:counterReducer
     })
 })
 

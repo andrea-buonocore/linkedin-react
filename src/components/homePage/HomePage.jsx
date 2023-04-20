@@ -15,6 +15,8 @@ import Scopri from "./ColonnaSinistra/Scopri";
 const HomePage = () => {
   const dispatch = useDispatch();
   const postRedux = useSelector((state) => state.post.post);
+  const counter = useSelector((state) => state.counter.counter);
+
   //const myInfo=useSelector(state=>state.myInfo)
   const [isLoading, setIsLoading] = useState(true);
 
@@ -70,7 +72,10 @@ const HomePage = () => {
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => getPosts(), []);
+  useEffect(() =>{
+    getPosts()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  } ,[counter]);
 
   return (
     <Container className="pageContainer">
