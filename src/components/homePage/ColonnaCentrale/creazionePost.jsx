@@ -18,10 +18,8 @@ const CreazionePost = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  let i=0;
 
   const sendComment = () => {
-    i++;
     return fetch("https://striveschool-api.herokuapp.com/api/posts", {
       method: "POST",
       headers: {
