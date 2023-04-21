@@ -60,7 +60,7 @@ const MyFooter = () => {
           <Row className="rowcircle me-0">
             <Col className="pe-0" xs={10}>
               <h6 className="mb-0">
-                <i class="bi bi-question-circle-fill">
+                <i className="bi bi-question-circle-fill">
                 <a href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_profile_view_base">
                 Domande?</a> </i></h6>
               <p>Visita il nostro Centro assistenza.</p>
@@ -69,7 +69,7 @@ const MyFooter = () => {
           <Row>
             <Col xs={10}>
               <h6 className="mb-0"> 
-              <i class="bi bi-gear-fill"> 
+              <i className="bi bi-gear-fill"> 
               <a href="https://www.linkedin.com/mypreferences/d/categories/account">
               Gestisci il tuo account e la tua privacy</a></i></h6>
               <p>Vai alle impostazioni</p>
@@ -77,7 +77,7 @@ const MyFooter = () => {
           </Row>
           <Row>
             <Col xs={10}>
-              <h6 className="mb-0"><i class="bi bi-shield-shaded"> 
+              <h6 className="mb-0"><i className="bi bi-shield-shaded"> 
                 <a href="https://www.linkedin.com/help/linkedin/answer/a1339724">Trasparenza sui contenuti consigliati</a> </i></h6>
               <p>Scopri di più sui contenuti consigliati.</p>
             </Col>

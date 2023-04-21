@@ -9,7 +9,7 @@ import HomeProfile from "./ColonnaSinistra/HomeProfile";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
 import Post from "./ColonnaCentrale/Post";
-import CreazionePost from "./ColonnaCentrale/creazionePost";
+import CreazionePost, { token } from "./ColonnaCentrale/creazionePost";
 import Scopri from "./ColonnaSinistra/Scopri";
 import ScrollToTopButton from "./ColonnaDestra/ScrollToTopButton";
 
@@ -28,14 +28,13 @@ const HomePage = () => {
         {
           method: "GET",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
+            Authorization:token,
           },
         }
       );
       if (response.ok) {
         let post = await response.json();
-        console.log("tutti i post", post);
+       // console.log("tutti i post", post);
         let fiftyPost = post.reverse().slice(0, 50);
         dispatch({
           type: "SAVE_POST",
@@ -56,8 +55,7 @@ const HomePage = () => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
+            Authorization:token
           },
         }
       );
@@ -66,7 +64,7 @@ const HomePage = () => {
         type: "HOMEPAGE_SAVE_MY_INFO",
         payload: data,
       });
-      console.log("Dati", data);
+      //console.log("Dati", data);
     } catch (error) {
       console.log(error);
     }

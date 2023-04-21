@@ -15,13 +15,14 @@ import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
 import { useEffect } from "react";
 import { useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
+import { token } from "../homePage/ColonnaCentrale/creazionePost";
 
 const ProfilePage = () => {
 
     const dispatch = useDispatch();
     //const myInfo = useSelector(state => state.userInfo.me);
     const params = useParams();
-    console.log('params', params.id);
+    //console.log('params', params.id);
     //const myID = "643cf25b186a8700143867ae";
     //fetch per ottenere info sul profilo
     // profile/me --> miei dati
@@ -32,9 +33,7 @@ const ProfilePage = () => {
             let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params.id}`, {
                 method: "GET",
                 headers: {
-                    Authorization:
-                        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
-                },
+                    Authorization:token},
             });
             if (response.ok) {
                 let data = await response.json();

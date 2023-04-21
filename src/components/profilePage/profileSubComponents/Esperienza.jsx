@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Dropdown } from "react-bootstrap";
+import { token } from "../../homePage/ColonnaCentrale/creazionePost";
+
+
 
 const Esperienza = () => {
   const [show, setShow] = useState(false);
@@ -11,6 +14,10 @@ const Esperienza = () => {
   const experiences = useSelector((state) => state.experiences.experiences);
   const myInfo = useSelector((state) => state.userInfo.me);
   const [selectedExperienceId, setSelectedExperienceId] = useState(null);
+  const [experienceModInfo, setExperienceModInfo] = useState(null);
+  const [idExperience, setIdExperience] = useState('');
+  const [counter, setCounter] = useState(0);
+
   //console.log("myInfo", myInfo);
 
   const esperienza = {
@@ -22,6 +29,10 @@ const Esperienza = () => {
     area: "",
   };
 
+
+
+  
+
   //console.log("experiences", experiences);
   //console.log(id)
   const handleClose = () => setShow(false);
@@ -31,11 +42,14 @@ const Esperienza = () => {
   const closeExperience = () => setModalExperience(false);
   const showExperience = () => setModalExperience(true);
 
-
+  const [modalModifyExperience, setModalModifyExperience] = useState(false);
+  const closeExperienceMod = () => setModalModifyExperience(false);
+  const showExperienceMod = () => setModalModifyExperience(true);
 
   const formData = new FormData();
   const formDataExperienceImg = new FormData();
-  let i = 0;
+  const ModifyFormData = new FormData();
+  let file=null;
 
   const addExperience = async () => {
     try {
@@ -45,9 +59,7 @@ const Esperienza = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
-          },
+            Authorization:token},
           body: JSON.stringify(esperienza),
         }
       );
@@ -60,15 +72,13 @@ const Esperienza = () => {
             {
               method: "POST",
               headers: {
-                Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
-              },
+                Authorization:token},
               body: formDataExperienceImg,
             }
           );
           if (responseImg.ok) {
             alert("You have added your new experience!");
-            i++;
+            setCounter(counter+1)
           } else {
             alert("ERROR you haven't added your new experience...");
           }
@@ -87,14 +97,13 @@ const Esperienza = () => {
         {
           method: "POST",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
-          },
+            Authorization:token},
           body: formData,
         }
       );
       if (response.ok) {
         alert("Your profile pic has been changed!");
+        setCounter(counter+1)
       } else {
         return new Error("Errore nella fetch");
       }
@@ -110,9 +119,7 @@ const Esperienza = () => {
         {
           method: "GET",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
-          },
+            Authorization:token },
         }
       );
       if (response.ok) {
@@ -129,29 +136,77 @@ const Esperienza = () => {
     }
   };
 
+  const cancelExperience = (idCancel) => {
+    fetch(
+      `https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences/${idCancel}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:token},
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          alert("La tua esperienza è stata rimossa con successo!");
+          setCounter(counter+1)
+        } else {
+          alert("Errore la tua esperienza non è stata rimossa...");
+        }
+      })
+      .catch((error) => console.log("ERRORE", error));
+  };
 
-  const cancelExperience=(idCancel)=>{
-    fetch(`https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences/${idCancel}`,{
-      method:"DELETE",
-      headers:{
-        "Content-Type": "application/json",
-        Authorization:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk'
+
+  const fillInputExperience = async () => {
+    try {
+      const response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${myInfo}/experiences/${idExperience}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify(experienceModInfo),
+        }
+      );
+      if(response.ok&& !file){
+        alert("Hai modificato correttamente la tua esperienza.");
+        setCounter(counter+1)
       }
-    })
-    .then(response=>{
-      if(response.ok){
-        alert('La tua esperienza è stata rimossa con successo!')
-      }else{
-        alert('Errore la tua esperienza non è stata rimossa...')
+  
+      if (response.ok && file) {
+        const response2 = await fetch(
+          `https://striveschool-api.herokuapp.com/api/profile/${myInfo}/experiences/${idExperience}/picture`,
+          {
+            method: "POST",
+            headers: {
+              Authorization: token,
+            },
+            body: ModifyFormData,
+          }
+        );
+  
+        if (response2.ok) {
+          alert("Hai modificato correttamente la tua esperienza.");
+          setCounter(counter+1)
+
+        } else {
+          throw new Error("Errore nella modifica dell'esperienza");
+        }
+      } else {
+        throw new Error("Errore nella modifica dell'esperienza");
       }
-    })
-    .catch(error=>console.log('ERRORE',error))
-  }
+    } catch (error) {
+      console.log("ERROR", error);
+    }
+  };
 
   useEffect(() => {
     getExperiences();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [myInfo, i]);
+  }, [myInfo, counter]);
 
   return (
     <>
@@ -165,7 +220,6 @@ const Esperienza = () => {
                 className="bi bi-plus-lg px-3"
                 onClick={showExperience}
               ></i>
-              <i type="button" className="bi bi-pencil"></i>
             </div>
           </div>
 
@@ -293,24 +347,38 @@ const Esperienza = () => {
                         </small>
                         <p>{experience.description}</p>
                       </Card.Body>
-                      
+
                       <div className="dotsDivAbsolute">
                         <Dropdown>
-                    <Dropdown.Toggle id="dropdown-basic" className="drop">
-               <i class="bi bi-three-dots fs-3"></i>
-                    </Dropdown.Toggle>
+                          <Dropdown.Toggle id="dropdown-basic" className="drop">
+                            <i className="bi bi-three-dots fs-3"></i>
+                          </Dropdown.Toggle>
 
-                    <Dropdown.Menu className="p-3 d-flex flex-column">
-                      <div className="mb-2 cursor" onClick={()=>{
-                        if (window.confirm("Vuoi davvero rimuovere questa esperienza")) {
-                          cancelExperience(experience._id)
-                          console.log('esperienza eliminata')
-                        }
-                      }}>Elimina </div>
-                      <div className="cursor">Modifica </div>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                        
+                          <Dropdown.Menu className="p-3 d-flex flex-column">
+                            <div
+                              className="mb-2 cursor"
+                              onClick={() => {
+                                if (
+                                  window.confirm(
+                                    "Vuoi davvero rimuovere questa esperienza"
+                                  )
+                                ) {
+                                  cancelExperience(experience._id);
+                                  console.log("esperienza eliminata");
+                                }
+                              }}
+                            >
+                              Elimina{" "}
+                            </div>
+                            <div className="cursor" onClick={()=>{
+                              showExperienceMod()
+                              setExperienceModInfo(experience)
+                              setIdExperience(experience._id)
+                              //console.log(experience._id)
+                              
+                              }}>Modifica </div>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </Col>
                   </Row>
@@ -334,7 +402,7 @@ const Esperienza = () => {
               <Form.Control
                 type="file"
                 onChange={(e) => {
-                  const file = e.target.files[0];
+                   file = e.target.files[0];
                   formData.append("experience", file);
                 }}
               />
@@ -356,6 +424,140 @@ const Esperienza = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      {experienceModInfo&&(
+              <Modal show={modalModifyExperience} onHide={closeExperienceMod}>
+            <Modal.Header closeButton>
+              <Modal.Title>Modifica esperienza</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="mb-1">Ruolo ricoperto</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={experienceModInfo.role}
+                    onChange={e=>{
+                      setExperienceModInfo({
+                        role: e.target.value,
+                        company: experienceModInfo.company,
+                        startDate: experienceModInfo.startDate,
+                        endDate: experienceModInfo.endDate, // could be null
+                        description: experienceModInfo.description,
+                        area: experienceModInfo.area,
+                      })
+                      //console.log(experienceModInfo.role)
+                    }}
+                    
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="mb-1">Nome azienda</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={experienceModInfo.company}
+                    onChange={e=>{
+                      setExperienceModInfo({
+                        role: experienceModInfo.role,
+                        company: e.target.value,
+                        startDate: experienceModInfo.startDate,
+                        endDate: experienceModInfo.endDate, // could be null
+                        description: experienceModInfo.description,
+                        area: experienceModInfo.area,
+                      })}}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="mb-1">Descrizione</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={experienceModInfo.description}
+                    onChange={e=>{
+                      setExperienceModInfo({
+                        role: experienceModInfo.role,
+                        company:experienceModInfo.company ,
+                        startDate:experienceModInfo.startDate,
+                        endDate: experienceModInfo.endDate, // could be null
+                        description: e.target.value ,
+                        area: experienceModInfo.area,
+                      })}}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="mb-1">Località</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={experienceModInfo.area}
+                    onChange={e=>{
+                      setExperienceModInfo({
+                        role: experienceModInfo.role,
+                        company:experienceModInfo.company ,
+                        startDate:experienceModInfo.startDate,
+                        endDate: experienceModInfo.endDate , // could be null
+                        description: experienceModInfo.description,
+                        area: e.target.value ,
+                      })}}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="mb-1">Data di inizio</Form.Label>
+                  <Form.Control
+                    type="date"
+                    value={experienceModInfo.startDate.slice(0,10)}
+                    onChange={e=>{
+                      setExperienceModInfo({
+                        role: experienceModInfo.role,
+                        company:experienceModInfo.company ,
+                        startDate:e.target.value,
+                        endDate: experienceModInfo.endDate , // could be null
+                        description: experienceModInfo.description,
+                        area: experienceModInfo.area ,
+                      })}}
+                  />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="mb-1">Data di fine</Form.Label>
+                  <Form.Control
+                    type="date"
+                    value={experienceModInfo.endDate?experienceModInfo.endDate.slice(0,10):null}
+                    onChange={e=>{
+                      setExperienceModInfo({
+                        role: experienceModInfo.role,
+                        company:experienceModInfo.company ,
+                        startDate: experienceModInfo.startDate,
+                        endDate: e.target.value , // could be null
+                        description: experienceModInfo.description,
+                        area: experienceModInfo.area ,
+                      })}}
+                  />
+                </Form.Group>
+                <Form.Group controlId="formFile" className="mb-3">
+                  <Form.Label className="mb-1">Allega un'immagine</Form.Label>
+                  <Form.Control
+                    type="file"
+                    onChange={(e) => {
+                       file = e.target.files[0];
+                      ModifyFormData.append("experience", file);
+                    }}
+                  />
+                </Form.Group>
+              </Form>
+            </Modal.Body>
+            <Modal.Footer className="d-flex justify-content-center">
+              <Button
+                variant="primary"
+                onClick={() => {
+                  fillInputExperience()
+                  closeExperienceMod();
+                  console.log(idExperience)
+                }}
+              >
+                Modifica esperienza
+              </Button>
+            </Modal.Footer>
+          </Modal>
+      )}
+
+
     </>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-script-url */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Container from "react-bootstrap/Container";
 import { Dropdown } from "react-bootstrap";
@@ -6,7 +7,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const CustomNavbar = () => {
-  const myInfo = useSelector((state) => state.myInfo.myInfo);
+  const myInfo = useSelector((state) => state.userInfo.me);
+
   return (
     <Navbar bg="light" variant="light" className="fixed-top border py-0">
       <Container className="d-flex pr-0">
@@ -34,7 +36,7 @@ const CustomNavbar = () => {
           >
             <li>
               <a
-                href="#"
+                href={void(0)}
                 className="d-flex d-md-none flex-column align-items-center justify-content-end"
               >
                 <svg
@@ -67,7 +69,7 @@ const CustomNavbar = () => {
               
             </li>
             <li>
-              <a href="#" className="d-flex flex-column align-items-center">
+              <a href={void(0)} className="d-flex flex-column align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -82,7 +84,7 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="d-flex flex-column align-items-center">
+              <a href={void(0)} className="d-flex flex-column align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -98,7 +100,7 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="d-flex flex-column align-items-center">
+              <a href={void(0)} className="d-flex flex-column align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -114,7 +116,7 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="d-flex flex-column align-items-center">
+              <a href={void(0)} className="d-flex flex-column align-items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -129,7 +131,7 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li className="">
-              <Link href="#" className="d-flex flex-column align-items-center">
+              <div href={void(0)} className="d-flex flex-column align-items-center">
                 <img
                   style={{width: "25px", height: "25px"}}
                   src={myInfo.image}
@@ -146,23 +148,12 @@ const CustomNavbar = () => {
                       <Link className="dropdown-item" to='/profile/me'> Visualizza profilo</Link>
                     </Dropdown.Menu>
                   </Dropdown>
-
-                  {/* <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="11"
-                    height="11"
-                    fill="currentColor"
-                    class="bi bi-caret-down-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                  </svg> */}
                 </div>
-              </Link>
+              </div>
             </li>
             <li>
               <a
-                href="#"
+                href={void(0)}
                 className="d-flex d-none d-lg-flex flex-column justify-content-center align-items-center"
               >
                 <svg
@@ -194,7 +185,7 @@ const CustomNavbar = () => {
                 </p>
               </a>
             </li>
-            <a href="#">
+            <a href={void(0)}>
               <li id="lastLi" className="d-none d-lg-block m-0">
                 Fatti assumere piu' velocemente. Prova Premium gratis.
               </li>

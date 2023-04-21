@@ -12,6 +12,7 @@ const SideProfileInfo = () => {
         <Card.Body className="p-3">
           <div className="d-flex justify-content-between">
             <Card.Text className="mb-0">
+            {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
             <a href="" className="profileUrl">Modifica il profilo pubblico e l'URL</a>
             </Card.Text>
             <svg
@@ -30,6 +31,7 @@ const SideProfileInfo = () => {
           <hr className="mx-1" />
           <div className="d-flex justify-content-between">
             <Card.Text className="mb-0">
+              {/*  eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
               <a href="" className="profileUrl">Aggiungi il tuo profilo in un'altra lingua</a>
             </Card.Text>
             <svg

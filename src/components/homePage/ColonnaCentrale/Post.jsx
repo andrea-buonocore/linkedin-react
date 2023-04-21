@@ -5,10 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { token } from "./creazionePost";
 const formData = new FormData();
 
-const token =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk";
 
 const Post = ({ post }) => {
   const dispatch = useDispatch();
@@ -122,11 +121,13 @@ const Post = ({ post }) => {
               </Link>
             </Col>
             <Col xs={9} md={10} lg={11}>
-              <Link to={`/profile/${post.user._id}`} className="postUserName">
+              
                 <p className="m-0 fw-bold postUserName">
+<Link to={`/profile/${post.user._id}`} className="postUserName">
                   {post.user.name} {post.user.surname}
+</Link>
                 </p>
-              </Link>
+              
               <small className="text-muted">{post.user.title}</small>
               <br></br>
               <small className="text-muted">{formattedDate}</small>

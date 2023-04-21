@@ -4,29 +4,7 @@ import { Link } from "react-router-dom";
 
 const HomeProfile = () => {
   const myInfo = useSelector((state) => state.myInfo.myInfo);
-  console.log('myInfo',myInfo);
-//  const [profileInfo, setProfileInfo] = useState([]);
-
-//  const getProfileInfo = async () => {
-//     try {
-//         let response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-//             method: "GET",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk"
-//             },
-//         }
-//         );
-//         let data = await response.json();
-//         setProfileInfo(data);
-//     } catch (error) {
-//         console.log(error);
-//     }
-//  };
-
-//  useEffect(() => {
-//     getProfileInfo();
-//  }, []);
+  //console.log('myInfo',myInfo);
 
   const randomNum100 = Math.floor(Math.random() * 100) + 1;
   const randomNum500 = Math.floor(Math.random() * 500) + 1;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { token } from "../../homePage/ColonnaCentrale/creazionePost";
 
 const OtherProfiles = () => {
   const dispatch = useDispatch();
@@ -16,9 +17,7 @@ const OtherProfiles = () => {
         {
           method: "GET",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk",
-          },
+            Authorization:token},
         }
       );
       let data = await response.json();
@@ -34,6 +33,7 @@ const OtherProfiles = () => {
 
   useEffect(() => {
     getProfileData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleShowMore = () => {

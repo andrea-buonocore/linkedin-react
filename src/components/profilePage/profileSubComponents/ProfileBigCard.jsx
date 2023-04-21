@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
+import { token } from "../../homePage/ColonnaCentrale/creazionePost";
 const ProfileBigCard = () => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
@@ -17,7 +18,7 @@ const ProfileBigCard = () => {
       let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/picture`, {
         method: "POST",
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjI1YjE4NmE4NzAwMTQzODY3YWUiLCJpYXQiOjE2ODE3MTU4MDMsImV4cCI6MTY4MjkyNTQwM30.QtMkPVJHJwbJXrJQxCZi3t_c8ImEL7Pi8UKRK-l88Tk',
+          Authorization:token,
         },
         body: formData
       })
@@ -43,7 +44,7 @@ const ProfileBigCard = () => {
         />
       </div>
       <div className="profilepicContainer">
-        {myInfo._id === '643cf25b186a8700143867ae' ? <><img className="profilepic profilepichover" alt="profilepic" src={myInfo.image} onClick={handleShow} /><div class="edit-text text-dark" onClick={handleShow} style={{cursor: 'pointer'}}>Edit Image</div></> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
+        {myInfo._id === '643cf25b186a8700143867ae' ? <><img className="profilepic profilepichover" alt="profilepic" src={myInfo.image} onClick={handleShow} /><div className="edit-text text-dark" onClick={handleShow} style={{cursor: 'pointer'}}>Edit Image</div></> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
         {/* <img className="profilepic" alt="profilepic" src={myInfo.image} onClick={handleShow} /> */}
         {/* <div class="edit-text text-dark">Edit Image</div> */}
       </div>
