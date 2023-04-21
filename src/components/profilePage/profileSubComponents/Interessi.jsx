@@ -26,7 +26,7 @@ const Interessi = () => {
                                     <Card.Body className="p-0">
                                         <p className="fw-bold m-0">Azienda</p>
                                         <p style={{cursor:"pointer"}} className="text-muted">893473 followers</p>
-                                        <Button variant="outline-secondary">
+                                        <Button variant="outline-secondary" className="rounded-pill">
                                             <i className="bi bi-check2"></i>
                                             Già segui
                                         </Button>
@@ -47,7 +47,7 @@ const Interessi = () => {
                                     <Card.Body className="p-0">
                                         <p className="fw-bold m-0">Azienda</p>
                                         <p style={{cursor:"pointer"}} className="text-muted">893473 followers</p>
-                                        <Button variant="outline-secondary">
+                                        <Button variant="outline-secondary" className="rounded-pill">
                                             <i className="bi bi-check2"></i>
                                             Già segui
                                         </Button>

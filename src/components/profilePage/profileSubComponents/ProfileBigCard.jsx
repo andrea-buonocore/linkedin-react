@@ -43,26 +43,12 @@ const ProfileBigCard = () => {
         />
       </div>
       <div className="profilepicContainer">
-        {myInfo._id === '643cf25b186a8700143867ae' ? <><img className="profilepic profilepichover" alt="profilepic" src={myInfo.image} onClick={handleShow} /><div class="edit-text text-dark" onClick={handleShow}>Edit Image</div></> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
+        {myInfo._id === '643cf25b186a8700143867ae' ? <><img className="profilepic profilepichover" alt="profilepic" src={myInfo.image} onClick={handleShow} /><div class="edit-text text-dark" onClick={handleShow} style={{cursor: 'pointer'}}>Edit Image</div></> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
         {/* <img className="profilepic" alt="profilepic" src={myInfo.image} onClick={handleShow} /> */}
         {/* <div class="edit-text text-dark">Edit Image</div> */}
       </div>
       <div className="pencil-right">
         <i className="bi bi-pencil"></i>
-      </div>
-      <div className="ProfileCoverPencil">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          data-supported-dps="16x16"
-          fill="blue"
-          className="mercado-match"
-          width="20"
-          height="20"
-          focusable="false"
-        >
-          <path d="M14.13 1.86a3 3 0 00-4.17 0l-7 7L1 15l6.19-2 6.94-7a3 3 0 000-4.16zm-8.36 9.71l-1.35-1.34L9.64 5 11 6.35z"></path>
-        </svg>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

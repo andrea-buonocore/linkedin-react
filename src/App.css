@@ -70,7 +70,7 @@ img, svg, i {
 }
 
 #showMore {
-    background-color: white;
+    background-color: transparent;
     font-weight: 500;
 }
 #notizie {
@@ -151,9 +151,6 @@ ul .nav {
     color: black
 }
 
-svg:hover {
-    fill: black;
-}
 
 #kitten {
     width: 35px;
@@ -611,6 +608,13 @@ display: none!important;
     flex-grow: 2;
     height: 50px;
 }
+#iconaFoto:hover {
+    fill: #378FE9;
+}
+svg:hover {
+    fill: currentColor;
+  }
+  
   .buttonCreationPost{
     display: flex;
     height:100%;
@@ -619,7 +623,7 @@ display: none!important;
     font-size: 1.4rem;
     max-width: none;
     justify-content: left;
-    border: 1px solid gray;
+    border: 1px solid #A5A5A5;
     background-color:white;
     border-radius: 35px!important;
     padding-left: 1.6rem!important;
