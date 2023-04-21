@@ -7,7 +7,7 @@ const Attivita = () => {
                 <div className="mb-3">
                     <div className="d-flex justify-content-between align-items-center">
                         <Card.Title className="m-0">Attività</Card.Title>
-                        <Button variant="outline-primary">Avvia un post</Button>
+                        <Button variant="outline-primary" className="rounded-pill">Avvia un post</Button>
                     </div>
                     <span>2 follower</span>
                 </div>

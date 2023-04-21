@@ -236,6 +236,10 @@ svg:hover {
     left: 4%;
 }
 
+.profilepichover:hover{
+    filter: grayscale(80%)
+}
+
 .pencil-right {
     position: absolute;
     right: 28px;
@@ -343,6 +347,27 @@ svg:hover {
     height: 152px;
 }
 
+.edit-text {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+    font-size: 14px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+    border-radius: 50px;
+  }
+  
+  .profilepicContainer:hover .edit-text {
+    visibility: visible;
+    opacity: 1;
+  }
 
 .ProfileCoverPencil svg {
     width: 1.4rem;
@@ -702,4 +727,11 @@ display: none!important;
 .dropdown-text2 {
     color: #b624cf!important;
     font-size: 0.9em;
+}
+
+
+/* POST */
+
+.postButton{
+    cursor: pointer;
 }
