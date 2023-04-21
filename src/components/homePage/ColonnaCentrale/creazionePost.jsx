@@ -61,6 +61,10 @@ const CreazionePost = () => {
       if (response1.ok) {
         const data1 = await response1.json();
         const postId = data1._id;
+        dispatch({
+          type: "UPDATE_COUNTER",
+          payload: counter + 1,
+        });
   
         if (formData.has("post")) {
   
@@ -78,19 +82,18 @@ const CreazionePost = () => {
           if (response2.ok) {
             const data2 = await response2.json();
             console.log(data2);
-            alert("Your comment has been posted!");
             dispatch({
               type: "UPDATE_COUNTER",
               payload: counter + 1,
             });
           } else {
-            throw new Error("Errore nella seconda richiesta POST");
+            throw new Error("Errore nella pubblicazione del post");
           }
   
         }
   
       } else {
-        alert("ERROR your comment hasn't been posted!");
+        alert("Errore nella pubblicazione del post");
       }
     } catch (error) {
       console.log("ERROR", error);

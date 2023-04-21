@@ -21,7 +21,7 @@ const Post = ({ post }) => {
   const [postId, setPostId] = useState(null);
   const myInfo = useSelector((state) => state.myInfo.myInfo);
   const counter = useSelector((state) => state.counter.counter);
-
+  let file = null;
   let date = new Date(post.createdAt);
   let year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -29,6 +29,7 @@ const Post = ({ post }) => {
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let seconds = date.getSeconds();
+  
 
   const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
@@ -71,7 +72,7 @@ const Post = ({ post }) => {
         }
       );
   
-      if (response.ok) {
+      if (response.ok && file) {
         const response2 = await fetch(
           `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
           {
@@ -133,7 +134,7 @@ const Post = ({ post }) => {
           </Row>
         </Card>
         <Card.Text>{post.text}</Card.Text>
-        <img className="img-fluid" src={post.image} alt="img" />
+        {post.image ? <img className="img-fluid" src={post.image} alt="img" /> : null}
       </Card.Body>
       <Card.Footer>
         <Row xs={4}>
@@ -289,7 +290,7 @@ const Post = ({ post }) => {
                       <Form.Control
                         type="file"
                         onChange={(e) => {
-                          const file = e.target.files[0];
+                          file = e.target.files[0];
                           formData.append("post", file);
                         }}
                       />
