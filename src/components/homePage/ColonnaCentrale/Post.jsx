@@ -116,19 +116,19 @@ const Post = ({ post }) => {
       </Card.Body>
       <Card.Footer>
         <Row xs={4}>
-          <Col className="px-0 text-center">
+          <Col id="showMore" className="px-0 text-center">
             <i className="bi bi-hand-thumbs-up me-2"></i>
             <span className="d-none d-lg-inline">Consiglia</span>
           </Col>
-          <Col className="px-0 text-center">
+          <Col id="showMore" className="px-0 text-center">
             <i className="bi bi-chat-text me-2"></i>
             <span className="d-none d-lg-inline">Commenta</span>
           </Col>
-          <Col className="px-0 text-center">
+          <Col id="showMore" className="px-0 text-center">
             <i className="bi bi-share me-2"></i>
             <span className="d-none d-lg-inline">Diffondi il post</span>
           </Col>
-          <Col className="px-0 text-center">
+          <Col id="showMore" className="px-0 text-center">
             <i className="bi bi-send-fill me-2"></i>
             <span className="d-none d-lg-inline">Invia</span>
           </Col>
