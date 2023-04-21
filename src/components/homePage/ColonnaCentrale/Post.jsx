@@ -137,19 +137,19 @@ const Post = ({ post }) => {
       </Card.Body>
       <Card.Footer>
         <Row xs={4}>
-          <Col id="showMore" className="px-0 text-center postButton" onClick={() => setLike(!like)} style={{color: like ? 'blue' : null, fontWeight: like ? 'bold' : null}}>
+          <Col id="showMore" className="px-0 py-2 text-center postButton" onClick={() => setLike(!like)} style={{color: like ? 'blue' : null, fontWeight: like ? 'bold' : null}}>
             <i className="bi bi-hand-thumbs-up me-2"></i>
             <span className="d-none d-lg-inline">Consiglia</span>
           </Col>
-          <Col id="showMore" className="px-0 text-center postButton">
+          <Col id="showMore" className="px-0 py-2 text-center postButton">
             <i className="bi bi-chat-text me-2"></i>
             <span className="d-none d-lg-inline">Commenta</span>
           </Col>
-          <Col id="showMore" className="px-0 text-center postButton">
+          <Col id="showMore" className="px-0 py-2 text-center postButton">
             <i className="bi bi-share me-2"></i>
             <span className="d-none d-lg-inline">Diffondi il post</span>
           </Col>
-          <Col id="showMore" className="px-0 text-center postButton">
+          <Col id="showMore" className="px-0 py-2 text-center postButton">
             <i className="bi bi-send-fill me-2"></i>
             <span className="d-none d-lg-inline">Invia</span>
           </Col>

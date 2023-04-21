@@ -43,7 +43,6 @@ const CreazionePost = () => {
   //     .catch((error) => console.log("ERROR", error));
   // };
 
-
   const sendComment = async () => {
     try {
       const response1 = await fetch(
@@ -57,7 +56,7 @@ const CreazionePost = () => {
           body: JSON.stringify({ text: comment }),
         }
       );
-  
+
       if (response1.ok) {
         const data1 = await response1.json();
         const postId = data1._id;
@@ -74,7 +73,7 @@ const CreazionePost = () => {
               body: formData,
             }
           );
-  
+
           if (response2.ok) {
             const data2 = await response2.json();
             console.log(data2);
@@ -86,9 +85,7 @@ const CreazionePost = () => {
           } else {
             throw new Error("Errore nella seconda richiesta POST");
           }
-  
         }
-  
       } else {
         alert("ERROR your comment hasn't been posted!");
       }
@@ -107,8 +104,12 @@ const CreazionePost = () => {
             </Link>
           </div>
           <div className="buttonContainer">
-            <button className="buttonCreationPost" onClick={handleShow}>
-              <span>Avvia un post</span>
+            <button
+              id="showMore"
+              className="buttonCreationPost"
+              onClick={handleShow}
+            >
+              <span style={{ color: "#808080" }}>Avvia un post</span>
             </button>
           </div>
         </div>
@@ -388,8 +389,8 @@ const CreazionePost = () => {
           </Modal.Body>
         </Modal>
 
-        <div className="my-3 d-flex justify-content-between align-items-center">
-          <button className="postButtonContainer">
+        <div className="my-1 d-flex justify-content-evenly align-items-center">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon
               aria-hidden="true"
               type="image"
@@ -399,11 +400,12 @@ const CreazionePost = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
-                fill="currentColor"
+                fill="#378FE9"
                 className="mercado-match"
                 width="24"
                 height="24"
                 focusable="false"
+                id="iconaFoto"
               >
                 <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
               </svg>
@@ -411,7 +413,7 @@ const CreazionePost = () => {
             <span className="artdeco-button__text">Foto</span>
           </button>
 
-          <button className="postButtonContainer">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon
               aria-hidden="true"
               type="video"
@@ -433,7 +435,7 @@ const CreazionePost = () => {
             <span className="artdeco-button__text">Video</span>
           </button>
 
-          <button className="postButtonContainer">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon aria-hidden="true" type="calendar" size="medium">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -451,7 +453,7 @@ const CreazionePost = () => {
             <span className="artdeco-button__text">Evento</span>
           </button>
 
-          <button className="postButtonContainer">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon aria-hidden="true" type="content-align-left" size="medium">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
