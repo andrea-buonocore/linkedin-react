@@ -12,6 +12,7 @@ import Post from "./ColonnaCentrale/Post";
 import CreazionePost, { token } from "./ColonnaCentrale/creazionePost";
 import Scopri from "./ColonnaSinistra/Scopri";
 import ScrollToTopButton from "./ColonnaDestra/ScrollToTopButton";
+import FooterHome2 from "./FooterHome/FooterHome2";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -79,11 +80,11 @@ const HomePage = () => {
   return (
     <Container className="pageContainer">
       <Row>
-        <Col xs={12} md={3}>
+        <Col xs={12} md={4} lg={3}>
           <HomeProfile />
           <Scopri />
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={8} lg={6}>
           <Row xs={1}>
             <Col>
               <CreazionePost />{" "}
@@ -99,11 +100,11 @@ const HomePage = () => {
             return <Post post={post} key={index} />;
           })}
         </Col>
-        <Col xs={12} md={3}>
+        <Col xs={12} lg={3}>
           <LinkedinNotizie />
           <div className="" id="deviStareStickyTop">
             <Annuncio />
-            <FooterHome></FooterHome>
+            <FooterHome2></FooterHome2>
           </div>
           <Messaggistica />
           <ScrollToTopButton/>
