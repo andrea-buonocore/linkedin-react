@@ -14,7 +14,7 @@ const Formazione = () => {
                 <Card className="insideCards">
                     <Row>
                         <Col xs={3} lg={1} >
-                            <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
+                            <Card.Img style={{cursor:"pointer"}} className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
                         </Col>
                         <Col>
                             <Card.Body className="p-0">
