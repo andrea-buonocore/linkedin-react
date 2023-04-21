@@ -233,7 +233,7 @@ svg:hover {
     left: 4%;
 }
 
-.profilepicContainer:hover{
+.profilepichover:hover{
     filter: grayscale(80%)
 }
 
