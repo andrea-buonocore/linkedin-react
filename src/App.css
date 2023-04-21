@@ -59,7 +59,7 @@ img, svg, i {
     margin-right: 3rem;
     display: none;
 }
-@media screen and (min-width:767px) {
+@media screen and (min-width:1384px) {
     #messaggistica {
         display: flex;
     }
