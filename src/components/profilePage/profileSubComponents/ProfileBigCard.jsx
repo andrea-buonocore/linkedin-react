@@ -43,7 +43,8 @@ const ProfileBigCard = () => {
         />
       </div>
       <div className="profilepicContainer">
-        <img className="profilepic" alt="profilepic" src={myInfo.image} onClick={handleShow} />
+        {myInfo._id === '643cf25b186a8700143867ae' ? <img className="profilepic" alt="profilepic" src={myInfo.image} onClick={handleShow} /> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
+        {/* <img className="profilepic" alt="profilepic" src={myInfo.image} onClick={handleShow} /> */}
       </div>
       <div className="pencil-right">
         <i className="bi bi-pencil"></i>
