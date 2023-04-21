@@ -44,14 +44,14 @@ const Post = ({ post }) => {
         if (response.ok) {
           // eslint-disable-next-line no-sequences
           return (
-            alert("Your comment has been deleted!"),
+            alert("Il tuo post è stato correttamente eliminato"),
             dispatch({
               type: "UPDATE_COUNTER",
               payload: counter + 1,
             })
           );
         } else {
-          alert("ERROR your comment hasn't been deleted!");
+          alert("Errore nell'eliminazione del post");
         }
       })
       .catch((error) => console.log("ERROR", error));
@@ -156,15 +156,12 @@ const Post = ({ post }) => {
           {idUser === post.user._id && (
             <>
               <Col className="px-0 text-center">
-                <Dropdown className="dropdownEdit">
-                  <Dropdown.Toggle
-                    className="drop d-flex align-items-center"
-                    id="dropdown-basic"
-                  >
+              <Dropdown className="dropdownEdit">
+                    <Dropdown.Toggle id="dropdown-basic" className="drop d-flex align-items-center">
                     <i className="bi bi-three-dots me-2 fs-5 text-dark"></i>
-                    {/* <span className="d-none d-lg-inline Modifica">Modifica</span> */}
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="d-flex flex-column align-items-center">
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
                     <span
                       className="dropdown-item"
                       role="button"
@@ -177,7 +174,6 @@ const Post = ({ post }) => {
                     >
                       <span>Modifica</span>
                     </span>
-                    {/* ho tolto la modale da qui */}
 
                     <span
                       className="dropdown-item"
@@ -196,8 +192,8 @@ const Post = ({ post }) => {
                     >
                       <span>Elimina post</span>
                     </span>
-                  </Dropdown.Menu>
-                </Dropdown>
+                    </Dropdown.Menu>
+                  </Dropdown>
               </Col>
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
