@@ -198,7 +198,7 @@ try {
           </Modal>
 
 
-          {experiences.map((experience, index) => {
+          {experiences.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)).map((experience, index) => {
             let startDate = new Date(experience.startDate);
             let startYear = startDate.getFullYear();
             let endDate = new Date(experience.endDate);
