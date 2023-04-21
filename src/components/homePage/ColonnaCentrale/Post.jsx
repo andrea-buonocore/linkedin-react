@@ -31,7 +31,7 @@ const Post = ({ post }) => {
   let seconds = date.getSeconds();
   
 
-  const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+  const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
 
   const eliminationPost = (id) => {
     fetch(`https://striveschool-api.herokuapp.com/api/posts/${id}`, {
