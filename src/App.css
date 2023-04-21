@@ -739,3 +739,23 @@ svg:hover {
 .postButton{
     cursor: pointer;
 }
+
+   /* scroll button */
+
+#scroll-to-top-button-container {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    z-index: 999;
+  }
+  
+#scroll-to-top-button {
+    font-size: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }

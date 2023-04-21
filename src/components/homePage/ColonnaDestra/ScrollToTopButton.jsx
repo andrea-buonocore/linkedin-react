@@ -12,7 +12,7 @@ function ScrollToTopButton() {
   );
 
   return (
-    <div className="scroll-to-top-button-container">
+    <div id="scroll-to-top-button-container">
       <OverlayTrigger
         placement="left"
         overlay={renderTooltip}
@@ -20,7 +20,7 @@ function ScrollToTopButton() {
       >
         <Button
           variant="light"
-          className="scroll-to-top-button"
+          id="scroll-to-top-button"
           onClick={handleScrollTop}
         >
           <i className="bi bi-arrow-up-circle-fill"></i>
