@@ -12,6 +12,7 @@ import Post from "./ColonnaCentrale/Post";
 import CreazionePost from "./ColonnaCentrale/creazionePost";
 import Scopri from "./ColonnaSinistra/Scopri";
 import ScrollToTopButton from "./ColonnaDestra/ScrollToTopButton";
+import FooterHome2 from "./FooterHome/FooterHome2";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -105,7 +106,7 @@ const HomePage = () => {
           <LinkedinNotizie />
           <div className="" id="deviStareStickyTop">
             <Annuncio />
-            <FooterHome></FooterHome>
+            <FooterHome2></FooterHome2>
           </div>
           <Messaggistica />
           <ScrollToTopButton/>

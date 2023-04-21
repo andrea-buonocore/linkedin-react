@@ -712,6 +712,10 @@ svg:hover {
     color:#848482 ;
 }
 
+#footerHome {
+    font-size: 0.8em;
+}
+
 .color:hover,
 #basic-nav-dropdown:hover {
     color: #b624cf!important ;
