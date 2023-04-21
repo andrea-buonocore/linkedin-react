@@ -17,7 +17,7 @@ const Attivita = () => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer>
-                <span className="mx-3">Mostra tutte le attività</span><i class="bi bi-arrow-right"></i>
+                <span className="mx-3">Mostra tutte le attività</span><i className="bi bi-arrow-right"></i>
             </Card.Footer>
         </Card>
     )

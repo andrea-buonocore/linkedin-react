@@ -2,7 +2,7 @@ import { Card, Col, Row } from "react-bootstrap";
 
 const Scopri = () => {
   return (
-    <Card className="mb-2 sticky-top">
+    <Card className="mb-2" id="scopriSticky">
       <Row className="d-flex align-items-center p-2 flex-nowrap">
         <Col xs={10}>
           <p className="linkHome text-primary mb-2">Gruppi</p>
@@ -16,7 +16,7 @@ const Scopri = () => {
               viewBox="0 0 16 16"
               data-supported-dps="16x16"
               fill="grey"
-              class="mercado-match"
+              className="mercado-match"
               width="16"
               height="16"
               focusable="false"

@@ -21,7 +21,7 @@ const ProfilePage = () => {
     const dispatch = useDispatch();
     //const myInfo = useSelector(state => state.userInfo.me);
     const params = useParams();
-    //console.log('params', params);
+    console.log('params', params.id);
     //const myID = "643cf25b186a8700143867ae";
     //fetch per ottenere info sul profilo
     // profile/me --> miei dati

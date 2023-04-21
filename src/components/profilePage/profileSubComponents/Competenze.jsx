@@ -1,4 +1,4 @@
-import { Card, Row, Col, Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
 
 const Competenze = () => {
@@ -23,7 +23,7 @@ const Competenze = () => {
                 <hr/>
             </Card.Body>
             <Card.Footer>
-                <span>Mostra tutte le competenze</span><i class="bi bi-arrow-right"></i>
+                <span>Mostra tutte le competenze</span><i className="bi bi-arrow-right"></i>
             </Card.Footer>
         </Card> 
     )

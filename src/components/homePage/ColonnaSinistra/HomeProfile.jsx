@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Card, Col, ListGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
