@@ -112,7 +112,7 @@ const HomeProfile = () => {
                 </svg>
                 </Col>
                 <Col xs={11}>
-                <p className="sidebarTextPremium mb-0">Fatti assumere più velocemente. <br /> Prova Premium gratis.</p>
+                <p style={{cursor:"pointer"}} className="sidebarTextPremium mb-0">Fatti assumere più velocemente. <br /> Prova Premium gratis.</p>
                 </Col>
             </Row>
           </div>

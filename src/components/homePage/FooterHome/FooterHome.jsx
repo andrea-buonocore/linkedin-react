@@ -25,7 +25,7 @@ export const FooterHome = () => {
                   Contratto di licenza
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2" className="dropdown-text">
-                 Termini e condizioni delle pagine
+                Termini e condizioni delle pagine
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3" className="dropdown-text">
                   Informativa sui coockie
@@ -37,7 +37,7 @@ export const FooterHome = () => {
             </small>
           </Col>
         </Row>
-
+  
         <Row>
           <Col className="d-flex justify-content-around align-items-center text-secondary text-footer mt-2">
             <small className="color"><a href="https://www.linkedin.com/help/linkedin/answer/a1342443?lang=it">
@@ -72,7 +72,7 @@ export const FooterHome = () => {
                     Raggiungi i migliori candidati con la tua offerta di lavoro
                   </small>
                 </NavDropdown.Item>
-
+ 
                 <NavDropdown.Item href="#action/3.4" className="dropdown-text2">
                   <p className="m-0 text-black">Marketing Solutions</p>
                   <small className="text-secondary">

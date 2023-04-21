@@ -1,89 +1,114 @@
-import { Container, Row, Col, Dropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Col, Row, NavDropdown} from "react-bootstrap";
 
 
+const MyFooter = () => {
+  return (
+    <>
+      <Row className="footer w-100 bottom">
+        <Col xs={6} className="footer-col">
+          <ul>
+            <Col className="firstcol" xs={4}>
+              <li> <a href="https://about.linkedin.com/it-it">
+                   Informazioni</a></li>
+              <li> <a href="https://it.linkedin.com/legal/professional-community-policies?">
+                 Linee guida della comunity </a></li>
+              <li>
+              <small>
+              <NavDropdown title="Privacy e condizioni" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1" className="dropdown-text">
+                  Informazioni sulla privacy
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2" className="dropdown-text">
+                  Contratto di licenza
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2" className="dropdown-text">
+                Termini e condizioni delle pagine
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3" className="dropdown-text">
+                  Informativa sui coockie
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.4" className="dropdown-text">
+                  Informativa sul copyright
+                </NavDropdown.Item>
+              </NavDropdown>
+            </small>
+              </li>
+              <li><a href="https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer">
+              Sales Solutions</a> </li>
+              <li> <a href="https://safety.linkedin.com/">Centro sicurezza</a></li>
+            </Col>
 
-export const MyFooter = () => {
-    return (
-      <Container>
-        <Row>
-              <Col xs={12} md={6}>
-              <div className="d-flex justify-content-start">       
-              <img className="mb-3" id="logoFooter"src="https://1000marche.net/wp-content/uploads/2020/03/LinkedIn-Logo-1-600x340.png"/>
+            <Col className="secondcol" xs={4}>
+              <li> <a href="https://it.linkedin.com/accessibility?"> Accessibilità </a></li>
+              <li><a href="https://careers.linkedin.com/">Carriera</a></li>
+              <li> <a href="https://www.linkedin.com/help/linkedin/answer/a1342443?lang=it">Opzioni</a></li>
+              <li> <a href="https://mobile.linkedin.com/it-it"> Mobile</a></li>
+            </Col>
 
-              <ul className="list-unstyled">
-              <li> <Link className="collegamenti" to={"https://about.linkedin.com/it-it"}>
-                    Informazioni</Link> </li>
-                    <li>
-                  <Link className="collegamenti text-secondary"
-                    to={"https://it.linkedin.com/legal/professional-community-policies?"}> Linee guida della community</Link> </li>
-                  <li>
-                    <Dropdown>
-                    <Dropdown.Toggle id="generesDropdown">
-                        <span>Privacy e condizioni</span>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="dropdown-menu dropdown-menu-dark text-light">
-                        <Dropdown.Item href="#/action-1"> Informativa sulla privacy</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Contratto di licenza</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Informativa sui cookie</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Informativa sul copyright</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                    </li>
+            <Col className="thirdcol" xs={4}>
+              <li> <a href="https://business.linkedin.com/it-it/talent-solutions?trk=flagship_nav&veh=li-footer-lts-control-it-it&src=li-footer">
+                Talent Solutions</a></li>
+              <li> <a href="https://business.linkedin.com/it-it/marketing-solutions?trk=n_nav_lms_f&src=li-footer">
+                Soluzioni di marketing</a></li>
+              <li> <a href="https://business.linkedin.com/it-it/marketing-solutions/ads?trk=n_nav_ads_f">
+                Pubblicità</a></li>
+              <li> <a href="https://business.linkedin.com/grow?&src=li-footer">Piccole impresa </a></li>
+            </Col>
+          </ul>
+        </Col>
+        <Col className="fourcol" xs={3}>
+          <Row className="rowcircle me-0">
+            <Col className="pe-0" xs={10}>
+              <h6 className="mb-0">
+                <i class="bi bi-question-circle-fill">
+                <a href="https://www.linkedin.com/help/linkedin?trk=d_flagship3_profile_view_base">
+                Domande?</a> </i></h6>
+              <p>Visita il nostro Centro assistenza.</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={10}>
+              <h6 className="mb-0"> 
+              <i class="bi bi-gear-fill"> 
+              <a href="https://www.linkedin.com/mypreferences/d/categories/account">
+              Gestisci il tuo account e la tua privacy</a></i></h6>
+              <p>Vai alle impostazioni</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={10}>
+              <h6 className="mb-0"><i class="bi bi-shield-shaded"> 
+                <a href="https://www.linkedin.com/help/linkedin/answer/a1339724">Trasparenza sui contenuti consigliati</a> </i></h6>
+              <p>Scopri di più sui contenuti consigliati.</p>
+            </Col>
+          </Row>
+        </Col>
+        <Col xs={3}>
+        <label>Seleziona lingua</label>
+          <br />
+          <select name="language" id="" defaultValue={"Italiano - Italiano"}>
+          <option value="0"> Italiano </option>
+            <option value="0"> Spagnolo </option>
+            <option value="1"> Inglese</option>
+            <option value="2">Francese</option>
+            <option value="3">Arabo</option>
+            <option value="4">Coreano</option>
+            <option value="5">Tedesco</option>
+            <option value="6">Danese </option>
+            <option value="7">Portoghese</option>
+            <option value="8">Russo</option>
+          </select>
+        </Col>
+        <span className="footerCopiright mb-2">
+          LinkedIn Corporation © 2023
+        </span>
+      </Row>
+    </>
+  );
+};
 
-                  <li><Link to={ "https://business.linkedin.com/sales-solutions?trk=flagship_nav&veh=li-footer-lss-control&src=li-footer"}
-                  className="collegamenti">Sales Solutions</Link> </li>
-                  <li><Link to={"https://safety.linkedin.com/"} className="collegamenti">Centro sicurezza</Link> </li>
-              
-                  <li> <Link to={"https://it.linkedin.com/accessibility?"}className="collegamenti">Accessibilità</Link> </li>
+export default MyFooter;
 
-                  <li><Link to={"https://careers.linkedin.com"} className="collegamenti"> Carriera</Link> </li>
 
-                  <li><Link to={"https://www.linkedin.com/help/linkedin/answer/a1342443?lang=it"} 
-                  className="collegamenti">Opzioni per gli annunci pubblicitari</Link></li>
-
-                  <li> <Link to={"https://mobile.linkedin.com/it-it"} className="collegamenti">Mobile</Link> </li>
-
-                <li> <Link to={ "https://business.linkedin.com/it-it/talent-solutions?trk=flagship_nav&veh=li-footer-lts-control-it-it&src=li-footer"}
-                  className="collegamenti">Talent Solutions</Link></li>
-
-                  <li><Link to={"https://business.linkedin.com/it-it/marketing-solutions?trk=n_nav_lms_f&src=li-footer"}
-                    className="collegamenti">Soluzioni di marketing</Link> </li>
-
-                  <li><Link to={"https://business.linkedin.com/it-it/marketing-solutions/ads?trk=n_nav_ads_f"}
-                    className="collegamenti">Pubbilictà</Link></li>
-
-                    <li><Link to={"https://business.linkedin.com/grow?&src=li-footer"} className="collegamenti">Piccole imprese</Link></li>
-    
-                  <li><Link to={"https://www.linkedin.com/help/linkedin?trk=d_flagship3_profile_view_base&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bru6up1A6Seq3bJvMtE7iUQ%3D%3D"
-                    }className="collegamenti domande"> <i className="bi bi-question-circle-fill">Domande? </i></Link>
-                  <p className="footerQuestion">Visita il nostro Centro assistenza.</p> </li>
-
-                  <li> <Link to={"https://www.linkedin.com/mypreferences/d/categories/account"}
-                    className="collegamenti domande"><i className="bi bi-gear-fill"> Gestisci il tuo account e la tua privacy</i> </Link>
-                  <p className="footerQuestion">Vai alle impostazioni</p> </li>
-          
-                  <li><Link to={"https://www.linkedin.com/help/linkedin/answer/a1339724"}
-                    className="collegamenti domande"><i className="bi bi-shield-shaded"> Trasparenza sui contenuti consigliati </i> </Link>
-                  <p className="footerQuestion">Scopri di più sui contenuti consigliati.</p></li>
- <Col xs={12} md={6}>
-                  <li>
-                  <p className="footerQuestion mb-1 ">Seleziona lingua</p>
-                  <select className="px-2 py-1" id="language" name="languageList" form="form">
-                    <option value="Italiano">Italiano</option>
-                    <option value="Inglese">Inglese</option>
-                    <option value="Francese">Francese</option>
-                    <option value="Spagnolo">Spagnolo</option>
-                  </select> </li>
-                  </Col>
-
-              <li><p className="footerQuestion">LinkedIn Corporation © 2023</p></li>
-              </ul>
-              </div>
-              </Col>
-            </Row>
-      </Container>
-    );
-  };
   
-  export default MyFooter
+  

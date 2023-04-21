@@ -60,7 +60,7 @@ const SideProfileInfo = () => {
                 src={myInfo.image}
                 alt="placeholder"
                 className="rounded-circle"
-                style={{ width: "70px" }}
+                style={{ width: "70px"}}
               />
               <img
                 src="https://picsum.photos/200"

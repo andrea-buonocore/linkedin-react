@@ -43,10 +43,8 @@ const CreazionePost = () => {
   //     .catch((error) => console.log("ERROR", error));
   // };
 
-
   const sendComment = async () => {
     try {
-      // Effettua la prima richiesta POST per creare un nuovo post con un commento
       const response1 = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts",
         {
@@ -58,15 +56,17 @@ const CreazionePost = () => {
           body: JSON.stringify({ text: comment }),
         }
       );
-  
+
       if (response1.ok) {
         const data1 = await response1.json();
         const postId = data1._id;
+        dispatch({
+          type: "UPDATE_COUNTER",
+          payload: counter + 1,
+        });
   
-        // Verifica se l'utente ha selezionato un'immagine
         if (formData.has("post")) {
   
-          // Effettua la seconda richiesta POST per caricare un'immagine
           const response2 = await fetch(
             `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
             {
@@ -77,23 +77,20 @@ const CreazionePost = () => {
               body: formData,
             }
           );
-  
+
           if (response2.ok) {
             const data2 = await response2.json();
             console.log(data2);
-            alert("Your comment has been posted!");
             dispatch({
               type: "UPDATE_COUNTER",
               payload: counter + 1,
             });
           } else {
-            throw new Error("Errore nella seconda richiesta POST");
+            throw new Error("Errore nella pubblicazione del post");
           }
-  
         }
-  
       } else {
-        alert("ERROR your comment hasn't been posted!");
+        alert("Errore nella pubblicazione del post");
       }
     } catch (error) {
       console.log("ERROR", error);
@@ -110,8 +107,12 @@ const CreazionePost = () => {
             </Link>
           </div>
           <div className="buttonContainer">
-            <button className="buttonCreationPost" onClick={handleShow}>
-              <span>Avvia un post</span>
+            <button
+              id="showMore"
+              className="buttonCreationPost"
+              onClick={handleShow}
+            >
+              <span style={{ color: "#808080" }}>Avvia un post</span>
             </button>
           </div>
         </div>
@@ -391,8 +392,8 @@ const CreazionePost = () => {
           </Modal.Body>
         </Modal>
 
-        <div className="my-3 d-flex justify-content-between align-items-center">
-          <button className="postButtonContainer">
+        <div className="my-1 d-flex justify-content-evenly align-items-center">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon
               aria-hidden="true"
               type="image"
@@ -402,11 +403,12 @@ const CreazionePost = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
-                fill="currentColor"
+                fill="#378FE9"
                 className="mercado-match"
                 width="24"
                 height="24"
                 focusable="false"
+                id="iconaFoto"
               >
                 <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
               </svg>
@@ -414,7 +416,7 @@ const CreazionePost = () => {
             <span className="artdeco-button__text">Foto</span>
           </button>
 
-          <button className="postButtonContainer">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon
               aria-hidden="true"
               type="video"
@@ -436,7 +438,7 @@ const CreazionePost = () => {
             <span className="artdeco-button__text">Video</span>
           </button>
 
-          <button className="postButtonContainer">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon aria-hidden="true" type="calendar" size="medium">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -454,7 +456,7 @@ const CreazionePost = () => {
             <span className="artdeco-button__text">Evento</span>
           </button>
 
-          <button className="postButtonContainer">
+          <button id="showMore" className="postButtonContainer py-2">
             <li-icon aria-hidden="true" type="content-align-left" size="medium">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

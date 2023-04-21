@@ -20,13 +20,13 @@ const Interessi = () => {
                         <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={4} >
-                                    <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
+                                    <Card.Img style={{cursor:"pointer"}} className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
                                 </Col>
                                 <Col>
                                     <Card.Body className="p-0">
                                         <p className="fw-bold m-0">Azienda</p>
-                                        <p className="text-muted">893473 followers</p>
-                                        <Button variant="outline-secondary">
+                                        <p style={{cursor:"pointer"}} className="text-muted">893473 followers</p>
+                                        <Button variant="outline-secondary" className="rounded-pill">
                                             <i className="bi bi-check2"></i>
                                             Già segui
                                         </Button>
@@ -41,13 +41,13 @@ const Interessi = () => {
                         <Card className="insideCards">
                             <Row>
                                 <Col xs={3} lg={4} >
-                                    <Card.Img className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
+                                    <Card.Img style={{cursor:"pointer"}} className="rounded rounded-0" variant="top" src="http://placekitten.com/50" />
                                 </Col>
                                 <Col>
                                     <Card.Body className="p-0">
                                         <p className="fw-bold m-0">Azienda</p>
-                                        <p className="text-muted">893473 followers</p>
-                                        <Button variant="outline-secondary">
+                                        <p style={{cursor:"pointer"}} className="text-muted">893473 followers</p>
+                                        <Button variant="outline-secondary" className="rounded-pill">
                                             <i className="bi bi-check2"></i>
                                             Già segui
                                         </Button>

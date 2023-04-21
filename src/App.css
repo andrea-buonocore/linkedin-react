@@ -12,7 +12,9 @@
 .card-body {
     padding: 2rem 1.5rem !important;
 }
-
+img, svg, i {
+    cursor:pointer
+}
 .card-title {
     margin-bottom: 1rem !important;
     font-size: 1.5rem ! important;
@@ -66,8 +68,9 @@
     background-color: #E5E6E7;
     border-radius: 50%;
 }
+
 #showMore {
-    background-color: white;
+    background-color: transparent;
     font-weight: 500;
 }
 #notizie {
@@ -158,9 +161,6 @@ ul .nav {
     color: black
 }
 
-svg:hover {
-    fill: black;
-}
 
 #kitten {
     width: 35px;
@@ -241,6 +241,10 @@ svg:hover {
     position: absolute;
     top: 5%;
     left: 4%;
+}
+
+.profilepichover:hover{
+    filter: grayscale(80%)
 }
 
 .pencil-right {
@@ -350,6 +354,27 @@ svg:hover {
     height: 152px;
 }
 
+.edit-text {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #000;
+    font-size: 14px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+    border-radius: 50px;
+  }
+  
+  .profilepicContainer:hover .edit-text {
+    visibility: visible;
+    opacity: 1;
+  }
 
 .ProfileCoverPencil svg {
     width: 1.4rem;
@@ -414,47 +439,57 @@ svg:hover {
     display: none !important;
 }
 
-/*Fine CSS Card Grande Profile Page*/
 
 
+/*FOOTER profile-page*/
 
-
-
-
-
-
-
-
-
-/*FOOTER*/
-#logoFooter {
-    width: 20%;
-    height: 20%
-}
-
-.collegamenti {
-    color: #848482;
+.footer {
+    color: rgb(128, 128, 128);
+    padding-left: 0.3em;
+    padding-right: 7em;
+    padding-top: 3em;
+    background-color: #f3f2ee;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 0.6em;
-    margin-bottom: 8px;
 }
 
-.domande {
-    font-size: 0.9em;
+.footer-col,
+.footerCopiright {
+    padding: 0;
 }
 
-.footerQuestion {
-    font-size: 0.9em;
-    color: #848482;
+.footerCopiright {
+    font-size: 1em;
 }
 
-#language {
-    width: 100%;
-    border-radius: 7px;
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
+.footer-col ul li {
+    margin: 18px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color:#b624cf;
+}
 
+.col-2 {
+    padding-right: 0;
+    width: auto;
+}
+.fourcol {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 300;
+    
+}
+
+.footer select {
+    width: 90%;
+}
+/*Fine CSS Card Grande Profile Page*/
 
 
 /* sidebar homepage */
@@ -583,6 +618,13 @@ display: none!important;
     flex-grow: 2;
     height: 50px;
 }
+#iconaFoto:hover {
+    fill: #378FE9;
+}
+svg:hover {
+    fill: currentColor;
+  }
+  
   .buttonCreationPost{
     display: flex;
     height:100%;
@@ -591,7 +633,7 @@ display: none!important;
     font-size: 1.4rem;
     max-width: none;
     justify-content: left;
-    border: 1px solid gray;
+    border: 1px solid #A5A5A5;
     background-color:white;
     border-radius: 35px!important;
     padding-left: 1.6rem!important;
@@ -667,56 +709,43 @@ display: none!important;
     
   /* FINE CREAZIONE POST COLONNA CENTRALE HOME PAGE */
 
-   
-   /*Footer home-page*/
 
-   .footerQuestion2 {
-     font-size: 0.9em;
-     margin-left: 5px !important;
-   }
-   
-   .text-footer {
-     font-size: 1.2em;
-     color:#848482 ;
-   }
-   
-   .color:hover,
-   #basic-nav-dropdown:hover {
-     color: #b624cf!important ;
-     text-decoration: underline;
-     cursor: pointer;
-   }
-   
-   .dropdown-text {
-     font-size: 0.8em;
-     font-weight: bold;
-   }
-   
-   .dropdown-text:hover {
-     text-decoration: none;
-   }
-   
-   .dropdown-text2 {
-     font-size: 0.9em;
-   }
-  
-   /* scroll button */
+/*Footer home-page*/
 
-   .scroll-to-top-button-container {
-    position: fixed;
-    bottom: 50px;
-    right: 10px;
-    z-index: 999;
-  }
-  
-  .scroll-to-top-button {
-    font-size: 20px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  }
-  
+.footerQuestion2 {
+    font-size: 0.9em;
+    margin-left: 5px !important;
+}
+   
+.text-footer {
+    font-size: 1.2em;
+    color:#848482 ;
+}
+
+.color:hover,
+#basic-nav-dropdown:hover {
+    color: #b624cf!important ;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.dropdown-text {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.dropdown-text:hover {
+    text-decoration: none;
+}
+
+.dropdown-text2 {
+    color: #b624cf!important;
+    font-size: 0.9em;
+}
+
+
+/* POST */
+
+.postButton{
+    cursor: pointer;
+}
