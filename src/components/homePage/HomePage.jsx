@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Annuncio from "./ColonnaDestra/Annuncio";
 import LinkedinNotizie from "./ColonnaDestra/LinkedinNotizie";
-import { FooterHome } from "./FooterHome/FooterHome";
 import Messaggistica from "./ColonnaDestra/Messaggistica";
 
 import HomeProfile from "./ColonnaSinistra/HomeProfile";
