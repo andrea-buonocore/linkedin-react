@@ -16,7 +16,7 @@ const Attivita = () => {
                     I post recenti che condividi o commenti appariranno qui
                 </Card.Text>
             </Card.Body>
-            <Card.Footer style={{cursor:"pointer"}}>
+            <Card.Footer id="showMore" style={{cursor:"pointer"}}>
                 <span className="mx-3">Mostra tutte le attività</span><i className="bi bi-arrow-right"></i>
             </Card.Footer>
         </Card>
