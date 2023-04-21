@@ -27,7 +27,6 @@ const Post = ({ post }) => {
   let day = date.getDate();
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  let seconds = date.getSeconds();
   
 
   const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
