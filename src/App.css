@@ -115,6 +115,16 @@
     border: none !important;
 }
 
+.cursor{
+    cursor:pointer;
+}
+
+.dotsDivAbsolute{
+    position: absolute;
+    top: -20px;
+    right: 20px;
+}
+
 .card-footer {
     text-align: center;
 }
