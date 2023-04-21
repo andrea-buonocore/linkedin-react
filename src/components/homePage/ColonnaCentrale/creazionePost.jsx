@@ -19,30 +19,6 @@ const CreazionePost = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const sendComment = () => {
-  //   return fetch("https://striveschool-api.herokuapp.com/api/posts", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: token,
-  //     },
-  //     body: JSON.stringify({ text: comment }),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         // eslint-disable-next-line no-sequences
-  //         return response.json(), alert("Your comment has been posted!"),dispatch({
-  //           type:'UPDATE_COUNTER',
-  //           payload:counter+1
-  //         })
-
-  //       } else {
-  //         alert("ERROR your comment hasn't been posted!");
-  //       }
-  //     })
-  //     .catch((error) => console.log("ERROR", error));
-  // };
-
   const sendComment = async () => {
     try {
       const response1 = await fetch(
