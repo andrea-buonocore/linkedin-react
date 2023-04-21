@@ -45,7 +45,6 @@ const CreazionePost = () => {
 
   const sendComment = async () => {
     try {
-      // Effettua la prima richiesta POST per creare un nuovo post con un commento
       const response1 = await fetch(
         "https://striveschool-api.herokuapp.com/api/posts",
         {
@@ -61,10 +60,9 @@ const CreazionePost = () => {
       if (response1.ok) {
         const data1 = await response1.json();
         const postId = data1._id;
-
-        // Verifica se l'utente ha selezionato un'immagine
+  
         if (formData.has("post")) {
-          // Effettua la seconda richiesta POST per caricare un'immagine
+  
           const response2 = await fetch(
             `https://striveschool-api.herokuapp.com/api/posts/${postId}`,
             {
