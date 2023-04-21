@@ -69,6 +69,13 @@ const Post = ({ post }) => {
           body: JSON.stringify({ text: comment }),
         }
       );
+      if(response.ok && !file){
+        alert("Hai modificato correttamente il tuo post!");
+          dispatch({
+            type: "UPDATE_COUNTER",
+            payload: counter + 1,
+          });
+      }
   
       if (response.ok && file) {
         const response2 = await fetch(
@@ -88,12 +95,8 @@ const Post = ({ post }) => {
             type: "UPDATE_COUNTER",
             payload: counter + 1,
           });
-        } else {
-          throw new Error("Errore nella modifica dell'immagine");
         }
-      } else {
-        throw new Error("Errore nella modifica del post");
-      }
+      } 
     } catch (error) {
       console.log("ERROR", error);
     }

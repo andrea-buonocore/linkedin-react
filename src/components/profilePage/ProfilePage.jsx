@@ -13,12 +13,15 @@ import PeopleWhoMightKnow from "./profileSubComponents/PeopleWhoMightKnow";
 import Interests from "./profileSubComponents/Interests";
 import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
 import { useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch,useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
 import { token } from "../homePage/ColonnaCentrale/creazionePost";
 
+
+
 const ProfilePage = () => {
 
+const counter=useSelector(state=>state.counter.counter)
     const dispatch = useDispatch();
     //const myInfo = useSelector(state => state.userInfo.me);
     const params = useParams();
@@ -55,7 +58,7 @@ const ProfilePage = () => {
     useEffect(() => {
         getUserInfo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[params.id]) // componentDidMount 
+    },[params.id,counter]) // componentDidMount 
 
    // console.log('useSelector:', myInfo);
 

@@ -1,16 +1,21 @@
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
 import { token } from "../../homePage/ColonnaCentrale/creazionePost";
+import { useLocation } from "react-router-dom";
 const ProfileBigCard = () => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const myInfo = useSelector((state) => state.userInfo.me);
+  const counter=useSelector(state=>state.counter.counter)
+  const dispatch=useDispatch()
   const formData = new FormData();
+  const location=useLocation()
   // console.log("myInfo", myInfo);
+  //console.log(location.pathname)
 
   const changeProfilePic = async () => {
     
@@ -24,6 +29,10 @@ const ProfileBigCard = () => {
       })
       if (response.ok) {
         alert("Your profile pic has been changed!")
+        dispatch({
+          type:'UPDATE_COUNTER',
+          payload:counter+1
+        })
       }
       else {
         return new Error('Errore nella fetch');
@@ -44,7 +53,7 @@ const ProfileBigCard = () => {
         />
       </div>
       <div className="profilepicContainer">
-        {myInfo._id === '643cf25b186a8700143867ae' ? <><img className="profilepic profilepichover" alt="profilepic" src={myInfo.image} onClick={handleShow} /><div className="edit-text text-dark" onClick={handleShow} style={{cursor: 'pointer'}}>Edit Image</div></> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
+        {location.pathname==='/profile/me' ? <><img className="profilepic profilepichover" alt="profilepic" src={myInfo.image} onClick={handleShow} /><div className="edit-text text-dark" onClick={handleShow} style={{cursor: 'pointer'}}>Edit Image</div></> : <img className="profilepic" alt="profilepic" src={myInfo.image}/>}
         {/* <img className="profilepic" alt="profilepic" src={myInfo.image} onClick={handleShow} /> */}
         {/* <div class="edit-text text-dark">Edit Image</div> */}
       </div>
