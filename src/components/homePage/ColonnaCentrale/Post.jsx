@@ -263,7 +263,7 @@ const Post = ({ post }) => {
                                 >
                                   <path
                                     d="M8 11L3 6h10z"
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                   ></path>
                                 </svg>
                               </li-icon>

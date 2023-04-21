@@ -113,7 +113,8 @@ const Esperienza = () => {
   };
 
   const getExperiences = async () => {
-    try {
+    if(myInfo!==undefined){
+          try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences`,
         {
@@ -134,6 +135,8 @@ const Esperienza = () => {
     } catch (err) {
       console.log(err);
     }
+    }
+
   };
 
   const cancelExperience = (idCancel) => {

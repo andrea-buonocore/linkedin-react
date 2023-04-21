@@ -178,7 +178,7 @@ const CreazionePost = () => {
                             height="16"
                             focusable="false"
                           >
-                            <path d="M8 11L3 6h10z" fill-rule="evenodd"></path>
+                            <path d="M8 11L3 6h10z" fillRule="evenodd"></path>
                           </svg>
                         </li-icon>
                       </button>
