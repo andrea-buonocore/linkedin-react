@@ -4,8 +4,6 @@ import Modal from "react-bootstrap/Modal";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-export const token =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQwMmEwNWQ5MTJlOTAwMTRjMjNmYTMiLCJpYXQiOjE2ODE5MjY2NjIsImV4cCI6MTY4MzEzNjI2Mn0.s5TVsYd1HXaVaF0WJGJgDu1B2fdFiL0a6OxN5U3_aFk";
 
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
@@ -51,7 +49,7 @@ const CreazionePost = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token,
+            Authorization: process.env.REACT_APP_API_KEY,
           },
           body: JSON.stringify({ text: comment }),
         }
@@ -72,7 +70,7 @@ const CreazionePost = () => {
             {
               method: "POST",
               headers: {
-                Authorization: token,
+                Authorization: process.env.REACT_APP_API_KEY,
               },
               body: formData,
             }

@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import Form from 'react-bootstrap/Form';
-import { token } from "../../homePage/ColonnaCentrale/creazionePost";
 import { useLocation } from "react-router-dom";
 const ProfileBigCard = () => {
   const [show, setShow] = useState(false)
@@ -23,7 +22,7 @@ const ProfileBigCard = () => {
       let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/picture`, {
         method: "POST",
         headers: {
-          Authorization:token,
+          Authorization:process.env.REACT_APP_API_KEY,
         },
         body: formData
       })

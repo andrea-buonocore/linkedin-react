@@ -15,7 +15,6 @@ import ProfileBigCard from "./profileSubComponents/ProfileBigCard";
 import { useEffect } from "react";
 import { useDispatch,useSelector} from "react-redux";
 import { useParams } from "react-router-dom";
-import { token } from "../homePage/ColonnaCentrale/creazionePost";
 
 
 
@@ -36,7 +35,7 @@ const counter=useSelector(state=>state.counter.counter)
             let response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${params.id}`, {
                 method: "GET",
                 headers: {
-                    Authorization:token},
+                    Authorization:process.env.REACT_APP_API_KEY},
             });
             if (response.ok) {
                 let data = await response.json();

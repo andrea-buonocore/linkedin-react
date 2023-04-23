@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Dropdown } from "react-bootstrap";
-import { token } from "../../homePage/ColonnaCentrale/creazionePost";
 
 
 
@@ -59,7 +58,7 @@ const Esperienza = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization:token},
+            Authorization:process.env.REACT_APP_API_KEY},
           body: JSON.stringify(esperienza),
         }
       );
@@ -72,7 +71,7 @@ const Esperienza = () => {
             {
               method: "POST",
               headers: {
-                Authorization:token},
+                Authorization:process.env.REACT_APP_API_KEY},
               body: formDataExperienceImg,
             }
           );
@@ -97,7 +96,7 @@ const Esperienza = () => {
         {
           method: "POST",
           headers: {
-            Authorization:token},
+            Authorization:process.env.REACT_APP_API_KEY},
           body: formData,
         }
       );
@@ -120,7 +119,7 @@ const Esperienza = () => {
         {
           method: "GET",
           headers: {
-            Authorization:token },
+            Authorization:process.env.REACT_APP_API_KEY },
         }
       );
       if (response.ok) {
@@ -146,7 +145,7 @@ const Esperienza = () => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          Authorization:token},
+          Authorization:process.env.REACT_APP_API_KEY},
       }
     )
       .then((response) => {
@@ -169,7 +168,7 @@ const Esperienza = () => {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token,
+            Authorization: process.env.REACT_APP_API_KEY,
           },
           body: JSON.stringify(experienceModInfo),
         }
@@ -185,7 +184,7 @@ const Esperienza = () => {
           {
             method: "POST",
             headers: {
-              Authorization: token,
+              Authorization: process.env.REACT_APP_API_KEY,
             },
             body: ModifyFormData,
           }

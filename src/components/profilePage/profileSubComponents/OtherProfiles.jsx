@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { token } from "../../homePage/ColonnaCentrale/creazionePost";
 
 const OtherProfiles = () => {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ const OtherProfiles = () => {
         {
           method: "GET",
           headers: {
-            Authorization:token},
+            Authorization:process.env.REACT_APP_API_KEY},
         }
       );
       let data = await response.json();
