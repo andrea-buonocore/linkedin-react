@@ -3,17 +3,19 @@
 import Container from "react-bootstrap/Container";
 import { Dropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const CustomNavbar = () => {
   const myInfo = useSelector((state) => state.userInfo.me);
+  const mySecondInfo = useSelector((state) => state.userInfo.me);
+  const location = useLocation();
 
   return (
     <Navbar bg="light" variant="light" className="fixed-top border py-0">
       <Container className="d-flex pr-0">
         <div className="d-flex d-none d-md-inline col col-md-4">
-            <Link to='/' className="me-2"> 
+          <Link to="/" className="me-2">
             <svg
               id="logo"
               className="me-1 bi bi-linkedin"
@@ -25,8 +27,8 @@ const CustomNavbar = () => {
             >
               <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
             </svg>
-            </Link>
-          
+          </Link>
+
           <input type="text" placeholder="Cerca" />
         </div>
         <div className="d-flex col col-12">
@@ -36,7 +38,7 @@ const CustomNavbar = () => {
           >
             <li>
               <a
-                href={void(0)}
+                href={void 0}
                 className="d-flex d-md-none flex-column align-items-center justify-content-end"
               >
                 <svg
@@ -52,8 +54,10 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-
-                <Link to='/' className="d-flex flex-column align-items-center justify-content-end"> 
+              <Link
+                to="/"
+                className="d-flex flex-column align-items-center justify-content-end"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -65,11 +69,13 @@ const CustomNavbar = () => {
                   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
                 </svg>{" "}
                 <p className="d-none d-lg-inline m-0">Home</p>
-                </Link>
-              
+              </Link>
             </li>
             <li>
-              <a href={void(0)} className="d-flex flex-column align-items-center">
+              <a
+                href={void 0}
+                className="d-flex flex-column align-items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -84,7 +90,10 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-              <a href={void(0)} className="d-flex flex-column align-items-center">
+              <a
+                href={void 0}
+                className="d-flex flex-column align-items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -100,7 +109,10 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-              <a href={void(0)} className="d-flex flex-column align-items-center">
+              <a
+                href={void 0}
+                className="d-flex flex-column align-items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -116,7 +128,10 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li>
-              <a href={void(0)} className="d-flex flex-column align-items-center">
+              <a
+                href={void 0}
+                className="d-flex flex-column align-items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -131,21 +146,25 @@ const CustomNavbar = () => {
               </a>
             </li>
             <li className="">
-              <div href={void(0)} className="d-flex flex-column align-items-center">
+              <div
+                href={void 0}
+                className="d-flex flex-column align-items-center"
+              >
                 <img
-                  style={{width: "25px", height: "25px"}}
-                  src={myInfo.image}
+                  style={{ width: "25px", height: "25px" }}
+                  src={location.pathname === "/profile/me" ? myInfo.image : mySecondInfo.image}
                   alt="kitten"
                 />
 
                 <div className="d-none d-lg-inline m-0">
                   <Dropdown>
-                    <Dropdown.Toggle id="dropdown-basic">
-               Tu{" "}
-                    </Dropdown.Toggle>
+                    <Dropdown.Toggle id="dropdown-basic">Tu </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                      <Link className="dropdown-item" to='/profile/me'> Visualizza profilo</Link>
+                      <Link className="dropdown-item" to="/profile/me">
+                        {" "}
+                        Visualizza profilo
+                      </Link>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>
@@ -153,7 +172,7 @@ const CustomNavbar = () => {
             </li>
             <li>
               <a
-                href={void(0)}
+                href={void 0}
                 className="d-flex d-none d-lg-flex flex-column justify-content-center align-items-center"
               >
                 <svg
@@ -185,7 +204,7 @@ const CustomNavbar = () => {
                 </p>
               </a>
             </li>
-            <a href={void(0)}>
+            <a href={void 0}>
               <li id="lastLi" className="d-none d-lg-block m-0">
                 Fatti assumere piu' velocemente. Prova Premium gratis.
               </li>
