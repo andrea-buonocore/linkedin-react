@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
-  const [comment, setComment] = useState(null);
+  const [comment, setComment] = useState(undefined);
 
   const myInfo = useSelector((state) => state.myInfo.myInfo);
   const counter = useSelector((state) => state.counter.counter);
@@ -360,10 +360,10 @@ const CreazionePost = () => {
                 <button
                   type="button"
                   className="rounded-pill px-3 py-1 btn btn-primary me-2"
-                  disabled={comment ? false : true}
+                  disabled={comment===undefined || comment==='' ? true:false}
                   onClick={() => {
                     handleClose();
-                    setComment(null);
+                    setComment(undefined);
                     sendComment();
                   }}
                 >
