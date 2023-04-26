@@ -52,6 +52,9 @@ const Esperienza = () => {
   let file=null;
 
   const addExperience = async () => {
+    if (esperienza.endDate === undefined) {
+      delete esperienza.endDate
+    }
     try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences`,
@@ -314,7 +317,7 @@ const Esperienza = () => {
           </Modal>
 
 
-          {experiences.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)).map((experience, index) => {
+          {experiences.map((experience, index) => {
             let startDate = new Date(experience.startDate);
             let startYear = startDate.getFullYear();
             let endDate = new Date(experience.endDate);
