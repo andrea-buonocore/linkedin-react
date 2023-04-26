@@ -16,30 +16,7 @@ const CreazionePost = () => {
   const formData = new FormData();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  // const sendComment = () => {
-  //   return fetch("https://striveschool-api.herokuapp.com/api/posts", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: token,
-  //     },
-  //     body: JSON.stringify({ text: comment }),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         // eslint-disable-next-line no-sequences
-  //         return response.json(), alert("Your comment has been posted!"),dispatch({
-  //           type:'UPDATE_COUNTER',
-  //           payload:counter+1
-  //         })
-
-  //       } else {
-  //         alert("ERROR your comment hasn't been posted!");
-  //       }
-  //     })
-  //     .catch((error) => console.log("ERROR", error));
-  // };
+  let file=null
 
   const sendComment = async () => {
     try {
@@ -55,7 +32,14 @@ const CreazionePost = () => {
         }
       );
 
-      if (response1.ok) {
+      if(response1.ok&&!file){
+        dispatch({
+          type: "UPDATE_COUNTER",
+          payload: counter + 1,
+        });
+      }
+
+      if (response1.ok&&file) {
         const data1 = await response1.json();
         const postId = data1._id;
         dispatch({
@@ -204,7 +188,7 @@ const CreazionePost = () => {
                 <Form.Control
                   type="file"
                   onChange={(e) => {
-                    const file = e.target.files[0];
+                     file = e.target.files[0];
                     formData.append("post", file);
                   }}
                 />

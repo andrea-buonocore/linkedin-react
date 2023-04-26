@@ -51,6 +51,9 @@ const Esperienza = () => {
   let file=null;
 
   const addExperience = async () => {
+    if(esperienza.endDate===null){
+      delete esperienza.endDate
+    }
     try {
       let response = await fetch(
         `https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences`,
@@ -62,7 +65,10 @@ const Esperienza = () => {
           body: JSON.stringify(esperienza),
         }
       );
-      if (response.ok) {
+      if(response.ok && !file){
+        setCounter(counter+1)
+      }
+      if (response.ok&&file) {
         const infoExperience = await response.json();
         const experienceId = infoExperience._id;
         if (formDataExperienceImg.has("experience")) {
@@ -194,11 +200,7 @@ const Esperienza = () => {
           alert("Hai modificato correttamente la tua esperienza.");
           setCounter(counter+1)
 
-        } else {
-          throw new Error("Errore nella modifica dell'esperienza");
         }
-      } else {
-        throw new Error("Errore nella modifica dell'esperienza");
       }
     } catch (error) {
       console.log("ERROR", error);
