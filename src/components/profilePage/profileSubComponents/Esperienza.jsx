@@ -113,26 +113,28 @@ const Esperienza = () => {
   };
 
   const getExperiences = async () => {
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences`,
-        {
-          method: "GET",
-          headers: {
-            Authorization:token },
+    if(myInfo._id!==undefined){
+      try {
+        let response = await fetch(
+          `https://striveschool-api.herokuapp.com/api/profile/${myInfo._id}/experiences`,
+          {
+            method: "GET",
+            headers: {
+              Authorization:token },
+          }
+        );
+        if (response.ok) {
+          let data = await response.json();
+          dispatch({
+            type: "ADD_TO_EXPERIENCES",
+            payload: data,
+          });
+        } else {
+          return new Error("Errore nella fetch");
         }
-      );
-      if (response.ok) {
-        let data = await response.json();
-        dispatch({
-          type: "ADD_TO_EXPERIENCES",
-          payload: data,
-        });
-      } else {
-        return new Error("Errore nella fetch");
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log(err);
     }
   };
 
