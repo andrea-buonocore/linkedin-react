@@ -11,6 +11,10 @@ const CustomNavbar = () => {
   const mySecondInfo = useSelector((state) => state.myInfo.myInfo);
   const location=useLocation()
 
+
+  
+  
+
   return (
     <Navbar bg="light" variant="light" className="fixed-top border py-0">
       <Container className="d-flex pr-0">
