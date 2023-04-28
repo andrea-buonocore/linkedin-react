@@ -8,7 +8,7 @@ import HomeProfile from "./ColonnaSinistra/HomeProfile";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
 import Post from "./ColonnaCentrale/Post";
-import CreazionePost, { token } from "./ColonnaCentrale/creazionePost";
+import CreazionePost from "./ColonnaCentrale/creazionePost";
 import Scopri from "./ColonnaSinistra/Scopri";
 import ScrollToTopButton from "./ColonnaDestra/ScrollToTopButton";
 import FooterHome2 from "./FooterHome/FooterHome2";
@@ -28,7 +28,7 @@ const HomePage = () => {
         {
           method: "GET",
           headers: {
-            Authorization:token,
+            Authorization:process.env.REACT_APP_API_KEY,
           },
         }
       );
@@ -55,7 +55,7 @@ const HomePage = () => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            Authorization:token
+            Authorization:process.env.REACT_APP_API_KEY
           },
         }
       );

@@ -9,7 +9,7 @@ export const token =
 
 const CreazionePost = () => {
   const [show, setShow] = useState(false);
-  const [comment, setComment] = useState(null);
+  const [comment, setComment] = useState(undefined);
 
   const myInfo = useSelector((state) => state.myInfo.myInfo);
   const counter = useSelector((state) => state.counter.counter);
@@ -18,6 +18,7 @@ const CreazionePost = () => {
   const formData = new FormData();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  let file=null
 
   const sendComment = async () => {
     try {
@@ -27,13 +28,20 @@ const CreazionePost = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token,
+            Authorization: process.env.REACT_APP_API_KEY,
           },
           body: JSON.stringify({ text: comment }),
         }
       );
 
-      if (response1.ok) {
+      if(response1.ok&&!file){
+        dispatch({
+          type: "UPDATE_COUNTER",
+          payload: counter + 1,
+        });
+      }
+
+      if (response1.ok&&file) {
         const data1 = await response1.json();
         const postId = data1._id;
         dispatch({
@@ -48,7 +56,7 @@ const CreazionePost = () => {
             {
               method: "POST",
               headers: {
-                Authorization: token,
+                Authorization: process.env.REACT_APP_API_KEY,
               },
               body: formData,
             }
@@ -154,7 +162,7 @@ const CreazionePost = () => {
                             height="16"
                             focusable="false"
                           >
-                            <path d="M8 11L3 6h10z" fill-rule="evenodd"></path>
+                            <path d="M8 11L3 6h10z" fillRule="evenodd"></path>
                           </svg>
                         </li-icon>
                       </button>
@@ -182,7 +190,7 @@ const CreazionePost = () => {
                 <Form.Control
                   type="file"
                   onChange={(e) => {
-                    const file = e.target.files[0];
+                     file = e.target.files[0];
                     formData.append("post", file);
                   }}
                 />
@@ -354,10 +362,10 @@ const CreazionePost = () => {
                 <button
                   type="button"
                   className="rounded-pill px-3 py-1 btn btn-primary me-2"
-                  disabled={comment ? false : true}
+                  disabled={comment===undefined || comment==='' ? true:false}
                   onClick={() => {
                     handleClose();
-                    setComment(null);
+                    setComment(undefined);
                     sendComment();
                   }}
                 >

@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { token } from "./creazionePost";
 const formData = new FormData();
 
 
@@ -28,7 +27,6 @@ const Post = ({ post }) => {
   let hours = date.getHours();
   let minutes = date.getMinutes();
   
-
   const formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
 
   const eliminationPost = (id) => {
@@ -36,7 +34,7 @@ const Post = ({ post }) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: token,
+        Authorization: process.env.REACT_APP_API_KEY,
       },
     })
       .then((response) => {
@@ -64,11 +62,18 @@ const Post = ({ post }) => {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token,
+            Authorization: process.env.REACT_APP_API_KEY,
           },
           body: JSON.stringify({ text: comment }),
         }
       );
+      if(response.ok && !file){
+        alert("Hai modificato correttamente il tuo post!");
+          dispatch({
+            type: "UPDATE_COUNTER",
+            payload: counter + 1,
+          });
+      }
   
       if (response.ok && file) {
         const response2 = await fetch(
@@ -76,7 +81,7 @@ const Post = ({ post }) => {
           {
             method: "POST",
             headers: {
-              Authorization: token,
+              Authorization: process.env.REACT_APP_API_KEY,
             },
             body: formData,
           }
@@ -88,12 +93,8 @@ const Post = ({ post }) => {
             type: "UPDATE_COUNTER",
             payload: counter + 1,
           });
-        } else {
-          throw new Error("Errore nella modifica dell'immagine");
         }
-      } else {
-        throw new Error("Errore nella modifica del post");
-      }
+      } 
     } catch (error) {
       console.log("ERROR", error);
     }
@@ -260,7 +261,7 @@ const Post = ({ post }) => {
                                 >
                                   <path
                                     d="M8 11L3 6h10z"
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                   ></path>
                                 </svg>
                               </li-icon>
