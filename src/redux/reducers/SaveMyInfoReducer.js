@@ -1,4 +1,3 @@
-
 const InitialState = {
     me: []
 }
@@ -16,11 +15,5 @@ const SaveMyInfoReducer = (state = InitialState, action) => {
 }
 
 export default SaveMyInfoReducer;
-
-
-
-// 1) state
-// 2) REDUCER
-// 3) ACTION --> DISPATCH
 
 
