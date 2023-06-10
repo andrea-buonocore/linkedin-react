@@ -9,6 +9,7 @@ Il progetto, frutto di un ottimo lavoro di squadra, è stato realizzato con Reac
 
 
 
+![linkedin_screenshot](https://github.com/andrea-buonocore/linkedin-react/assets/123959335/d4461105-dd39-46ef-82b9-97ee8deba452)
 
 
 
